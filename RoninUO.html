@@ -1,0 +1,919 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>RoninUO</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: portal de servidor. Banda de tinta con logo y menú, contenido en paneles enmarcados como pergaminos y una columna lateral con el estado del servidor. */
+:root {
+  --paper: #e4e2d9;      /* fondo: washi con un punto verde de bambú */
+  --panel: #f4f3ed;      /* pergamino de los paneles */
+  --ink: #1b1d21;        /* sumi */
+  --muted: #5a5e5b;
+  --line: #c9c6b9;
+  --band: #16181c;       /* banda de cabecera, oscura en los dos temas */
+  --band-ink: #ebe7da;
+  --band-muted: #a5a296;
+  --shu: #b8361f;        /* bermellón de sello */
+  --ai: #2c4766;         /* añil */
+  --kin: #94702a;        /* oro viejo */
+  --shu-soft: rgba(184, 54, 31, .1);
+  --ai-soft: rgba(44, 71, 102, .1);
+  --kin-soft: rgba(148, 112, 42, .12);
+  --f-display: "Shippori Mincho B1", "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111316; --panel: #1a1d21; --ink: #e7e3d7; --muted: #a29f95; --line: #2e3237;
+    --band: #0b0c0e; --band-ink: #ebe7da; --band-muted: #9a978c;
+    --shu: #e0573c; --ai: #8fb0d6; --kin: #c9a456;
+    --shu-soft: rgba(224, 87, 60, .14); --ai-soft: rgba(143, 176, 214, .12); --kin-soft: rgba(201, 164, 86, .14);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111316; --panel: #1a1d21; --ink: #e7e3d7; --muted: #a29f95; --line: #2e3237;
+  --band: #0b0c0e; --band-ink: #ebe7da; --band-muted: #9a978c;
+  --shu: #e0573c; --ai: #8fb0d6; --kin: #c9a456;
+  --shu-soft: rgba(224, 87, 60, .14); --ai-soft: rgba(143, 176, 214, .12); --kin-soft: rgba(201, 164, 86, .14);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.65; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--band); }
+a { color: var(--ai); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--shu); outline-offset: 3px; }
+.gut { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1140px; margin: 0 auto; }
+p { margin: 0; }
+
+/* Banda superior */
+.band { background: var(--band); color: var(--band-ink); }
+.band .wrap { display: flex; align-items: center; gap: 18px; padding-block: 18px 14px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--band-ink); }
+.brand svg { width: 64px; height: 64px; flex: none; }
+.brand b { display: block; font-family: var(--f-display); font-weight: 800; font-size: 28px; letter-spacing: .06em; line-height: 1.1; }
+.brand b span { color: var(--shu); }
+.brand small { display: block; font-size: 13px; color: var(--band-muted); letter-spacing: .04em; }
+.band .status { margin-left: auto; display: flex; gap: 10px; align-items: center; font-size: 13px; color: var(--band-muted); }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--shu); display: inline-block; }
+.menu-btn { display: none; margin-left: auto; background: none; border: 1px solid var(--band-muted); color: var(--band-ink); font: inherit; font-size: 14px; padding: 6px 12px; cursor: pointer; }
+
+/* Menú */
+nav.main { background: var(--band); border-top: 1px solid rgba(255,255,255,.08); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 6; }
+nav.main ul { list-style: none; margin: 0 auto; padding: 0; display: flex; flex-wrap: wrap; max-width: 1140px; }
+nav.main a { display: block; padding: 12px 16px; text-decoration: none; color: var(--band-muted); font-size: 14.5px; border-bottom: 3px solid transparent; }
+nav.main a:hover { color: var(--band-ink); }
+nav.main a[aria-current="page"] { color: var(--band-ink); border-bottom-color: var(--shu); font-weight: 700; }
+
+/* Cuerpo: contenido y lateral */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; padding-block: 28px 48px; align-items: start; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-top: 4px solid var(--ink); }
+.panel + .panel { margin-top: 24px; }
+.panel-h { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 16px 24px 12px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.panel-h h2 { font-family: var(--f-display); font-weight: 800; font-size: 25px; margin: 0; line-height: 1.2; text-wrap: balance; }
+.panel-h .kj { font-family: var(--f-display); font-weight: 800; font-size: 18px; color: var(--shu); letter-spacing: .12em; }
+.panel-b { padding: 20px 24px 24px; display: grid; gap: 16px; }
+.panel-b > p, .panel-b li { max-width: 68ch; }
+h3 { font-family: var(--f-display); font-weight: 800; font-size: 19px; margin: 0; line-height: 1.25; }
+.tr { font-family: var(--f-body); font-weight: 400; font-size: 13.5px; color: var(--muted); }
+.muted { color: var(--muted); }
+.lead { font-size: 17.5px; }
+
+/* Portada */
+.hero { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 32px; align-items: center; padding: 30px 28px; }
+.hero .logo { width: 100%; max-width: 280px; }
+.panel-h .kj { font-size: 30px; line-height: 1; }
+.preview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; align-items: center; }
+.mons { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.mons a { display: grid; justify-items: center; gap: 6px; text-align: center; text-decoration: none; color: var(--ink); padding: 14px 8px; border: 1px solid var(--line); background: var(--paper); }
+.mons svg { width: 56px; height: 56px; }
+.mons b { font-family: var(--f-display); font-size: 16px; }
+.mons small { font-size: 12.5px; color: var(--muted); }
+.kstrip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.kstrip div { display: grid; justify-items: center; gap: 2px; padding: 12px 6px; border: 1px solid var(--line); background: var(--paper); text-align: center; }
+.kstrip .k { font-family: var(--f-display); font-weight: 800; font-size: 44px; line-height: 1.1; color: var(--shu); }
+.kstrip small { font-size: 12.5px; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero .logo circle { transform-box: fill-box; transform-origin: center; animation: rise 1.4s ease-out both; }
+  @keyframes rise { from { transform: translateY(6px); opacity: .6; } to { transform: none; opacity: 1; } }
+}
+.hero h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.08; margin: 0; text-wrap: balance; }
+.hero .sub { font-family: var(--f-display); font-weight: 600; font-size: 21px; color: var(--shu); margin: 6px 0 14px; }
+.hero .sub small { font-family: var(--f-body); font-size: 13px; color: var(--muted); letter-spacing: .08em; margin-left: 6px; }
+.btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.btn { display: inline-block; text-decoration: none; padding: 9px 18px; font-size: 14.5px; font-weight: 700; border: 1px solid var(--ink); color: var(--ink); background: transparent; font-family: inherit; cursor: pointer; }
+.btn.primary { background: var(--shu); border-color: var(--shu); color: #fff; }
+.btn[aria-disabled="true"] { opacity: .55; cursor: default; }
+
+/* Noticias */
+.news { display: grid; gap: 0; }
+.news article { padding: 16px 0; border-bottom: 1px solid var(--line); display: grid; gap: 6px; }
+.news article:first-child { padding-top: 0; }
+.news article:last-child { border-bottom: 0; padding-bottom: 0; }
+.news time { font-size: 12.5px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; font-size: 11.5px; padding: 1px 8px; border: 1px solid var(--shu); color: var(--shu); margin-left: 8px; letter-spacing: .04em; text-transform: none; }
+
+/* Rejillas */
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.card { border: 1px solid var(--line); padding: 16px; display: grid; gap: 6px; align-content: start; background: var(--paper); }
+.card .role { font-size: 13.5px; font-weight: 700; color: var(--ai); }
+.card .skills { font-size: 13.5px; color: var(--muted); }
+.feature h3 { font-size: 17px; }
+.feature p { font-size: 14.5px; }
+
+/* Mundo */
+.world { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.lore { display: grid; gap: 14px; }
+.lore b { font-family: var(--f-display); font-size: 17px; display: block; }
+.map { width: 100%; height: auto; display: block; }
+.map .isle { fill: var(--paper); stroke: var(--muted); stroke-width: 1.4; }
+.map .z1 { fill: var(--ai-soft); stroke: var(--ai); stroke-width: 1.4; }
+.map .z2 { fill: var(--kin-soft); stroke: var(--kin); stroke-width: 1.4; }
+.map .z3 { fill: var(--shu-soft); stroke: var(--shu); stroke-width: 1.4; }
+.map .neutral, .map .closed { fill: none; stroke: var(--muted); stroke-dasharray: 5 4; stroke-width: 1.3; }
+.map .volcano { fill: var(--shu); }
+.map .crack { fill: none; stroke: var(--shu); stroke-width: 1.6; }
+.map .sea { fill: none; stroke: var(--muted); stroke-dasharray: 3 4; stroke-width: 1.2; }
+.map .port { fill: var(--kin); }
+.map text { fill: var(--ink); font-family: var(--f-body); font-size: 12px; }
+.map text.big { font-family: var(--f-display); font-weight: 800; font-size: 14px; }
+.map text.q { fill: var(--muted); }
+.clan .mon { width: 40px; height: 40px; }
+.clan.hidden { border-style: dashed; background: transparent; }
+
+/* Honor */
+.scale { display: flex; height: 16px; border: 1px solid var(--ink); }
+.scale span { border-right: 1px solid var(--ink); }
+.scale span:last-child { border-right: 0; }
+.s1 { flex: 40; background: var(--shu); } .s2 { flex: 40; background: var(--shu-soft); } .s3 { flex: 41; background: var(--panel); }
+.s4 { flex: 40; background: var(--ai-soft); } .s5 { flex: 30; background: var(--ai); opacity: .55; } .s6 { flex: 10; background: var(--ai); }
+.ticks { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; margin-top: 4px; }
+.level { border-top: 2px solid var(--ink); padding-top: 10px; }
+.level .pts { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.level h4 { margin: 2px 0 2px; font-family: var(--f-display); font-size: 17px; }
+.level p { font-size: 14px; }
+.tablebox { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 440px; font-size: 15px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); }
+th { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+td.good { color: var(--ai); font-weight: 700; } td.bad { color: var(--shu); font-weight: 700; }
+
+/* Estaciones */
+.season .k { font-family: var(--f-display); font-weight: 800; font-size: 30px; line-height: 1; color: var(--shu); }
+.season p { font-size: 14px; color: var(--muted); }
+
+/* Listas numeradas reales */
+ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 14px; }
+ol.steps li { counter-increment: s; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 12px; }
+ol.steps li::before { content: counter(s); font-family: var(--f-display); font-weight: 800; font-size: 18px; width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--shu); color: var(--shu); }
+ol.steps b { display: block; }
+ul.rules { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.draft { font-size: 13px; padding: 8px 12px; border-left: 3px solid var(--kin); background: var(--kin-soft); }
+.road li { grid-template-columns: 36px minmax(0, 1fr) auto !important; align-items: baseline; }
+.st { font-size: 12px; padding: 2px 10px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.st.now { border-color: var(--shu); color: var(--shu); font-weight: 700; }
+.st.next { border-color: var(--ai); color: var(--ai); font-weight: 700; }
+
+/* Lateral */
+aside { display: grid; gap: 20px; }
+.box { background: var(--panel); border: 1px solid var(--line); }
+.box-h { background: var(--band); color: var(--band-ink); padding: 9px 16px; font-family: var(--f-display); font-weight: 800; font-size: 15px; letter-spacing: .04em; display: flex; justify-content: space-between; align-items: center; }
+.box-h span { color: var(--shu); font-size: 14px; }
+.box-b { padding: 14px 16px; display: grid; gap: 10px; font-size: 14.5px; }
+dl.kv { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; }
+dl.kv dt { color: var(--muted); }
+dl.kv dd { margin: 0; font-weight: 700; text-align: right; }
+.state-big { display: flex; align-items: center; gap: 10px; font-family: var(--f-display); font-weight: 800; font-size: 20px; color: var(--shu); }
+.qlinks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.qlinks a { text-decoration: none; color: var(--ink); }
+.qlinks a::before { content: "›"; color: var(--shu); margin-right: 8px; font-weight: 700; }
+.bar { height: 8px; background: var(--paper); border: 1px solid var(--line); }
+.bar i { display: block; height: 100%; width: 18%; background: var(--shu); }
+
+footer.foot { background: var(--band); color: var(--band-muted); }
+footer.foot .wrap { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding-block: 24px 32px; font-size: 13px; }
+footer.foot b { color: var(--band-ink); font-family: var(--f-display); }
+
+.logo .word { fill: var(--ink); font-family: var(--f-display); font-weight: 800; }
+.logo .uo { fill: var(--shu); }
+.logo .seal { fill: var(--shu); }
+.logo .sealtx { fill: #fff; font-family: var(--f-display); font-weight: 800; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .world, .grid2 { grid-template-columns: minmax(0, 1fr); }
+  .grid3, .grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .band .status { display: none; }
+  .menu-btn { display: inline-block; }
+  nav.main ul { display: none; flex-direction: column; }
+  nav.main.open ul { display: flex; }
+  nav.main a { border-bottom: 0; border-left: 3px solid transparent; }
+  nav.main a[aria-current="page"] { border-left-color: var(--shu); }
+  .hero { grid-template-columns: minmax(0, 1fr); padding: 20px 16px; }
+  .hero .logo { max-width: 150px; }
+  .panel-h, .panel-b { padding-left: 16px; padding-right: 16px; }
+  .grid3, .grid4 { grid-template-columns: minmax(0, 1fr); }
+  .hero .logo { max-width: 200px; }
+  .preview { grid-template-columns: minmax(0, 1fr); }
+  .mons, .kstrip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brand svg { width: 48px; height: 48px; }
+  .brand b { font-size: 22px; }
+  .brand small { display: none; }
+  .band .wrap { flex-wrap: nowrap; }
+  .road li { grid-template-columns: 36px minmax(0, 1fr) !important; }
+  .road .st { grid-column: 2; justify-self: start; }
+}
+
+
+/* Skills: ilustraciones de tinta y sellos */
+.sk-hero { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 22px; align-items: center; }
+.sk-hero svg { width: 100%; height: auto; display: block; }
+.sk-hero .lema { font-family: var(--f-display); font-size: 21px; font-weight: 800; line-height: 1.3; margin: 0 0 6px; }
+.sk-banda { width: 100%; height: auto; display: block; border: 1px solid var(--line); background: var(--paper); }
+.sk-banda .tinta { fill: none; stroke: var(--ink); stroke-linecap: round; stroke-linejoin: round; }
+.sk-banda .relleno { fill: var(--ink); }
+.sk-banda .sol { fill: var(--shu); }
+.sk-banda .suave { fill: none; stroke: var(--muted); stroke-linecap: round; opacity: .55; }
+.sk-banda .oro { fill: var(--kin); }
+.sk-banda text { font-family: var(--f-display); font-weight: 800; fill: var(--ink); }
+.sk-banda text.kj { fill: var(--shu); }
+.sk-sello { flex: none; width: 38px; height: 38px; display: grid; place-items: center; background: var(--shu); color: #fff; font-family: var(--f-display); font-weight: 800; font-size: 22px; line-height: 1; border-radius: 4px; transform: rotate(-3deg); box-shadow: inset 0 0 0 2px rgba(255,255,255,.25); }
+.sk-ficha.sk-pend .sk-sello, .sk-ficha.sk-motor .sk-sello { background: var(--muted); }
+.sk-cab { align-items: center; }
+.sk-cab .sk-izq { display: flex; align-items: center; gap: 12px; min-width: 0; }
+@media (max-width: 640px) { .sk-hero { grid-template-columns: 96px minmax(0, 1fr); gap: 14px; } .sk-hero .lema { font-size: 18px; } }
+/* Skills */
+.sk-recuento { display: flex; flex-wrap: wrap; gap: 10px; }
+.sk-cuenta { display: flex; align-items: baseline; gap: 8px; border: 1px solid var(--line); background: var(--paper); padding: 6px 12px; }
+.sk-cuenta b { font-family: var(--f-display); font-size: 22px; font-variant-numeric: tabular-nums; color: var(--c); }
+.sk-cuenta span { font-size: 13px; color: var(--muted); }
+.sk-filtros { display: grid; gap: 10px; border: 1px solid var(--line); background: var(--paper); padding: 12px 14px; }
+.sk-fila { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.sk-et { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); min-width: 62px; }
+.sk-chip { font: inherit; font-size: 13.5px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 4px 11px; cursor: pointer; }
+.sk-chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--panel); }
+.sk-chip:focus-visible, #sk-buscar:focus-visible { outline: 2px solid var(--shu); outline-offset: 2px; }
+#sk-buscar { font: inherit; font-size: 14.5px; flex: 1 1 220px; min-width: 0; padding: 6px 10px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
+.sk-grupo { display: grid; gap: 12px; }
+.sk-grupo + .sk-grupo { margin-top: 10px; }
+.sk-grupo h3 { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.sk-grupo h3 small { font-family: var(--f-body); font-weight: 400; font-size: 13px; color: var(--muted); }
+.sk-fichas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.sk-ficha { border: 1px solid var(--line); border-left: 3px solid var(--c); background: var(--paper); padding: 12px 14px; display: grid; gap: 7px; align-content: start; min-width: 0; }
+.sk-cab { display: flex; justify-content: space-between; align-items: start; gap: 10px; }
+.sk-nom { font-family: var(--f-display); font-weight: 800; font-size: 17px; line-height: 1.2; }
+.sk-estado { flex: none; font-size: 11.5px; font-weight: 700; color: var(--c); border: 1px solid var(--c); padding: 1px 8px; white-space: nowrap; }
+.sk-datos { display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: 12.5px; color: var(--muted); }
+.sk-datos b { color: var(--ink); font-weight: 500; }
+.sk-hace { margin: 0; padding-left: 16px; display: grid; gap: 2px; font-size: 14px; }
+.sk-l3 { font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--shu); }
+.sk-ok { --c: var(--ai); } .sk-parte { --c: var(--kin); } .sk-lote { --c: var(--shu); } .sk-motor { --c: var(--muted); } .sk-pend { --c: var(--muted); }
+.sk-pend { border-left-style: dashed; }
+@media (max-width: 640px) { .sk-fichas { grid-template-columns: minmax(0, 1fr); } }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 200 200">
+      <path style="fill:none;stroke:currentColor;stroke-linecap:round" stroke-width="13" d="M153 52 A75 75 0 1 0 172 86"/>
+      <circle style="fill:var(--shu)" cx="100" cy="92" r="38"/>
+      <line style="stroke:currentColor;stroke-linecap:round" stroke-width="4" x1="54" y1="152" x2="146" y2="60"/>
+      <path style="fill:currentColor" d="M34 140 Q100 92 166 140 Q100 128 34 140 Z"/>
+      <path style="fill:currentColor" d="M92 106 L100 96 L108 106 Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="band gut">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="RoninUO, ir a inicio">
+      <svg viewBox="0 0 200 200" aria-hidden="true" style="color: var(--band-ink)"><use href="#mark"/></svg>
+      <span><b>Ronin<span>UO</span></b><small>Crónicas del Honor · Ecos del Sol Naciente</small></span>
+    </a>
+    <div class="status"><span class="dot" aria-hidden="true"></span>Servidor cerrado · en desarrollo</div>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+  </div>
+</div>
+<nav class="main gut" id="menu" aria-label="Menú principal">
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#como-jugar">Cómo jugar</a></li>
+    <li><a href="#mundo">El mundo</a></li>
+    <li><a href="#caminos">Caminos</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#honor">Honor y fama</a></li>
+    <li><a href="#vida">Vida en Hinokage</a></li>
+    <li><a href="#reglas">Reglas</a></li>
+    <li><a href="#descargas">Descargas</a></li>
+    <li><a href="#desarrollo">Desarrollo</a></li>
+  </ul>
+</nav>
+
+<div class="gut">
+<div class="wrap layout">
+<main id="contenido">
+
+  <!-- INICIO -->
+  <div data-page="inicio">
+    <div class="panel">
+      <div class="hero">
+        <svg class="logo" viewBox="0 0 240 262" role="img" aria-label="Logotipo de RoninUO">
+          <use href="#mark" x="20" y="0" width="200" height="200" style="color: var(--ink)"/>
+          <rect class="seal" x="196" y="14" width="30" height="46" rx="2"/>
+          <text class="sealtx" x="211" y="34" font-size="15" text-anchor="middle">浪</text>
+          <text class="sealtx" x="211" y="53" font-size="15" text-anchor="middle">人</text>
+          <text class="word" x="120" y="246" font-size="40" letter-spacing="5" text-anchor="middle">RONIN<tspan class="uo" font-size="24" dx="4" letter-spacing="1">UO</tspan></text>
+        </svg>
+        <div>
+          <h1>Crónicas del Honor</h1>
+          <p class="sub">Ecos del Sol Naciente <small>I Edición</small></p>
+          <p class="lead">Un servidor de rol de Ultima Online en un Japón feudal con yokai, clanes en tregua y extranjeros llegados por mar. Llegas sin señor y sin nombre. Lo que seas después depende de tu honor.</p>
+          <div class="btns">
+            <a class="btn primary" href="#como-jugar">Cómo empezar</a>
+            <a class="btn" href="#mundo">Conoce el mundo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h"><h2>Noticias</h2><span class="kj" aria-hidden="true">便り</span></div>
+      <div class="panel-b news">
+        <article>
+          <time datetime="2026-10-31">31 oct 2026<span class="tag">Diario de desarrollo</span></time>
+          <h3>Todos saben un poco de todo</h3>
+          <p>Cualquier personaje puede aprender cualquier skill hasta 50, y su camino lleva las propias a 100 dentro de una plantilla de 700. Desde 50, los sensei (maestros) cobran sus lecciones y quien entrena con ellos avanza más rápido. Envenenar y Onmyodo pasan a ser saber secreto, que solo se transmite por iniciación. Y rezar en los santuarios ya hace que las plegarias te lleguen con más fuerza.</p>
+        </article>
+        <article>
+          <time datetime="2026-10-30">30 oct 2026<span class="tag">Diario de desarrollo</span></time>
+          <h3>Quinto lote: repaso de skills</h3>
+          <p>Emplastos y huesos rotos que hay que entablillar, campamentos de curación, monta con caballos de temperamento, el mozo de cuadras que cría y entrena, perros de caza, el ojo del tasador para lo robado y lo falso, la daga lanzada y el polvo cegador, informantes que escuchan en cualquier parte y cartas lacradas.</p>
+        </article>
+        <article>
+          <time datetime="2026-10-30">30 oct 2026<span class="tag">Comunidad</span></time>
+          <h3>Ya tenemos Discord</h3>
+          <p>Abrimos el servidor de Discord de RoninUO: sigue el desarrollo, propón ideas y apúntate a las pruebas cerradas. <a href="https://discord.gg/KMvqtdeKM" target="_blank" rel="noopener">Entrar en el Discord</a>.</p>
+        </article>
+        <article>
+          <time datetime="2026-10-30">30 oct 2026<span class="tag">Diario de desarrollo</span></time>
+          <h3>Cuarto lote programado</h3>
+          <p>Venenos de época que nunca matan, plantas que solo reconoce quien sabe, anatomía para leer cuerpos y heridas, tintes prohibidos, cuencos de té famosos, mapas que pueden mentir, huellas que seguir y el carro de buey. Herboristería desaparece y Venenos pasa a llamarse Envenenar.</p>
+        </article>
+        <article>
+          <time datetime="2026-10-30">30 oct 2026<span class="tag">Diario de desarrollo</span></time>
+          <h3>Tercer lote programado</h3>
+          <p>Ya están en el servidor de pruebas las casas pieza a pieza, los barcos y el buceo, los siete disfraces, el liderazgo con sus arengas y Ashigaru, la nueva música del bardo y los documentos, testigos y rumores con los que se irá destapando el lore.</p>
+        </article>
+        <article>
+          <time datetime="2026-10-30">30 oct 2026<span class="tag">Lore</span></time>
+          <h3>La Crónica de Hinokage</h3>
+          <p>De la lágrima del sol a la Tregua del Arroz: la historia de las islas ya está escrita. Puedes leerla en <a href="#mundo">El mundo</a>.</p>
+        </article>
+        <article>
+          <time datetime="2026-10-28">28 oct 2026<span class="tag">Anuncio</span></time>
+          <h3>Nace RoninUO</h3>
+          <p>Presentamos el proyecto: un servidor 100 % rol ambientado en las islas de Hinokage. Esta web irá creciendo a medida que avance el desarrollo.</p>
+        </article>
+        <article>
+          <time datetime="2026-10-28">28 oct 2026<span class="tag">Diario de desarrollo</span></time>
+          <h3>El diseño, casi cerrado</h3>
+          <p>Ya están definidos el mundo, los clanes, los ocho caminos, el honor y la fama, la economía del arroz y la mayoría de sistemas. Siguiente paso: la base técnica del servidor.</p>
+        </article>
+        <article>
+          <time datetime="2026-10-28">28 oct 2026<span class="tag">Comunidad</span></time>
+          <h3>Pronto, el Discord</h3>
+          <p>Abriremos un servidor de Discord para seguir el desarrollo, proponer ideas y formar parte de las pruebas cerradas. <b>Actualización:</b> ya está abierto, <a href="https://discord.gg/KMvqtdeKM" target="_blank" rel="noopener">entra aquí</a>.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h"><h2>Las islas de Hinokage</h2><span class="kj" aria-hidden="true">世界</span></div>
+      <div class="panel-b preview">
+        <svg class="map" viewBox="0 0 440 400" role="img" aria-label="Esquema del archipiélago: Kurogane al norte, Haibara en el centro, Shirasagi al sur, Akabane y el puerto Nanban al este">
+          <path class="isle" d="M70 50C150 18 260 22 318 50C372 78 382 140 366 196C396 246 392 318 344 356C292 394 196 394 132 368C70 342 42 284 58 230C34 170 30 96 70 50Z"/>
+          <path class="z1" d="M80 60C150 34 256 38 310 60C342 78 352 108 348 132L84 132C66 108 64 84 80 60Z"/>
+          <path class="z2" d="M64 238C56 280 92 340 150 360C204 378 252 376 282 360L274 268C214 274 120 266 64 238Z"/>
+          <path class="z3" d="M330 150C368 178 380 236 372 286C364 320 340 346 308 356L290 268C312 236 320 192 312 156Z"/>
+          <ellipse class="neutral" cx="200" cy="198" rx="88" ry="58"/>
+          <path class="volcano" d="M186 196 L200 170 L214 196 Z"/>
+          <path class="crack" d="M160 184l7 5l-5 5l7 5M240 186l-7 5l5 5l-7 5"/>
+          <text class="big" x="216" y="100" text-anchor="middle">Kurogane</text>
+          <text class="big" x="200" y="222" text-anchor="middle">Haibara</text>
+          <text x="200" y="240" text-anchor="middle">empiezas aquí</text>
+          <text class="big" x="178" y="314" text-anchor="middle">Shirasagi</text>
+          <text class="big" x="342" y="244" text-anchor="middle">Akabane</text>
+          <circle class="port" cx="380" cy="300" r="6"/>
+          <path class="sea" d="M386 306 C404 322 414 336 420 352"/>
+          <rect class="closed" x="352" y="356" width="80" height="34" rx="4"/>
+          <text x="392" y="378" text-anchor="middle">Nanban</text>
+          <text class="q" x="40" y="214" text-anchor="middle">?</text>
+        </svg>
+        <div class="lore">
+          <p>Un archipiélago nacido, dicen, de una lágrima del sol. Hace diez años el volcán sagrado despertó, murió el último Shōgun (señor militar supremo) sin heredero y de las grietas empezaron a salir yokai (criaturas sobrenaturales).</p>
+          <p>Hoy tres clanes se vigilan bajo la Tregua del Arroz, y tú llegas a Haibara (llanura de ceniza), la tierra de nadie del centro.</p>
+          <div class="btns"><a class="btn" href="#mundo">Leer la historia</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h"><h2>Elige a quién servir</h2><span class="kj" aria-hidden="true">氏族</span></div>
+      <div class="panel-b">
+        <div class="mons">
+          <a href="#mundo"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="none" style="stroke:var(--ai)" stroke-width="2"/><path d="M12 30 L22 12 L32 30 Z" style="fill:var(--ai)"/></svg><b>Kurogane</b><small>hierro negro</small></a>
+          <a href="#mundo"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="none" style="stroke:var(--kin)" stroke-width="2"/><path d="M10 26 Q22 8 34 26 Q22 20 10 26 Z" style="fill:var(--kin)"/></svg><b>Shirasagi</b><small>garza blanca</small></a>
+          <a href="#mundo"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="none" style="stroke:var(--shu)" stroke-width="2"/><path d="M22 8 C30 16 30 28 22 36 C24 26 20 18 22 8 Z" style="fill:var(--shu)"/></svg><b>Akabane</b><small>pluma roja</small></a>
+          <a href="#mundo"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="none" style="stroke:var(--muted)" stroke-width="2" stroke-dasharray="4 4"/><text x="22" y="29" text-anchor="middle" font-size="20" style="fill:var(--muted)" font-family="serif">?</text></svg><b>Ryu shinobi</b><small>clan ninja</small></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h"><h2>Un año en Hinokage</h2><span class="kj" aria-hidden="true">四季</span></div>
+      <div class="panel-b">
+        <div class="kstrip">
+          <div><span class="k" aria-hidden="true">春</span><b>Haru</b><small>primavera · siembra</small></div>
+          <div><span class="k" aria-hidden="true">夏</span><b>Natsu</b><small>verano · lluvias</small></div>
+          <div><span class="k" aria-hidden="true">秋</span><b>Aki</b><small>otoño · cosecha</small></div>
+          <div><span class="k" aria-hidden="true">冬</span><b>Fuyu</b><small>invierno · año nuevo</small></div>
+        </div>
+        <p class="muted">Cada estación dura mes y medio real. <a href="#vida">Ver la vida en Hinokage</a></p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h"><h2>¿Por qué RoninUO?</h2><span class="kj" aria-hidden="true">理由</span></div>
+      <div class="panel-b grid3">
+        <div class="feature"><h3>Rol de verdad</h3><p>Nadie elige clase al crear el personaje: el camino se gana por rol, ante un maestro.</p></div>
+        <div class="feature"><h3>El honor importa</h3><p>Abre tutores, ascensos y técnicas secretas. Perderlo te cierra puertas y te convierte en ronin.</p></div>
+        <div class="feature"><h3>Todos se necesitan</h3><p>Nadie puede hacerlo todo. Una casa necesita cuatro oficios; una katana, al herrero y al carpintero.</p></div>
+        <div class="feature"><h3>Un mundo vivo</h3><p>Estaciones, cosechas, tributo de arroz, hambrunas y festivales que cambian la vida de las islas.</p></div>
+        <div class="feature"><h3>Yokai y misterio</h3><p>Criaturas que salen de las grietas del volcán, zonas selladas y un mundo de espíritus por descubrir.</p></div>
+        <div class="feature"><h3>Combate con consecuencias</h3><p>No hay muertes absurdas, pero cada derrota deja heridas que alguien tiene que curar.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CÓMO JUGAR -->
+  <div data-page="como-jugar" hidden>
+    <div class="panel">
+      <div class="panel-h"><h2>Cómo jugar</h2><span class="kj" aria-hidden="true">始め</span></div>
+      <div class="panel-b">
+        <p class="draft">El servidor aún no está abierto. Estos son los pasos que seguirás cuando abra.</p>
+        <ol class="steps">
+          <li><div><b>Descarga el cliente y el parche</b><span class="muted">Ultima Online clásico más nuestro parche con el arte japonés, desde la sección Descargas.</span></div></li>
+          <li><div><b>Crea tu cuenta</b><span class="muted">Se creará desde la web o el <a href="https://discord.gg/KMvqtdeKM" target="_blank" rel="noopener">Discord</a>.</span></div></li>
+          <li><div><b>Crea tu personaje</b><span class="muted">Nombre japonés y de rol, aspecto de la época y una historia breve si quieres. Empiezas como Heimin (gente común).</span></div></li>
+          <li><div><b>Llega a Haibara</b><span class="muted">La llanura de ceniza, neutral por la Tregua del Arroz. Con algo de mon (monedas de cobre), una onigiri (bola de arroz) y una herramienta.</span></div></li>
+          <li><div><b>Busca tu camino</b><span class="muted">Trabaja, aprende con tutores, gana honor y pide a un maestro que te acepte. Ningún clan te espera: tendrás que ganártelo.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- MUNDO -->
+  <div data-page="mundo" hidden>
+    <div class="panel">
+      <div class="panel-h"><h2>Las islas de Hinokage</h2><span class="kj" aria-hidden="true">世界</span></div>
+      <div class="panel-b">
+        <p class="lead">Hinokage (sombra del sol) es un archipiélago inspirado en el Japón feudal. Durante trescientos años vivió en paz bajo un Shōgun (señor militar supremo). Hace diez años todo ardió.</p>
+        <div class="world">
+          <div class="lore">
+            <p><b>La lágrima del sol</b>Cuando Amaterasu (diosa del sol) se encerró en su cueva, lloró una sola lágrima. Cayó al mar, se enfrió y fue tierra. Por eso aquí el velo entre los vivos y el mundo oculto es fino, y los kami (dioses), los muertos y los yokai (criaturas sobrenaturales) caminan cerca.</p>
+            <p><b>Homusubi, el corazón de fuego</b>En el centro de las islas duerme Homura-yama (la montaña de la llama), y dentro, Homusubi (el que hace nacer el fuego). Dormido, su ceniza hace la tierra fértil. Despierto, lo quema todo.</p>
+            <p><b>Takamori y las Cuatro Casas</b>Hace trescientos años, Takamori subió solo a la boca del volcán, pactó con el kami y bajó con el pelo blanco. Unió las islas y fue el primer Shōgun. Le juraron lealtad Kurogane, Shirasagi, Akabane y una cuarta casa cuyo nombre ya nadie pronuncia.</p>
+            <p><b>Los Tres Tesoros</b>La espada del sol, el espejo de sombra y la joya del alba. Quien reúna los tres será Shōgun. Hoy nadie sabe dónde están.</p>
+          </div>
+          <svg class="map" viewBox="0 0 440 400" role="img" aria-label="Esquema del archipiélago: Kurogane al norte, Haibara en el centro, Shirasagi al sur, Akabane y el puerto Nanban al este">
+            <path class="isle" d="M70 50C150 18 260 22 318 50C372 78 382 140 366 196C396 246 392 318 344 356C292 394 196 394 132 368C70 342 42 284 58 230C34 170 30 96 70 50Z"/>
+            <path class="z1" d="M80 60C150 34 256 38 310 60C342 78 352 108 348 132L84 132C66 108 64 84 80 60Z"/>
+            <path class="z2" d="M64 238C56 280 92 340 150 360C204 378 252 376 282 360L274 268C214 274 120 266 64 238Z"/>
+            <path class="z3" d="M330 150C368 178 380 236 372 286C364 320 340 346 308 356L290 268C312 236 320 192 312 156Z"/>
+            <ellipse class="neutral" cx="200" cy="198" rx="88" ry="58"/>
+            <path class="volcano" d="M186 196 L200 170 L214 196 Z"/>
+            <path class="crack" d="M160 184l7 5l-5 5l7 5M240 186l-7 5l5 5l-7 5"/>
+            <text class="big" x="216" y="100" text-anchor="middle">Kurogane</text>
+            <text x="216" y="118" text-anchor="middle">hierro negro · montañas</text>
+            <text class="big" x="200" y="222" text-anchor="middle">Haibara</text>
+            <text x="200" y="240" text-anchor="middle">empiezas aquí</text>
+            <text class="big" x="178" y="314" text-anchor="middle">Shirasagi</text>
+            <text x="178" y="332" text-anchor="middle">garza blanca · arrozales</text>
+            <text class="big" x="342" y="244" text-anchor="middle">Akabane</text>
+            <text x="342" y="262" text-anchor="middle">pluma roja</text>
+            <circle class="port" cx="380" cy="300" r="6"/>
+            <path class="sea" d="M386 306 C404 322 414 336 420 352"/>
+            <rect class="closed" x="352" y="356" width="80" height="34" rx="4"/>
+            <text x="392" y="378" text-anchor="middle">Nanban</text>
+            <text class="q" x="40" y="206" text-anchor="middle">?</text>
+            <text class="q" x="40" y="222" text-anchor="middle">shinobi</text>
+          </svg>
+        </div>
+        <div class="grid2" style="align-items:start">
+          <div class="lore">
+            <p><b>La Gran Ceniza</b>Hace diez años, en la noche del rito, la montaña despertó. La ceniza cayó cuarenta días sobre la capital, el último Shōgun murió sin heredero, los Tres Tesoros se perdieron y la tierra se abrió en grietas.</p>
+            <p><b>La guerra del triple remolino</b>Las casas se lanzaron a por el trono vacío. Dos años de batallas sin vencedor, y una casa borrada de las crónicas.</p>
+          </div>
+          <div class="lore">
+            <p><b>El Año de los Espíritus Hambrientos</b>En el segundo invierno ardieron los almacenes de arroz del Shōgun. Murió uno de cada cinco habitantes de las islas, y los gaki (espíritus hambrientos) vagaban por los campos.</p>
+            <p><b>La Tregua del Arroz</b>Los tres clanes la firmaron en el Gran Santuario del Sol: nadie será Shōgun sin los Tres Tesoros, Haibara no es de nadie y el arroz se reparte. Dura ya ocho años. Nadie la ha roto en público. Nadie la cumple del todo.</p>
+          </div>
+        </div>
+        <p><b>Haibara (llanura de ceniza)</b>, antes Kazanbara (llanura del volcán), la tierra más fértil de las islas, vuelve a dar arroz. Ningún clan puede ocuparla. Aquí empiezas, y los tres clanes quieren tu lealtad.</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-h"><h2>Clanes</h2><span class="kj" aria-hidden="true">氏族</span></div>
+      <div class="panel-b">
+        <p>Sus señores los lleva el staff. Puedes servirlos y ascender por rol y honor, o vivir libre y sin protección.</p>
+        <div class="grid2">
+          <article class="card clan">
+            <svg class="mon" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="none" style="stroke:var(--ai)" stroke-width="2"/><path d="M12 30 L22 12 L32 30 Z" style="fill:var(--ai)"/></svg>
+            <h3>Kurogane <span class="tr">(hierro negro)</span></h3>
+            <p class="tr">Montañas del norte</p>
+            <p>Militar y estricto. Vive de sus minas y sus forjas, y desprecia a los extranjeros.</p>
+          </article>
+          <article class="card clan">
+            <svg class="mon" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="none" style="stroke:var(--kin)" stroke-width="2"/><path d="M10 26 Q22 8 34 26 Q22 20 10 26 Z" style="fill:var(--kin)"/></svg>
+            <h3>Shirasagi <span class="tr">(garza blanca)</span></h3>
+            <p class="tr">Llanuras y arrozales del sur</p>
+            <p>Culto y diplomático. Protege templos y artes, y desconfía de los Nanban.</p>
+          </article>
+          <article class="card clan">
+            <svg class="mon" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="none" style="stroke:var(--shu)" stroke-width="2"/><path d="M22 8 C30 16 30 28 22 36 C24 26 20 18 22 8 Z" style="fill:var(--shu)"/></svg>
+            <h3>Akabane <span class="tr">(pluma roja)</span></h3>
+            <p class="tr">Costa este y puerto Nanban</p>
+            <p>Ambicioso y comerciante. Abrió su puerto a los extranjeros y se enriquece con ellos.</p>
+          </article>
+          <article class="card clan hidden">
+            <svg class="mon" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="none" style="stroke:var(--muted)" stroke-width="2" stroke-dasharray="4 4"/><text x="22" y="29" text-anchor="middle" font-size="20" style="fill:var(--muted)" font-family="serif">?</text></svg>
+            <h3>Ryu shinobi <span class="tr">(clan ninja)</span></h3>
+            <p class="tr">Paradero desconocido</p>
+            <p>Oficialmente no existe. Sirve al mejor postor, y sus miembros viven bajo una identidad falsa.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAMINOS -->
+  <div data-page="caminos" hidden>
+    <div class="panel">
+      <div class="panel-h"><h2>Ocho caminos para dejar de ser nadie</h2><span class="kj" aria-hidden="true">道</span></div>
+      <div class="panel-b">
+        <p>Todos empiezan como <b>Heimin (gente común)</b>, sin clase, y pueden aprender un poco de todo: cualquier skill hasta 50, salvo Envenenar y Onmyodo, que son saber secreto. Cada camino lleva sus siete skills propias hasta 100. La plantilla suma 700: tú eliges cómo repartirla. Nadie puede hacerlo todo.</p>
+        <div class="grid2">
+          <article class="card"><h3>Bushi <span class="tr">(guerrero)</span></h3><p class="role">Combate y mando</p><p class="skills">Kenjutsu (esgrima), Sojutsu (armas de asta), Kyujutsu (arco), Heiho (tácticas), Bajutsu (monta), Liderazgo, Etiqueta</p></article>
+          <article class="card"><h3>Yamabushi <span class="tr">(monje guerrero)</span></h3><p class="role">Lucha y sanación</p><p class="skills">Bojutsu (contundentes), Jujutsu (lucha sin armas), Devoción, Curación, Anatomía, Medicina, Rastrear</p></article>
+          <article class="card"><h3>Shinobi <span class="tr">(ninja)</span></h3><p class="role">Infiltración</p><p class="skills">Sigilo, Esconderse, Disfraz, Espionaje, Cerrajería, Shurikenjutsu (arrojadizas), Robar</p></article>
+          <article class="card"><h3>Gakusha <span class="tr">(erudito, onmyoji)</span></h3><p class="role">Magia y remedios</p><p class="skills">Onmyodo (magia y adivinación), Medicina, Envenenar, Caligrafía, Anatomía, Tasación, Cartografía</p></article>
+          <article class="card"><h3>Biwa hoshi <span class="tr">(bardo)</span></h3><p class="role">Información y vida social</p><p class="skills">Música, Etiqueta, Espionaje, Disfraz, Detectar, Medicina (el gremio de los ciegos unía a bardos, masajistas y acupuntores), y Caligrafía o Cerrajería a elegir</p></article>
+          <article class="card"><h3>Shokunin <span class="tr">(artesano)</span></h3><p class="role">Producción</p><p class="skills">Un solo oficio a 100: herrería, carpintería, sastrería, alfarería o construcción (y otro a 70), más sus skills de apoyo y Bajutsu (monta) para carros y animales de tiro</p></article>
+          <article class="card"><h3>Ryoshi <span class="tr">(cazador)</span></h3><p class="role">Exploración y caza</p><p class="skills">Kyujutsu (arco), Rastrear, Detectar, Doma, Cocina, Pesca, Navegación</p></article>
+          <article class="card"><h3>Hyakusho <span class="tr">(campesino)</span></h3><p class="role">Comida y tributo</p><p class="skills">Agricultura, Pesca, Cocina, Doma, Construcción, Tala, Bojutsu (bastón y hoz)</p></article>
+        </div>
+        <p class="muted">Desde 50, quien entrena con un sensei (maestro) avanza cuatro veces más rápido, pero las lecciones se pagan. Los mejores pueden pasar de 100 a 120 en sus skills propias, y la plantilla de 700 a 800: eso no se compra, se gana por rol.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HONOR -->
+  <!-- SKILLS -->
+  <div data-page="skills" hidden>
+    <div class="panel">
+      <div class="panel-h"><h2>Las 42 skills</h2><span class="kj" aria-hidden="true">技</span></div>
+      <div class="panel-b">
+        <div class="sk-hero">
+          <svg viewBox="0 0 160 160" role="img" aria-label="Enso, el circulo zen, con el kanji de tecnica">
+            <defs><filter id="sk-pincel" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+            <path d="M118 30 C150 55 148 115 108 136 C68 156 22 132 18 90 C14 52 46 22 84 22 C96 22 104 24 112 28" fill="none" style="stroke:var(--ink)" stroke-width="13" stroke-linecap="round" filter="url(#sk-pincel)"/>
+            <text x="80" y="102" text-anchor="middle" font-size="52" style="fill:var(--shu);font-family:var(--f-display);font-weight:800">技</text>
+          </svg>
+          <div><p class="lema">Waza (técnica): lo que sabes hacer.</p><p>Qué hace cada skill, qué clases la llevan a 100 y en qué punto del desarrollo está. Esta lista se irá actualizando con cada lote. Mampostería se unió a Construcción en el lote 3. En el lote 4, Venenos pasó a llamarse Envenenar y Herboristería desapareció: cualquiera recoge plantas con la vara de zahorí, pero solo quien sabe Medicina o Envenenar reconoce lo que coge.</p></div>
+        </div>
+        <div class="sk-recuento" id="sk-recuento" aria-label="Recuento por estado"></div>
+        <div class="sk-filtros">
+          <div class="sk-fila"><span class="sk-et" id="sk-et-estado">Estado</span><span id="sk-f-estado" role="group" aria-labelledby="sk-et-estado" style="display:contents"></span></div>
+          <div class="sk-fila"><span class="sk-et" id="sk-et-grupo">Grupo</span><span id="sk-f-grupo" role="group" aria-labelledby="sk-et-grupo" style="display:contents"></span></div>
+          <div class="sk-fila"><label class="sk-et" for="sk-buscar">Buscar</label><input id="sk-buscar" type="search" placeholder="Skill, clase o efecto (Shinobi, casas, yokai...)"></div>
+        </div>
+        <div id="sk-lista"></div>
+        <p class="muted" style="font-size:13.5px">«A 100»: clases que llegan al máximo. «A 50»: todos los demás pueden aprenderla hasta 50; la plantilla (700) decide cuánto repartes. Envenenar y Onmyodo son saber secreto: solo su clase o alguien iniciado en secreto por un maestro. Los oficios: el Shokunin (artesano) elige uno a 100 y otro a 70. En todo lo que enfrenta una skill contra otra (disfraz contra detectar, robar contra vigilar) se hace una tirada enfrentada: skill + la mitad de la stat + un dado de 1 a 50 por cada lado.</p>
+      </div>
+    </div>
+  </div>
+
+  <div data-page="honor" hidden>
+    <div class="panel">
+      <div class="panel-h"><h2>Honor y fama</h2><span class="kj" aria-hidden="true">名誉</span></div>
+      <div class="panel-b">
+        <p>Todos empiezan en 0. Cada camino tiene su código: a un shinobi una emboscada no le quita honor; a un samurái, huir de un duelo sí.</p>
+        <div>
+          <div class="scale" role="img" aria-label="Escala de honor de menos 100 a más 100 dividida en seis niveles"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span></div>
+          <div class="ticks"><span>−100</span><span>−60</span><span>−20</span><span>+20</span><span>+60</span><span>+90</span><span>+100</span></div>
+        </div>
+        <div class="grid3">
+          <div class="level"><span class="pts">−100 a −61</span><h4>Deshonrado</h4><p>Expulsado del gremio, nadie te enseña y un bushi cae a ronin.</p></div>
+          <div class="level"><span class="pts">−60 a −21</span><h4>Mal visto</h4><p>Los tutores te cobran el doble y no asciendes.</p></div>
+          <div class="level"><span class="pts">−20 a +20</span><h4>Neutral</h4><p>Donde empieza todo el mundo.</p></div>
+          <div class="level"><span class="pts">+21 a +60</span><h4>Honorable</h4><p>Aprendes los tramos altos y asciendes en tu gremio.</p></div>
+          <div class="level"><span class="pts">+61 a +90</span><h4>Ejemplar</h4><p>Optas al primer densho y enseñas a otros.</p></div>
+          <div class="level"><span class="pts">+91 a +100</span><h4>Leyenda</h4><p>Segundo densho y los cargos más altos.</p></div>
+        </div>
+        <h3>La fama</h3>
+        <p>La fama dice cuánto te conocen; el honor, por qué. Las hazañas solo cuentan si hay testigos.</p>
+        <div class="tablebox">
+          <table>
+            <thead><tr><th scope="col">Fama</th><th scope="col">Con honor</th><th scope="col">Sin honor</th></tr></thead>
+            <tbody>
+              <tr><td>Desconocido</td><td>Nadie te conoce</td><td>Nadie te conoce</td></tr>
+              <tr><td>Conocido</td><td class="good">Respetado</td><td class="bad">Sospechoso</td></tr>
+              <tr><td>Famoso</td><td class="good">Admirado</td><td class="bad">Temido</td></tr>
+              <tr><td>Legendario</td><td class="good">Héroe</td><td class="bad">Infame</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDA -->
+  <div data-page="vida" hidden>
+    <div class="panel">
+      <div class="panel-h"><h2>Vida en Hinokage</h2><span class="kj" aria-hidden="true">暮らし</span></div>
+      <div class="panel-b">
+        <p>Cada estación dura mes y medio real: un año natural son dos años en Hinokage.</p>
+        <div class="grid4">
+          <div class="card season"><span class="k" aria-hidden="true">春</span><h3>Haru <span class="tr">(primavera)</span></h3><p>Siembra del arroz. Hanami (contemplar los cerezos en flor).</p></div>
+          <div class="card season"><span class="k" aria-hidden="true">夏</span><h3>Natsu <span class="tr">(verano)</span></h3><p>Lluvias y la mejor pesca. Obon (festival de los difuntos).</p></div>
+          <div class="card season"><span class="k" aria-hidden="true">秋</span><h3>Aki <span class="tr">(otoño)</span></h3><p>Cosecha y tributo de arroz. Tsukimi (contemplar la luna).</p></div>
+          <div class="card season"><span class="k" aria-hidden="true">冬</span><h3>Fuyu <span class="tr">(invierno)</span></h3><p>Se vive de conservas. Shogatsu (año nuevo): saldar deudas.</p></div>
+        </div>
+        <div class="grid3">
+          <div class="feature"><h3>Arroz, tributo y paga</h3><p>Los campesinos pagan el nengu (tributo de arroz) al clan, y el señor paga a sus samuráis en arroz.</p></div>
+          <div class="feature"><h3>Casas pieza a pieza</h3><p>Construcción y Carpintería hacen muros, suelos y tejados. El dueño y su constructor los colocan con el Sashigane (escuadra) en su solar. Pesan, así que hay que acarrearlas con bueyes. Quien no paga el impuesto, la pierde.</p></div>
+          <div class="feature"><h3>Magia de papel y fe</h3><p>Ofuda (talismanes) que se escriben y se gastan, shikigami (espíritus sirvientes) y la fe de los monjes.</p></div>
+          <div class="feature"><h3>Yokai</h3><p>Oni, kitsune, tengu, kappa. A algunos se les combate; a otros conviene respetarlos, o su maldición te perseguirá.</p></div>
+          <div class="feature"><h3>Heridas que dejan huella</h3><p>Caes desmayado con un corte, una fractura o una quemadura, y otro tiene que curarte. La muerte definitiva, solo con pacto.</p></div>
+          <div class="feature"><h3>Minas, mar y tesoros</h3><p>Minas que se derrumban por zonas, barcos de pesca y de guerra, buceo a pulmón en busca de perlas y pecios, y pergaminos de tesoro.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGLAS -->
+  <div data-page="reglas" hidden>
+    <div class="panel">
+      <div class="panel-h"><h2>Reglas</h2><span class="kj" aria-hidden="true">掟</span></div>
+      <div class="panel-b">
+        <p class="draft">Borrador. Las reglas definitivas se publicarán antes de la apertura.</p>
+        <ul class="rules">
+          <li>Nombre japonés y de rol. Nada de nombres de broma, de famosos ni de otros personajes conocidos.</li>
+          <li>Dentro del juego se habla y se actúa como el personaje. Lo que sabe el jugador no lo sabe el personaje.</li>
+          <li>La muerte definitiva solo es posible con un pacto aceptado por los dos jugadores y aprobado por el staff.</li>
+          <li>Un shinobi puede ocultar su verdadero camino. Descubrirlo es cosa del rol, no de preguntar fuera del juego.</li>
+          <li>Un edificio por personaje para vivir. Talleres y tiendas, aparte y con su impuesto.</li>
+          <li>No hay herederos: quien muere de verdad pierde su casa, su dinero y sus objetos. Solo los altos cargos pasan a su sucesor lo que va con el cargo.</li>
+          <li>El staff lleva a los señores de los clanes y decide guerras, treguas y eventos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESCARGAS -->
+  <div data-page="descargas" hidden>
+    <div class="panel">
+      <div class="panel-h"><h2>Descargas</h2><span class="kj" aria-hidden="true">入手</span></div>
+      <div class="panel-b">
+        <p class="draft">Aún no hay descargas disponibles. Se publicarán aquí cuando empiecen las pruebas cerradas.</p>
+        <div class="grid3">
+          <div class="card"><h3>Cliente</h3><p class="muted">Ultima Online clásico, en la versión que usará el servidor.</p><span class="btn" aria-disabled="true">Próximamente</span></div>
+          <div class="card"><h3>Parche RoninUO</h3><p class="muted">Arte japonés: paperdoll, ropa, barcos, gumps de pergamino y caracteres con tilde.</p><span class="btn" aria-disabled="true">Próximamente</span></div>
+          <div class="card"><h3>Lanzador</h3><p class="muted">Actualiza el parche y abre el juego conectado al servidor.</p><span class="btn" aria-disabled="true">Próximamente</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESARROLLO -->
+  <div data-page="desarrollo" hidden>
+    <div class="panel">
+      <div class="panel-h"><h2>En qué punto estamos</h2><span class="kj" aria-hidden="true">進捗</span></div>
+      <div class="panel-b">
+        <p>El servidor se construye por lotes: se diseñan cinco puntos, se programan juntos y se prueban en un servidor de pruebas antes de pasar al siguiente.</p>
+        <ol class="steps road">
+          <li><span>Diseño del mundo, caminos, honor y sistemas</span><span class="st">Hecho</span></li>
+          <li><span>Lote 1: base técnica, personaje, skills, armas y oficios, heridas, comida, economía y magia</span><span class="st">Hecho</span></li>
+          <li><span>Lote 2: posturas y técnicas, yokai y NPC, regiones, recolección y campo, clanes y pactos</span><span class="st">Hecho</span></li>
+          <li><span>Lote 3: revelación del lore, casas, barcos y buceo, disfraz, liderazgo y música</span><span class="st">Hecho</span></li>
+          <li><span>Lote 4: venenos, anatomía, tintorería, alfarería, cartografía, rastreo y carro de buey</span><span class="st">Hecho</span></li>
+          <li><span>Lote 5: repaso de skills (medicina, monta, establo, tasación, curación, arrojadizas y espionaje)</span><span class="st">Hecho</span></li>
+          <li><span>Mapa nuevo y arte japonés</span><span class="st now">Siguiente</span></li>
+          <li><span>Pruebas cerradas y apertura</span><span class="st">Pendiente</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</main>
+
+<aside aria-label="Estado y enlaces">
+  <div class="box">
+    <div class="box-h">Estado del servidor<span aria-hidden="true">状態</span></div>
+    <div class="box-b">
+      <div class="state-big"><span class="dot" aria-hidden="true"></span>Cerrado</div>
+      <dl class="kv">
+        <dt>Fase</dt><dd>En desarrollo</dd>
+        <dt>Edición</dt><dd>I · Ecos del Sol Naciente</dd>
+        <dt>Apertura</dt><dd>Por anunciar</dd>
+        <dt>Motor</dt><dd>Source-X</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="box">
+    <div class="box-h">Próximo hito<span aria-hidden="true">次</span></div>
+    <div class="box-b">
+      <b>Mapa nuevo y arte japonés</b>
+      <div class="bar" role="img" aria-label="Fase 6 de 7"><i style="width:78%"></i></div>
+      <span class="muted">Fase 6 de 7 · <a href="#desarrollo">ver el plan</a></span>
+    </div>
+  </div>
+  <div class="box">
+    <div class="box-h">Comunidad<span aria-hidden="true">仲間</span></div>
+    <div class="box-b">
+      <p>Sigue el desarrollo, propón ideas y apúntate a las pruebas cerradas.</p>
+      <a class="btn primary" href="https://discord.gg/KMvqtdeKM" target="_blank" rel="noopener">Entrar en el Discord</a>
+    </div>
+  </div>
+  <div class="box">
+    <div class="box-h">Enlaces rápidos<span aria-hidden="true">道標</span></div>
+    <div class="box-b">
+      <ul class="qlinks">
+        <li><a href="#como-jugar">Cómo empezar</a></li>
+        <li><a href="#caminos">Los ocho caminos</a></li>
+        <li><a href="#skills">Las 42 skills</a></li>
+        <li><a href="#honor">Escala de honor</a></li>
+        <li><a href="#reglas">Reglas (borrador)</a></li>
+      </ul>
+    </div>
+  </div>
+</aside>
+</div>
+</div>
+
+<footer class="foot gut">
+  <div class="wrap">
+    <span><b>RoninUO</b> · Crónicas del Honor · Ecos del Sol Naciente</span>
+    <span>Servidor de rol sin ánimo de lucro. Ultima Online es una marca de Electronic Arts; este proyecto no está afiliado a ella.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var pages = Array.prototype.slice.call(document.querySelectorAll('[data-page]'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.main a'));
+  var nav = document.getElementById('menu');
+  var btn = document.getElementById('menu-btn');
+  function show(scroll) {
+    var id = (location.hash || '').replace('#', '');
+    var found = pages.some(function (p) { return p.getAttribute('data-page') === id; });
+    if (!found) id = 'inicio';
+    pages.forEach(function (p) { p.hidden = p.getAttribute('data-page') !== id; });
+    links.forEach(function (a) {
+      if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    if (scroll) window.scrollTo(0, 0);
+  }
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  window.addEventListener('hashchange', function () { show(true); });
+  show(false);
+})();
+</script>
+<script>
+(function () {
+var ESTADOS = {
+  ok:    { nom: "Lista" },
+  parte: { nom: "En parte" },
+  lote:  { nom: "En desarrollo" },
+  motor: { nom: "Como en UO" },
+  pend:  { nom: "Por diseñar" }
+};
+var C = { bushi:"Bushi", ronin:"Ronin", yamabushi:"Yamabushi", kannushi:"Kannushi", shinobi:"Shinobi", gakusha:"Gakusha", biwahoshi:"Biwa hoshi", shokunin:"Shokunin", shonin:"Shonin", ryoshi:"Ryoshi", hyakusho:"Hyakusho", Heimin:"Heimin" };
+var GRUPOS = ["Combate","Social","Subterfugio","Saber","Naturaleza","Oficio"];
+var STAT = { TAI:"Tai (cuerpo)", GI:"Gi (técnica)", SHIN:"Shin (mente)" };
+var KANJI = { Kenjutsu:"剣", Sojutsu:"槍", Kyujutsu:"弓", Bojutsu:"棒", Jujutsu:"柔", Shurikenjutsu:"手", Heiho:"兵", Bajutsu:"馬", Liderazgo:"将", Etiqueta:"礼", Musica:"楽", Sigilo:"忍", Esconderse:"隠", Espionaje:"諜", Disfraz:"変", Robar:"盗", Cerrajeria:"錠", Onmyodo:"陰", Devocion:"祈", Medicina:"医", Envenenar:"毒", Curacion:"癒", Anatomia:"体", Caligrafia:"書", Tasacion:"鑑", Cartografia:"図", Rastrear:"跡", Detectar:"察", Doma:"獣", Pesca:"釣", Navegacion:"航", Agricultura:"農", Cocina:"料", Tala:"伐", Mineria:"鉱", Comercio:"商", Tintoreria:"染", Herreria:"鍛", Carpinteria:"木", Sastreria:"縫", Alfareria:"陶", Construccion:"建" };
+// Ilustraciones de cada grupo (tinta sobre washi): viewBox 600x150
+var PINCEL = '<filter id="sk-p-ID" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter>';
+var ARTE = {
+  Combate: '<circle class="sol" cx="470" cy="70" r="46"/>' +
+    '<path class="tinta" stroke-width="5" d="M60 120 L330 30"/><path class="tinta" stroke-width="10" d="M60 120 L118 101"/>' +
+    '<ellipse class="relleno" cx="122" cy="100" rx="5" ry="14" transform="rotate(-18 122 100)"/>' +
+    '<path class="tinta" stroke-width="4" d="M380 20 C330 60 330 100 380 140"/><path class="suave" stroke-width="2" d="M380 20 L380 140"/>' +
+    '<path class="tinta" stroke-width="3" d="M300 128 L540 128"/><text class="kj" x="560" y="62" font-size="30">武</text>',
+  Social: '<path class="relleno" d="M420 118 L380 40 A80 80 0 0 1 520 40 Z" opacity=".9"/><circle class="sol" cx="450" cy="60" r="14"/><path class="tinta" stroke-width="5" d="M450 118 L450 140"/>' +
+    '<ellipse class="tinta" stroke-width="4" cx="170" cy="92" rx="40" ry="48"/><path class="tinta" stroke-width="5" d="M170 44 L210 10"/><path class="suave" stroke-width="1.5" d="M160 50 L160 130 M170 46 L170 138 M180 50 L180 130"/>' +
+    '<path class="tinta" stroke-width="3" d="M40 132 L300 132"/><text class="kj" x="560" y="62" font-size="30">礼</text>',
+  Subterfugio: '<rect x="0" y="0" width="600" height="150" style="fill:var(--ink)" opacity=".92"/>' +
+    '<path d="M470 30 A42 42 0 1 0 512 92 A34 34 0 1 1 470 30 Z" style="fill:var(--paper)"/>' +
+    '<g transform="translate(170 78) rotate(15)"><path d="M0 -34 L8 -8 L34 0 L8 8 L0 34 L-8 8 L-34 0 L-8 -8 Z" style="fill:var(--paper)"/><circle r="6" style="fill:var(--ink)"/></g>' +
+    '<path d="M60 130 C140 110 260 140 360 120" style="fill:none;stroke:var(--paper);stroke-width:2;opacity:.5"/><text x="560" y="62" font-size="30" style="fill:var(--shu)">忍</text>',
+  Saber: '<rect class="tinta" stroke-width="3" x="90" y="36" width="300" height="80" rx="4"/><rect class="relleno" x="78" y="30" width="14" height="92" rx="6"/><rect class="relleno" x="388" y="30" width="14" height="92" rx="6"/>' +
+    '<path class="tinta" stroke-width="4" d="M130 58 L130 100 M160 52 L160 104 M190 62 L190 96 M220 54 L220 102 M250 60 L250 98 M280 56 L280 104 M310 64 L310 94 M340 54 L340 100"/>' +
+    '<rect x="450" y="24" width="40" height="110" style="fill:var(--paper);stroke:var(--ink);stroke-width:2"/><rect class="sol" x="458" y="96" width="24" height="24"/><path class="tinta" stroke-width="3" d="M470 36 L470 86"/><text class="kj" x="560" y="62" font-size="30">知</text>',
+  Naturaleza: '<path class="tinta" stroke-width="7" d="M70 150 L80 10 M110 150 L122 30 M150 150 L156 50"/><path class="tinta" stroke-width="3" d="M80 40 L110 28 M122 64 L150 50 M156 80 L184 70 M78 80 L52 66"/>' +
+    '<path class="tinta" stroke-width="4" d="M250 130 C280 100 310 100 330 120 C350 140 380 140 400 116 C420 92 450 92 470 116 C490 140 520 140 540 120"/><path class="suave" stroke-width="2" d="M260 144 C300 128 340 150 380 136 C420 122 470 150 520 136"/>' +
+    '<path class="relleno" d="M330 60 C350 40 380 40 400 52 C420 40 450 44 470 56 C440 56 420 64 400 72 C380 64 360 60 330 60 Z"/><circle class="sol" cx="404" cy="50" r="5"/><text class="kj" x="560" y="62" font-size="30">然</text>',
+  Oficio: '<path class="relleno" d="M90 100 L210 100 L195 116 L105 116 Z"/><rect class="relleno" x="128" y="116" width="44" height="22"/><rect class="relleno" x="100" y="138" width="100" height="8"/>' +
+    '<path class="tinta" stroke-width="6" d="M230 30 L170 90"/><rect class="relleno" x="216" y="16" width="34" height="18" transform="rotate(45 233 25)"/>' +
+    '<circle class="sol" cx="150" cy="80" r="6"/><circle class="oro" cx="170" cy="70" r="3"/><circle class="oro" cx="132" cy="68" r="2.5"/>' +
+    '<path class="tinta" stroke-width="4" d="M330 120 L330 60 L400 30 L470 60 L470 120 Z"/><path class="tinta" stroke-width="5" d="M315 64 L400 24 L485 64"/><path class="tinta" stroke-width="3" d="M380 120 L380 86 L420 86 L420 120"/>' +
+    '<text class="kj" x="560" y="62" font-size="30">匠</text>'
+};
+function banda(g) {
+  var id = g.toLowerCase();
+  return '<svg class="sk-banda" viewBox="0 0 600 150" role="img" aria-label="Ilustracion de ' + g + '"><defs>' + PINCEL.replace("ID", id) + '</defs><g filter="url(#sk-p-' + id + ')">' + ARTE[g] + '</g></svg>';
+}
+var tilde = { Musica:"Música", Cerrajeria:"Cerrajería", Devocion:"Devoción", Curacion:"Curación", Anatomia:"Anatomía", Caligrafia:"Caligrafía", Tasacion:"Tasación", Cartografia:"Cartografía", Navegacion:"Navegación", Mineria:"Minería", Tintoreria:"Tintorería", Herreria:"Herrería", Carpinteria:"Carpintería", Sastreria:"Sastrería", Alfareria:"Alfarería", Construccion:"Construcción", Mamposteria:"Mampostería" };
+var S = [["Kenjutsu", "esgrima", "Combate", "GI", ["bushi", "ronin"], ["shinobi", "Heimin"], "ok", ["Katana, wakizashi, tachi y nodachi; cada arma pide una skill mínima para empuñarla", "Waza (técnicas): Kiri-otoshi (corte descendente) 50, Kesagiri (corte en diagonal) 70", "Iaijutsu (desenvainar y cortar) 120, pasiva: primer golpe al 150 %"], []], ["Sojutsu", "lanza", "Combate", "TAI", ["bushi", "ronin"], ["Heimin"], "ok", ["Yari (lanza) y naginata (alabarda)", "Tsuki (estocada larga) 50: golpea a 2 casillas", "Nagi-harai (barrido) 110: daña a los demás rivales"], []], ["Kyujutsu", "tiro con arco", "Combate", "GI", ["bushi", "ronin", "ryoshi"], ["Heimin"], "ok", ["Yumi (arco largo) y hankyu (arco corto)", "Nerai (disparo apuntado) 50: 130 % tras 3 s", "Kabura-ya (flecha silbadora) 70: se oye en la zona y descabalga"], []], ["Bojutsu", "bastón", "Combate", "TAI", ["yamabushi", "hyakusho"], ["Heimin", "shonin"], "ok", ["Bo (bastón), kanabō (maza de hierro) y shakujō (bastón de anillas)", "Uchi-otoshi (golpe al arma) 50: hace soltar o desgasta el arma", "Shakujō del Yamabushi: exorcismo"], []], ["Jujutsu", "lucha sin armas", "Combate", "GI", ["yamabushi"], ["ronin", "shinobi", "Heimin"], "ok", ["Pelea con las manos", "Nage (proyección) 50: derriba 2 s", "Kansetsu (luxación) 70: el rival pega un 20 % menos 30 s"], []], ["Shurikenjutsu", "armas arrojadizas", "Combate", "GI", ["shinobi"], ["Heimin"], "ok", ["Shuriken, kunai, bo-shuriken y dardos de fukiya (cerbatana)", "Uchi (lanzamiento rápido) 50: interrumpe lo que hace el rival", "Tantō-uchi (lanzar la daga) 70: con todo su daño, y su veneno", "Metsubushi (polvo cegador) 90: el rival falla mucho más"], []], ["Heiho", "estrategia", "Combate", "TAI", ["bushi", "ronin"], ["Heimin"], "ok", ["Sustituye a Tácticas de UO", "Kiai (grito de combate) 50, Sen no sen (anticipación) 70, Zanshin (alerta) 90", "A 110, la armadura pesada no penaliza el Gi"], []], ["Bajutsu", "equitación", "Combate", "TAI", ["bushi", "ronin", "shokunin"], ["Heimin"], "ok", ["Monta: cada caballo tiene temperamento; si no llegas, no te deja subir o te tira (más en combate)", "Más aguante montado y coces del caballo al golpear", "Jaco de tiro, Kiso-uma (montaña), Misaki-uma (costa, medio salvaje) y caballo de guerra con bagai (armadura de caballo)", "Monta firme 50: la flecha silbadora no te descabalga", "Llevar un carro de buey pide Bajutsu 30"], []], ["Liderazgo", "mando", "Social", "SHIN", ["bushi", "ronin"], ["Heimin"], "ok", ["Arengas con Gunbai (abanico de guerra): efectos cortos de combate para su grupo", "Ashigaru (soldados de a pie) NPC: uno por cada 20 puntos, pagados en arroz", "Requisito de cargos: Hatamoto (abanderado) 70, Karō (consejero mayor) 90", "Nobori (estandarte del clan): efecto alrededor; si cae, pierde honor quien lo clavó"], []], ["Etiqueta", "protocolo", "Social", "SHIN", ["bushi", "ronin", "kannushi", "biwahoshi", "shonin"], ["gakusha", "Heimin"], "ok", ["Los NPC ya tratan a cada uno según su clase (-sama, -san o de tú)", "Examinar a alguien: clase visible a 30, clan a 60, honor aproximado a 90", "Tirada para hacer hablar a los testigos", "Tirada contra las mentiras de un bardo"], []], ["Musica", "música", "Social", "GI", ["kannushi", "biwahoshi"], ["gakusha", "Heimin"], "ok", ["Tocar en una taberna suma sabor a la comida y fama al bardo", "Biwa (laúd), shakuhachi (flauta) y taiko (tambor)", "Chinkon (calmar a los muertos): calma espíritus y puede sacarles una pista", "Kataribe (narrador): sube o baja la fama de alguien; puede mentir con riesgo", "Uta-gatari: una canción que los NPC de la zona repiten como rumor", "Mekura no mimi (el oído del ciego): oye los rumores de la zona", "Rohen no uta (canto junto al fuego): curar y recuperar Ki descansando", "Duelo de bardos con voto del público"], []], ["Sigilo", "moverse en silencio", "Subterfugio", "GI", ["shinobi"], ["ryoshi", "Heimin"], "ok", ["Como en UO", "No se puede con armadura media ni pesada", "Tirada enfrentada contra Detectar"], []], ["Esconderse", "ocultarse", "Subterfugio", "GI", ["shinobi"], ["Heimin"], "ok", ["Como en UO", "No se puede con armadura pesada", "Bunshin (desdoblamiento) 70, solo Shinobi", "Pasar un sekisho (puesto de control) escondido te deja como fugitivo", "Tirada enfrentada contra Detectar"], []], ["Espionaje", "fisgar", "Subterfugio", "SHIN", ["shinobi", "biwahoshi"], ["shonin", "Heimin"], "ok", ["Como en UO: mirar mochilas ajenas", "Descifrar documentos en cifra", "Kusa (informantes): cualquier NPC puede estar escuchando; agentes dobles", "Abrir cartas lacradas sin romper el sello"], []], ["Disfraz", "disfrazarse", "Subterfugio", "GI", ["shinobi", "biwahoshi"], [], "ok", ["La tapadera del Shinobi ya funciona (la eligen él y el staff)", "Kits Shichi-hō-de (los siete disfraces), de 30 a 90; 5 usos, 2 horas", "Suplantar a una persona concreta con Disfraz 100", "Tirada contra Detectar + Shin; la fama resta"], []], ["Robar", "hurto", "Subterfugio", "GI", ["shinobi"], [], "ok", ["Como en UO", "Robar en una ciudad y que te pillen es delito grave: celda", "Robar dentro de las casas", "Tirada enfrentada contra quien vigila"], []], ["Cerrajeria", "forzar cerraduras", "Subterfugio", "GI", ["shinobi"], ["el resto de clases", "Heimin"], "ok", ["Como en UO", "El Biwa hoshi puede elegirla a 100 en vez de Caligrafía", "Puertas de casa: 101 o más", "Puertas de casas de alquiler: 70 o más"], []], ["Onmyodo", "magia y adivinación", "Saber", "SHIN", ["gakusha"], [], "ok", ["Ofuda (talismanes): adivinación, fuego, sellado, kekkai (barrera), exorcismo y shikigami (espíritu sirviente)", "Talismanes de arma con huecos y cargas", "Gasta Ki (energía espiritual)"], []], ["Devocion", "fe", "Saber", "SHIN", ["yamabushi", "kannushi"], [], "ok", ["Cualquiera puede rezar en un santuario y subirla hasta 50; las plegarias son solo del Yamabushi y el Kannushi", "Cuanta más Devoción tienes, más te curan y te protegen las plegarias, y mayor es tu bendición", "Nueve plegarias por rama, ceremonia con bendición de 18 horas", "Fe, Kegare (impureza) y diez deidades", "Omamori (amuleto), purificar y consagrar"], []], ["Medicina", "medicina", "Saber", "SHIN", ["gakusha", "yamabushi", "kannushi", "biwahoshi"], ["Heimin"], "ok", ["Kōyaku (emplastos) para heridas leves, graves, mortales y quemaduras: acortan la herida", "Entablillar huesos rotos: sin tablilla, la fractura grave no se cura", "Antídotos con suribachi (mortero de barro)", "A 30 reconoce las plantas medicinales"], []], ["Envenenar", "venenos", "Saber", "SHIN", ["gakusha"], ["shinobi"], "ok", ["Siete venenos de época: torikabuto (acónito), dokuzeri, waraitake (seta de la risa), tsukiyotake, hashiridokoro, fugu y jorogumo", "Ninguno mata: lo peor es el Kizetsu (desmayo); fugu y jorogumo bajan una stat hasta el antídoto", "Untar armas de filo o punta (solo Gakusha y Shinobi); el arma envenena la use quien la use", "En comida o bebida puede echarlo cualquiera, pero quien come puede notar el sabor", "A 30 reconoce las plantas venenosas; fallar al prepararlos puede salir caro"], []], ["Curacion", "primeros auxilios", "Saber", "GI", ["yamabushi", "kannushi"], ["casi todas las clases", "Heimin"], "ok", ["Trata heridas al vendar; las graves piden además Anatomía", "Campamento de curación con 101: se cura como en casa y las vendas del maestro tratan a dos"], []], ["Anatomia", "anatomía", "Saber", "SHIN", ["yamabushi", "kannushi", "gakusha"], ["Heimin"], "ok", ["Examinar a alguien: fuerza, agilidad y mente por tramos, y sus heridas", "Diagnosticar un veneno y saber qué antídoto necesita", "Las heridas graves piden Anatomía 50 y las mortales 70", "Examinar un cuerpo: cuándo cayó, con qué, si fueron varios o por la espalda; nunca quién"], []], ["Caligrafia", "escritura", "Saber", "SHIN", ["kannushi", "gakusha", "shonin"], ["bushi", "ronin", "yamabushi", "biwahoshi", "shokunin", "Heimin"], "ok", ["Ofuda, papel washi y tinta", "Falsificar el Tegata (salvoconducto)", "Copiar y falsificar documentos de lore", "Leer la escritura antigua (a nivel alto)"], []], ["Tasacion", "mekiki (ojo experto)", "Saber", "SHIN", ["gakusha", "shokunin", "shonin"], ["biwahoshi", "Heimin"], "ok", ["Precio justo, acero de joya o hierro y la firma del artesano", "Chawan auténtico y documentos falsos", "Objetos robados: a 50 lo notas, a 80 sabes a quién y cuándo (nunca quién lo robó)", "Al vender a un NPC, hasta un 15 % más"], []], ["Cartografia", "mapas", "Saber", "SHIN", ["gakusha", "shonin"], ["ryoshi", "Heimin"], "ok", ["Ezu (mapas pintados) de la zona, de la provincia y de Hinokage", "Kaizu (carta náutica): sin una, en alta mar el barco deriva", "Marcar lugares en un mapa (que puede mentir) y encontrarlos", "Completar los mapas antiguos del lore"], []], ["Rastrear", "rastrear", "Naturaleza", "GI", ["yamabushi", "ryoshi"], ["bushi", "ronin", "Heimin"], "ok", ["Leer huellas: cuántos, hace cuánto, hacia dónde, a caballo, heridos", "Seguir un rastro con tirada enfrentada contra Sigilo", "Caza: animales y yokai cerca, por tipo y dirección", "Junto a un cuerpo, seguir un trecho a quien lo hizo caer; nunca dice quién"], []], ["Detectar", "detectar", "Naturaleza", "SHIN", ["biwahoshi", "shonin", "ryoshi"], ["shinobi", "Heimin"], "ok", ["Como en UO: descubrir a los escondidos", "Tirada enfrentada contra Disfraz, Esconderse y Sigilo", "Leer la tinta oculta de un documento"], []], ["Doma", "doma", "Naturaleza", "GI", ["ryoshi", "hyakusho"], ["Heimin"], "ok", ["Domar animales y ver cómo es un caballo", "Bettō (mozo de cuadras): cuida, entrena, amansa y cruza tus caballos; los potros heredan de los padres", "Inu (perro de caza): olfatea escondidos, busca, persigue, vigila y hace trucos", "Animales de carga: Ushi (buey) y Uma (caballo); el ushi tira del carro"], []], ["Pesca", "pesca", "Naturaleza", "TAI", ["ryoshi", "hyakusho"], ["casi todas las clases", "Heimin"], "ok", ["Según el agua: río, costa o mar", "Batea para el oro y nasa (trampa) que se recoge horas después", "De noche puede salir un kappa (duende del río)"], []], ["Navegacion", "navegación", "Naturaleza", "SHIN", ["shonin", "ryoshi"], ["hyakusho", "Heimin"], "ok", ["Gobernar los barcos: Kobaya, Sekibune y Atakebune"], []], ["Agricultura", "agricultura", "Oficio", "TAI", ["hyakusho"], ["ronin", "kannushi", "shokunin", "Heimin"], "ok", ["Parcelas y arrozales, sembrar, regar y cosechar por estación", "La cosecha cuenta para el Nengu (impuesto de arroz) del clan", "Pienso para la granja"], []], ["Cocina", "cocina", "Oficio", "GI", ["hyakusho", "ryoshi"], ["casi todas las clases", "Heimin"], "ok", ["Platos con nutrientes y sabor; kaiseki y fugu", "Fermentos: miso, shoyu, sake, umeboshi, tsukemono", "Notar el sabor de un veneno en la comida"], []], ["Tala", "tala", "Oficio", "TAI", ["shokunin", "hyakusho"], ["ronin", "yamabushi", "ryoshi", "Heimin"], "ok", ["Madera según la zona; los árboles se agotan y vuelven a crecer", "Madera sagrada con permiso de un Kannushi", "Carbonera"], []], ["Mineria", "minería", "Oficio", "TAI", ["shokunin"], ["hyakusho", "Heimin"], "ok", ["Minas con estabilidad, avisos, vigas, derrumbes y gases", "Fundición de lingotes y Tamahagane (acero de joya)"], []], ["Comercio", "comercio", "Oficio", "SHIN", ["shokunin", "shonin"], ["ronin", "biwahoshi", "hyakusho", "Heimin"], "ok", ["Comprar a un NPC hasta un 15 % más barato", "Mise (puestos con vendedor): 1 a 30, 3 a 60, 5 a 100", "Mercader Nanban (extranjero) a 120"], []], ["Tintoreria", "tintorería", "Oficio", "GI", ["shokunin"], ["Heimin"], "ok", ["Tintes por tramos: ai (índigo), kuchinashi, sumi, akane, beni y murasaki (púrpura)", "Kinjiki (colores prohibidos): beni y murasaki, solo para rangos altos", "Colores y mon del clan por encargo", "Tinta sumi y tinta oculta; maquillaje y tinte de pelo para el disfraz"], []], ["Herreria", "herrería", "Oficio", "TAI", ["oficio del Shokunin"], ["Heimin"], "ok", ["Armas y armaduras en hierro y Tamahagane", "Herramientas de metal; Hinagata (patrones)"], []], ["Carpinteria", "carpintería", "Oficio", "GI", ["oficio del Shokunin"], ["Heimin"], "ok", ["Monta las armas de dos pasos, arcos, muebles y herramientas de madera", "Piezas de casa de madera, vara de zahorí y tina de tinte", "Barcos con el tramo de 110", "Carro de buey: niguruma (90) y gissha (100)"], []], ["Sastreria", "sastrería", "Oficio", "GI", ["oficio del Shokunin"], ["Heimin"], "ok", ["Ropa, armaduras de tela y cuero, bolsitas de omamori", "Kits de disfraz Shichi-hō-de"], []], ["Alfareria", "alfarería", "Oficio", "GI", ["oficio del Shokunin"], ["Heimin"], "ok", ["Noborigama (horno): frascos, kawara (tejas para el tejado), ollas, suribachi, hibachi (brasero) y vasijas que conservan la comida", "Chawan (cuenco de té): uno de maestro lleva firma y da honor al regalarlo; muy de vez en cuando, un meibutsu (pieza famosa)"], []], ["Construccion", "construcción", "Oficio", "TAI", ["oficio del Shokunin", "hyakusho"], ["Heimin"], "ok", ["Absorbe a Mampostería (lote 3): estaciones de cocina y noborigama (horno)", "Muros, cimientos, tejados y piezas de casa", "Sashigane (escuadra) para colocar piezas", "Linternas y almacenes de piedra"], []]];
+var fEstado = "todos", fGrupo = "todos", texto = "";
+function nc(c) { return C[c] || c; }
+function chips(id, valores, actual, poner) {
+  var cont = document.getElementById(id); cont.innerHTML = "";
+  valores.forEach(function (p) {
+    var b = document.createElement("button"); b.type = "button"; b.className = "sk-chip"; b.id = id + "-" + p[0];
+    b.textContent = p[1]; b.setAttribute("aria-pressed", String(p[0] === actual));
+    b.addEventListener("click", function () { poner(p[0]); pinta(); });
+    cont.appendChild(b);
+  });
+}
+function recuento() {
+  var r = document.getElementById("sk-recuento"); r.innerHTML = "";
+  Object.keys(ESTADOS).forEach(function (k) {
+    var n = S.filter(function (s) { return s[6] === k; }).length;
+    var d = document.createElement("div"); d.className = "sk-cuenta sk-" + k;
+    var b = document.createElement("b"); b.textContent = n; var sp = document.createElement("span"); sp.textContent = ESTADOS[k].nom;
+    d.appendChild(b); d.appendChild(sp); r.appendChild(d);
+  });
+}
+function pinta() {
+  chips("sk-f-estado", [["todos","Todas"]].concat(Object.keys(ESTADOS).map(function (k) { return [k, ESTADOS[k].nom]; })), fEstado, function (v) { fEstado = v; });
+  chips("sk-f-grupo", [["todos","Todos"]].concat(GRUPOS.map(function (g) { return [g, g]; })), fGrupo, function (v) { fGrupo = v; });
+  var q = texto.trim().toLowerCase();
+  var lista = document.getElementById("sk-lista"); lista.innerHTML = "";
+  var total = 0;
+  GRUPOS.forEach(function (g) {
+    if (fGrupo !== "todos" && fGrupo !== g) return;
+    var items = S.filter(function (s) {
+      return s[2] === g && (fEstado === "todos" || s[6] === fEstado) &&
+        (!q || JSON.stringify(s.concat(s[4].map(nc), s[5].map(nc), tilde[s[0]] || "")).toLowerCase().indexOf(q) >= 0);
+    });
+    if (!items.length) return;
+    total += items.length;
+    var sec = document.createElement("section"); sec.className = "sk-grupo";
+    var ilu = document.createElement("div"); ilu.innerHTML = banda(g); sec.appendChild(ilu.firstChild);
+    var h = document.createElement("h3"); h.textContent = g; var sm = document.createElement("small"); sm.textContent = items.length + (items.length === 1 ? " skill" : " skills"); h.appendChild(sm); sec.appendChild(h);
+    var f = document.createElement("div"); f.className = "sk-fichas";
+    items.forEach(function (s) {
+      var d = document.createElement("article"); d.className = "sk-ficha sk-" + s[6];
+      d.innerHTML = '<div class="sk-cab"><div class="sk-izq"><span class="sk-sello" aria-hidden="true"></span><div class="sk-nom"><span class="n"></span> <span class="tr"></span></div></div><span class="sk-estado"></span></div><div class="sk-datos"></div><ul class="sk-hace"></ul>';
+      d.querySelector(".sk-sello").textContent = KANJI[s[0]] || "技";
+      d.querySelector(".n").textContent = tilde[s[0]] || s[0];
+      d.querySelector(".tr").textContent = "(" + s[1] + ")";
+      d.querySelector(".sk-estado").textContent = ESTADOS[s[6]].nom;
+      var datos = d.querySelector(".sk-datos");
+      [["Stat", STAT[s[3]]], ["A 100", s[4].map(nc).join(", ") || "nadie"], ["A 50", (s[0] === "Envenenar" || s[0] === "Onmyodo") ? (s[0] === "Envenenar" ? "Shinobi e iniciados en secreto" : "solo iniciados en secreto") : "todos los demás"]].forEach(function (p) {
+        var sp = document.createElement("span"); sp.appendChild(document.createTextNode(p[0] + ": ")); var b = document.createElement("b"); b.textContent = p[1]; sp.appendChild(b); datos.appendChild(sp);
+      });
+      var ul = d.querySelector(".sk-hace");
+      s[7].forEach(function (t) { var li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
+      if (s[8].length) {
+        var p = document.createElement("div"); p.className = "sk-l3"; p.textContent = "Pendiente"; d.appendChild(p);
+        var u2 = document.createElement("ul"); u2.className = "sk-hace";
+        s[8].forEach(function (t) { var li = document.createElement("li"); li.textContent = t; u2.appendChild(li); });
+        d.appendChild(u2);
+      }
+      f.appendChild(d);
+    });
+    sec.appendChild(f); lista.appendChild(sec);
+  });
+  if (!total) { var p = document.createElement("p"); p.className = "muted"; p.textContent = "Ninguna skill coincide con estos filtros."; lista.appendChild(p); }
+}
+document.getElementById("sk-buscar").addEventListener("input", function (e) { texto = e.target.value; pinta(); });
+recuento(); pinta();
+})();
+</script>
+
+</body></html>
