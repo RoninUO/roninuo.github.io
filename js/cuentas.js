@@ -109,7 +109,9 @@
       "<h3>" + esc(f.nombre) + (f.apellido ? " " + esc(f.apellido) : "") + "</h3>" +
       '<p class="muted">Enviada el ' + fecha(f.creada) + (f.actualizada !== f.creada ? " · última edición " + fecha(f.actualizada) : "") + "</p>";
     if (f.nota_staff) html += '<p class="cu-nota"><b>El staff dice:</b> ' + esc(f.nota_staff) + "</p>";
-    if (f.estado === "aprobada") html += "<p>Tu cuenta del juego es <b>" + esc(f.cuenta || "(pendiente)") + "</b>. La contraseña te llega por mensaje privado de Discord. Descarga el lanzador y nos vemos en el templo de Hoshikawa-mura.</p>";
+    if (f.estado === "aprobada") html += '<div class="cu-credenciales"><span>Cuenta</span><b>' + esc(f.cuenta || f.cuenta_deseada) + "</b><span>Contraseña</span><b>" + esc(f.cuenta_clave || "te la enviamos por Discord") + "</b></div>" +
+      "<p>No se la des a nadie: el staff nunca te la pedirá. Descarga el lanzador y nos vemos en el templo de Hoshikawa-mura.</p>";
+    else if (f.cuenta_deseada) html += '<p class="muted">Cuenta pedida: <b>' + esc(f.cuenta_deseada) + "</b></p>";
     if (f.estado === "pendiente") html += "<p>El staff la leerá en cuanto pueda. Mientras tanto puedes corregirla.</p>";
     if (f.estado === "rechazada") html += '<p>Si quieres hablarlo, abre un ticket en el <a href="' + esc(CONFIG.discord) + '" target="_blank" rel="noopener">Discord</a>.</p>';
     if (editable) html += '<button class="btn primary" type="button" data-cu="editar">Editar la ficha</button>';
@@ -125,6 +127,10 @@
     var cons = CONSTITUCION.map(function (c) { return "<option" + (f.constitucion === c ? " selected" : "") + ">" + c + "</option>"; }).join("");
     caja.innerHTML = cabeceraSesion() +
       '<form id="cu-form" class="cu-form" novalidate>' +
+      '<fieldset><legend>Tu cuenta del juego</legend>' +
+      campo("cu-cuentadeseada", "Nombre de cuenta *", '<input id="cu-cuentadeseada" maxlength="16" autocomplete="off" value="' + esc(f.cuenta_deseada) + '">',
+        "Con el que entrarás en el lanzador: de 3 a 16 letras o números, sin espacios. No tiene por qué parecerse al del personaje. La contraseña te la damos nosotros al aprobar la ficha.") +
+      "</fieldset>" +
       '<fieldset><legend>Quién es</legend>' +
       campo("cu-nombre", "Nombre del personaje *", '<input id="cu-nombre" maxlength="24" required value="' + esc(f.nombre) + '">',
         'Japonés y de la época, sin tildes (así se escribe en el juego). Ideas en el <a href="#como-jugar">generador de nombres</a>.') +
@@ -164,12 +170,15 @@
     var msg = $("cu-msg");
     var v = function (id) { return $(id).value.trim(); };
     var nombre = v("cu-nombre"), historia = v("cu-historia");
+    var cuentaDeseada = v("cu-cuentadeseada");
+    if (!/^[A-Za-z0-9]{3,16}$/.test(cuentaDeseada)) return aviso(msg, "El nombre de cuenta debe tener de 3 a 16 letras o números, sin espacios.", true);
     if (!/^[A-Za-z][A-Za-z' -]{2,23}$/.test(nombre)) return aviso(msg, "El nombre debe tener entre 3 y 24 letras, sin tildes ni números.", true);
     if (historia.length < 200) return aviso(msg, "La historia necesita al menos 200 caracteres.", true);
     if (!$("cu-normas").checked) return aviso(msg, "Tienes que aceptar las normas.", true);
     var archivo = $("cu-avatar").files[0];
     if (archivo && archivo.size > 2097152) return aviso(msg, "El retrato pasa de 2 MB.", true);
     var datos = {
+      cuenta_deseada: cuentaDeseada,
       nombre: nombre,
       apellido: v("cu-apellido") || null,
       linaje: v("cu-linaje") || null,
@@ -198,7 +207,11 @@
       if (r.error) throw r.error;
       editando = false;
       pintarTodo();
-    }).catch(function (e) { aviso(msg, "No se pudo enviar: " + (e.message || e), true); });
+    }).catch(function (e) {
+      var m = e.message || String(e);
+      if (m.indexOf("cuenta_deseada_unica") >= 0) m = "Ese nombre de cuenta ya lo ha pedido otra persona. Elige otro.";
+      aviso(msg, "No se pudo enviar: " + m, true);
+    });
   }
 
   // ------------------------------------------------------------ staff
@@ -247,7 +260,7 @@
         '<button type="button" class="btn" data-cu="volver">← Volver a la lista</button>' +
         '<div class="cu-ficha"><div class="cu-retrato" id="cu-retrato">' + (f.avatar ? "" : '<span class="muted">Sin retrato</span>') + "</div><div>" +
         "<h3>" + esc(f.nombre) + (f.apellido ? " " + esc(f.apellido) : "") + "</h3>" +
-        '<dl class="kv cu-kv">' + fila("Discord", f.discord + (f.discord_id ? " (" + f.discord_id + ")" : "")) + fila("Sexo", f.sexo) + fila("Edad", f.edad) +
+        '<dl class="kv cu-kv">' + fila("Discord", f.discord + (f.discord_id ? " (" + f.discord_id + ")" : "")) + fila("Cuenta pedida", f.cuenta_deseada) + fila("Sexo", f.sexo) + fila("Edad", f.edad) +
         fila("Altura", f.altura) + fila("Constitución", f.constitucion) + fila("Enviada", fecha(f.creada)) + fila("Revisada", fecha(f.revisada)) + "</dl></div></div>" +
         (f.linaje ? "<h4>Linaje</h4><p>" + esc(f.linaje) + "</p>" : "") +
         (f.aspecto ? "<h4>Aspecto</h4><p>" + esc(f.aspecto) + "</p>" : "") +
@@ -255,17 +268,25 @@
         '<h4>Historia</h4><p class="cu-historia">' + esc(f.historia) + "</p>" +
         '<form id="cu-revisar" class="cu-form"><fieldset><legend>Decisión del staff</legend><div class="cu-fila">' +
         campo("cu-estado", "Estado", '<select id="cu-estado">' + opts + "</select>") +
-        campo("cu-cuentajuego", "Cuenta del juego", '<input id="cu-cuentajuego" value="' + esc(f.cuenta) + '">', "La que creas en el servidor al aprobar.") +
-        "</div>" + campo("cu-notastaff", "Nota para el jugador", '<textarea id="cu-notastaff" rows="3">' + esc(f.nota_staff) + "</textarea>", "La verá en su ficha. Úsala para pedir cambios o explicar un rechazo.") +
+        campo("cu-cuentajuego", "Cuenta del juego", '<input id="cu-cuentajuego" value="' + esc(f.cuenta || f.cuenta_deseada) + '">') +
+        campo("cu-clave", "Contraseña", '<div class="cu-clave"><input id="cu-clave" value="' + esc(f.cuenta_clave) + '"><button type="button" class="btn" data-cu="generar">Generar</button></div>') +
+        "</div>" +
+        '<div class="cu-comando"><span class="muted">Al aprobar, en el juego:</span> <code id="cu-cmd"></code> <button type="button" class="btn" data-cu="copiar">Copiar</button></div>' + campo("cu-notastaff", "Nota para el jugador", '<textarea id="cu-notastaff" rows="3">' + esc(f.nota_staff) + "</textarea>", "La verá en su ficha. Úsala para pedir cambios o explicar un rechazo.") +
         '</fieldset><div class="cu-acciones"><button class="btn primary" type="submit">Guardar decisión</button></div><div id="cu-msg2" aria-live="polite"></div></form>';
       if (f.avatar) sb.storage.from("avatares").createSignedUrl(f.avatar, 3600).then(function (u) {
         if (u.data) $("cu-retrato").innerHTML = '<img src="' + esc(u.data.signedUrl) + '" alt="Retrato de ' + esc(f.nombre) + '">';
       });
+      var cmd = function () { $("cu-cmd").textContent = ".rncuenta " + $("cu-cuentajuego").value.trim() + " " + $("cu-clave").value.trim(); };
+      $("cu-cuentajuego").addEventListener("input", cmd);
+      $("cu-clave").addEventListener("input", cmd);
+      if (!$("cu-clave").value) $("cu-clave").value = claveNueva();
+      cmd();
       $("cu-revisar").addEventListener("submit", function (ev) {
         ev.preventDefault();
         sb.from("solicitudes").update({
           estado: $("cu-estado").value,
           cuenta: $("cu-cuentajuego").value.trim() || null,
+          cuenta_clave: $("cu-clave").value.trim() || null,
           nota_staff: $("cu-notastaff").value.trim() || null
         }).eq("id", f.id).then(function (r2) {
           if (r2.error) return aviso($("cu-msg2"), r2.error.message, true);
@@ -273,6 +294,14 @@
         });
       });
     });
+  }
+
+  // Contrasena al azar: solo letras, sin las que se confunden (l, I, O, o)
+  function claveNueva() {
+    var c = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ", r = new Uint32Array(10), t = "";
+    crypto.getRandomValues(r);
+    for (var i = 0; i < r.length; i++) t += c.charAt(r[i] % c.length);
+    return t;
   }
 
   // ------------------------------------------------------------ clics
@@ -287,6 +316,11 @@
     else if (a === "filtro") { staffFiltro = b.getAttribute("data-f"); staffSel = null; pintarTodo(); }
     else if (a === "ver") { staffSel = b.getAttribute("data-id"); pintarTodo(); window.scrollTo(0, 0); }
     else if (a === "volver") { staffSel = null; pintarTodo(); }
+    else if (a === "generar") { $("cu-clave").value = claveNueva(); $("cu-clave").dispatchEvent(new Event("input")); }
+    else if (a === "copiar") {
+      var t = $("cu-cmd").textContent;
+      if (navigator.clipboard) navigator.clipboard.writeText(t).then(function () { b.textContent = "Copiado"; setTimeout(function () { b.textContent = "Copiar"; }, 1500); });
+    }
   });
 
   if ($("cu-solicitud") || $("cu-staff")) cargarLib(0);

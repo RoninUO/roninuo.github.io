@@ -368,3 +368,10 @@ ul.ping b { font-variant-numeric: tabular-nums; }
 .cu-kv dd { text-align: left; font-weight: 400; }
 .cu-historia { white-space: pre-wrap; }
 @media (max-width: 560px) { .cu-ficha { grid-template-columns: 1fr; } .cu-tabla th:nth-child(4), .cu-tabla td:nth-child(4) { display: none; } }
+.cu-credenciales { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; padding: 10px 14px; background: var(--ai-soft); border-left: 3px solid var(--ai); font-size: 15px; }
+.cu-credenciales b { font-family: ui-monospace, Consolas, monospace; letter-spacing: .03em; }
+.cu-clave { display: flex; gap: 8px; }
+.cu-clave .btn { padding: 6px 12px; font-size: 13px; }
+.cu-comando { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 14px; font-size: 14px; }
+.cu-comando code { background: var(--paper); border: 1px solid var(--line); padding: 4px 8px; }
+.cu-comando .btn { padding: 4px 10px; font-size: 12.5px; }
