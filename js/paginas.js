@@ -101,12 +101,32 @@ var PAGINAS = {
       <div class="panel-b">
         <p class="draft">El servidor aún no está abierto. Estos son los pasos que seguirás cuando abra.</p>
         <ol class="steps">
-          <li><div><b>Descarga el cliente y el parche</b><span class="muted">Ultima Online clásico más nuestro parche con el arte japonés, desde la sección Descargas.</span></div></li>
-          <li><div><b>Crea tu cuenta</b><span class="muted">Se creará desde la web o el <a href="https://discord.gg/KMvqtdeKM" target="_blank" rel="noopener">Discord</a>.</span></div></li>
-          <li><div><b>Crea tu personaje</b><span class="muted">Nombre japonés y de rol, aspecto de la época y una historia breve si quieres. Empiezas como Heimin (gente común).</span></div></li>
-          <li><div><b>Llega a Haibara</b><span class="muted">La llanura de ceniza, neutral por la Tregua del Arroz. Con algo de mon (monedas de cobre), una onigiri (bola de arroz) y una herramienta.</span></div></li>
-          <li><div><b>Busca tu camino</b><span class="muted">Trabaja, aprende con tutores, gana honor y pide a un maestro que te acepte. Ningún clan te espera: tendrás que ganártelo.</span></div></li>
+          <li><div><b>Descarga el lanzador</b><span class="muted">Desde la sección <a href="#descargas">Descargas</a>. Instala el juego con el arte japonés y lo mantiene al día. Es la única forma de entrar en RoninUO.</span></div></li>
+          <li><div><b>Crea tu personaje</b><span class="muted">Piensa su nombre (japonés y de la época; más abajo tienes ideas), de dónde viene y una historia breve. El staff la lee y la aprueba antes de que entres.</span></div></li>
+          <li><div><b>Crea tu cuenta</b><span class="muted">Abre un ticket en el <a href="https://discord.gg/KMvqtdeKM" target="_blank" rel="noopener">Discord</a> con tus datos, el nombre del personaje y su historia. Cada cuenta tiene un solo personaje, y no se puede borrar desde el juego: solo se retira con seppuku (suicidio ritual).</span></div></li>
+          <li><div><b>Llega a Haibara</b><span class="muted">Despiertas en el templo de Hoshikawa-mura (aldea del río de las estrellas), en Haibara (llanura de ceniza), sin ropa y sin nada. Un monje anciano te recibe, te cuenta lo que pasa en las islas y te pregunta tu nombre, de dónde vienes y quién eras. Después te da ropa, algo de comida y unos mon (monedas de cobre), y sales por la puerta del templo.</span></div></li>
+          <li><div><b>Busca tu camino</b><span class="muted">Empiezas como Heimin (gente común). Reparte 225 puntos entre Tai (cuerpo), Gi (técnica) y Shin (mente) como prefieras, hasta 125 en cada una. Trabaja, aprende con tutores, gana honor y pide a un maestro que te acepte. Ningún clan te espera: tendrás que ganártelo.</span></div></li>
         </ol>
+      </div>
+    </div>
+    <div class="panel" id="nombres">
+      <div class="panel-h"><h2>Ideas de nombre</h2><span class="kj" aria-hidden="true">名</span></div>
+      <div class="panel-b">
+        <p>Sugerencias según el camino que quieras seguir. Cada propuesta lleva sus kanji y su significado. Pulsa una tira para copiar el nombre tal como se escribe en el juego, sin tildes.</p>
+        <div class="nb-grupo"><span class="nb-et" id="nb-et-clase">Camino</span><div class="nb-opciones" id="nb-clases" role="group" aria-labelledby="nb-et-clase"></div></div>
+        <div class="nb-grupo"><span class="nb-et" id="nb-et-sexo">Sexo</span><div class="nb-opciones" id="nb-sexos" role="group" aria-labelledby="nb-et-sexo"></div></div>
+        <div class="nb-fila"><p class="muted" id="nb-regla"></p><button class="btn primary" id="nb-generar" type="button">Otros nombres</button></div>
+        <div class="nb-tiras" id="nb-tiras" aria-live="polite" aria-label="Nombres propuestos"></div>
+        <h3 class="nb-h">Cómo se llamaba la gente</h3>
+        <ul class="nb-leyenda">
+          <li>El apellido va delante del nombre: Kuroki Hyōgo es Hyōgo, de la casa Kuroki.</li>
+          <li>La gente corriente no tenía apellido oficial: se la conocía por su aldea (Gonbei de Kawaguchi) o por el nombre de su tienda.</li>
+          <li>Los comerciantes usaban el nombre de la casa, terminado en -ya (tienda), delante del suyo: Kameya Denbei.</li>
+          <li>A una mujer del pueblo se la llamaba con o- delante, por cortesía: O-Kiku.</li>
+          <li>Los Yamabushi (monjes de montaña) toman un nombre budista y suelen añadir -bō (celda del monje).</li>
+          <li>Los Biwa hoshi (bardos ciegos) llevaban nombres terminados en -ichi.</li>
+          <li>Un Shinobi (ninja) tiene un alias para su ryu (clan) y una tapadera para el mundo; en el juego se le ve con la tapadera.</li>
+        </ul>
       </div>
     </div>
 `,
@@ -290,6 +310,8 @@ var PAGINAS = {
         <p class="draft">Borrador. Las reglas definitivas se publicarán antes de la apertura.</p>
         <ul class="rules">
           <li>Nombre japonés y de rol. Nada de nombres de broma, de famosos ni de otros personajes conocidos.</li>
+          <li>Un personaje por cuenta. La historia del personaje la aprueba el staff antes de entrar.</li>
+          <li>Los personajes no se borran desde el cliente: quien quiera retirar el suyo lo hace con seppuku (suicidio ritual) dentro del juego, sin pedir permiso a nadie.</li>
           <li>Dentro del juego se habla y se actúa como el personaje. Lo que sabe el jugador no lo sabe el personaje.</li>
           <li>La muerte definitiva solo es posible con un pacto aceptado por los dos jugadores y aprobado por el staff.</li>
           <li>Un shinobi puede ocultar su verdadero camino. Descubrirlo es cosa del rol, no de preguntar fuera del juego.</li>
@@ -305,9 +327,7 @@ var PAGINAS = {
       <div class="panel-b">
         <p class="draft">Aún no hay descargas disponibles. Se publicarán aquí cuando empiecen las pruebas cerradas.</p>
         <div class="grid3">
-          <div class="card"><h3>Cliente</h3><p class="muted">Ultima Online clásico, en la versión que usará el servidor.</p><span class="btn" aria-disabled="true">Próximamente</span></div>
-          <div class="card"><h3>Parche RoninUO</h3><p class="muted">Arte japonés: paperdoll, ropa, barcos, gumps de pergamino y caracteres con tilde.</p><span class="btn" aria-disabled="true">Próximamente</span></div>
-          <div class="card"><h3>Lanzador</h3><p class="muted">Actualiza el parche y abre el juego conectado al servidor.</p><span class="btn" aria-disabled="true">Próximamente</span></div>
+          <div class="card"><h3>Lanzador RoninUO</h3><p class="muted">Lo único que necesitas: instala el juego con el arte japonés, lo mantiene al día y te conecta al servidor. No se puede entrar de otra forma.</p><span class="btn" aria-disabled="true">Próximamente</span></div>
         </div>
       </div>
     </div>

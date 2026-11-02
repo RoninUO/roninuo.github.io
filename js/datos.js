@@ -16,6 +16,13 @@ var CONFIG = {
   relojes: [
     { nombre: "España", zona: "Europe/Madrid", bandera: "es" },
     { nombre: "Argentina", zona: "America/Argentina/Buenos_Aires", bandera: "ar" }
+  ],
+  // Ping estimado al servidor (alojado en España). Son rangos orientativos,
+  // no una medida real: se cambian aqui si el servidor se muda.
+  ping: [
+    { nombre: "España", bandera: "es", ms: "20-50" },
+    { nombre: "Argentina", bandera: "ar", ms: "210-260" },
+    { nombre: "Chile", bandera: "cl", ms: "220-270" }
   ]
 };
 
@@ -66,6 +73,18 @@ var MENU = [
 // Noticias. etiqueta: Diario de desarrollo, Comunidad, Lore, Anuncio...
 // fecha en formato AAAA-MM-DD; el texto admite HTML (enlaces, negritas).
 var NOTICIAS = [
+  {
+    "fecha": "2026-11-02",
+    "etiqueta": "Diario de desarrollo",
+    "titulo": "Hinokage ya tiene mapa",
+    "texto": "Las islas ya se pueden recorrer: las tierras de los tres clanes, Haibara en el centro, arrozales inundados, playas, el volcán y sus grietas de lava, y los sekisho (puestos de control) en las fronteras. Además, cada cuenta tendrá un único personaje, que solo se retira con seppuku (suicidio ritual), y cada jugador reparte 225 puntos entre Tai, Gi y Shin como prefiera, hasta 125 en cada una."
+  },
+  {
+    "fecha": "2026-10-31",
+    "etiqueta": "Diario de desarrollo",
+    "titulo": "Sexto lote: etiqueta y maldiciones",
+    "texto": "Ofender a un yokai trae tatari (maldición) hasta que un kannushi (sacerdote) te purifica. Las audiencias piden reverencia y Etiqueta, se puede pedir perdón con .owabi, la ceremonia del té calma el cuerpo y el shisha (mensajero) no se toca. El staff ya lleva desde un panel los pactos, los clanes, las regiones y los edificios."
+  },
   {
     "fecha": "2026-10-31",
     "etiqueta": "Diario de desarrollo",
@@ -147,6 +166,10 @@ var PLAN = [
   },
   {
     "texto": "Lote 5: repaso de skills (medicina, monta, establo, tasación, curación, arrojadizas y espionaje)",
+    "estado": "Hecho"
+  },
+  {
+    "texto": "Lote 6: tatari (maldiciones de yokai), etiqueta y audiencias, registros y panel del staff",
     "estado": "Hecho"
   },
   {

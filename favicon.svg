@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Kabuto (casco samurai): cuenco y shikoro (cubrenuca) en bermellon, kuwagata (cuernos) y maedate (emblema) dorados -->
+  <rect width="64" height="64" rx="12" fill="#16181c"/>
+  <path d="M14 38 Q14 18 32 18 Q50 18 50 38 Z" fill="#b8361f"/>
+  <path d="M18 29 Q32 24 46 29 M16 33.5 Q32 28.5 48 33.5" fill="none" stroke="#16181c" stroke-width="1.6"/>
+  <path d="M8 38 H56 L60 46 Q32 42 4 46 Z" fill="#b8361f"/>
+  <path d="M6 48 Q32 44 58 48 L61 55 Q32 51 3 55 Z" fill="#8e2915"/>
+  <path d="M30 36 Q20 26 11 6 Q10 4 12.5 5.5 Q22 20 33 32 Z" fill="#d9ad4c"/>
+  <path d="M34 36 Q44 26 53 6 Q54 4 51.5 5.5 Q42 20 31 32 Z" fill="#d9ad4c"/>
+  <rect x="11" y="37" width="42" height="3.2" rx="1" fill="#d9ad4c"/>
+  <circle cx="32" cy="31" r="5" fill="#d9ad4c"/>
+  <circle cx="32" cy="31" r="2.2" fill="#b8361f"/>
+</svg>
