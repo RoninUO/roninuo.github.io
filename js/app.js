@@ -13,6 +13,12 @@
     cl: '<svg class="bandera" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#D52B1E"/><rect width="30" height="10" fill="#fff"/><rect width="10" height="10" fill="#0039A6"/><path fill="#fff" d="M5 2.2l.67 2.06h2.17l-1.75 1.27.67 2.06L5 6.32 3.24 7.59l.67-2.06-1.75-1.27h2.17z"/></svg>'
   };
 
+  // Siluetas para los relojes
+  var SILUETAS = {
+    iberia: '<svg class="silueta" viewBox="0 0 40 34" aria-hidden="true"><path fill="currentColor" d="M2 6 8 3.5 18 5 26 6 30 7 34.5 9 36.5 12 33 16 31 20 30 23 28 26 25 29 17 31.5 14 30 12 27 6 28.5 3 24 4 18 2 12Z"/></svg>',
+    sudamerica: '<svg class="silueta" viewBox="0 0 30 40" aria-hidden="true"><path fill="currentColor" d="M8 2 16 1 22 4 28 10 29.5 15 25 20 22 24 19 27 16 32 14 37 12 39.5 10 35 9 28 8 20 5 13 3 9 5 5Z"/></svg>'
+  };
+
   function $(id) { return document.getElementById(id); }
 
   function fechaTexto(iso) {
@@ -114,15 +120,20 @@
   });
 
   function pintarRelojes() {
-    var cab = CONFIG.relojes.map(function (r, i) {
-      return '<span class="reloj" title="Hora de ' + r.nombre + '">' + BANDERAS[r.bandera] +
-        '<span class="sr">' + r.nombre + ' </span><time data-reloj="' + i + '" data-tipo="hora"></time></span>';
+    // Cabecera: una silueta por region y sus horas (ES 11:04 | AR 07:04 CL 07:04)
+    var grupos = [];
+    CONFIG.relojes.forEach(function (r, i) {
+      var g = grupos.length && grupos[grupos.length - 1].silueta === r.silueta ? grupos[grupos.length - 1] : null;
+      if (!g) { g = { silueta: r.silueta, horas: [] }; grupos.push(g); }
+      g.horas.push('<span title="Hora de ' + r.nombre + '"><span class="reloj-cod">' + r.corto + '</span> <time data-reloj="' + i + '" data-tipo="hora"></time></span>');
+    });
+    $("relojes-cab").innerHTML = grupos.map(function (g) {
+      return '<span class="reloj">' + SILUETAS[g.silueta] + g.horas.join("") + '</span>';
     }).join("");
-    $("relojes-cab").innerHTML = cab;
     var lat = $("relojes-lateral");
     if (lat) {
       lat.innerHTML = CONFIG.relojes.map(function (r, i) {
-        return '<div class="reloj-fila">' + BANDERAS[r.bandera] + '<span class="reloj-nom">' + r.nombre +
+        return '<div class="reloj-fila">' + SILUETAS[r.silueta] + '<span class="reloj-nom">' + r.nombre +
           '<small data-reloj="' + i + '" data-tipo="dia"></small></span><time data-reloj="' + i + '" data-tipo="hora"></time></div>';
       }).join("");
     }

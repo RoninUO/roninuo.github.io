@@ -323,3 +323,9 @@ ul.ping b { font-variant-numeric: tabular-nums; }
 .nb-leyenda { margin: 0; padding-left: 18px; color: var(--muted); display: grid; gap: 4px; font-size: 14px; }
 @media (max-width: 480px) { .nb-tiras { grid-template-columns: repeat(2, minmax(0, 1fr)); } .nb-kanji { font-size: 26px; } }
 @media (prefers-reduced-motion: no-preference) { .tanzaku { transition: transform .15s ease; } .tanzaku:hover { transform: translateY(-3px); } }
+
+/* Siluetas de los relojes */
+.silueta { width: 18px; height: 16px; flex: none; color: var(--shu); }
+.reloj { gap: 8px; }
+.reloj-cod { color: var(--band-muted); font-size: 11.5px; letter-spacing: .04em; }
+.reloj-fila .silueta { width: 27px; height: 24px; }

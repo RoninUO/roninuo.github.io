@@ -12,10 +12,13 @@ var CONFIG = {
     apertura: "Por anunciar",
     motor: "Source-X"
   },
-  // Relojes en tiempo real (zona horaria IANA y bandera: es o ar)
+  // Relojes en tiempo real: zona horaria IANA, silueta (iberia o sudamerica)
+  // y abreviatura para la cabecera. Chile cambia de hora en invierno y
+  // Argentina no, por eso van separados aunque compartan silueta.
   relojes: [
-    { nombre: "España", zona: "Europe/Madrid", bandera: "es" },
-    { nombre: "Argentina", zona: "America/Argentina/Buenos_Aires", bandera: "ar" }
+    { nombre: "España", zona: "Europe/Madrid", silueta: "iberia", corto: "ES" },
+    { nombre: "Argentina", zona: "America/Argentina/Buenos_Aires", silueta: "sudamerica", corto: "AR" },
+    { nombre: "Chile", zona: "America/Santiago", silueta: "sudamerica", corto: "CL" }
   ],
   // Ping estimado al servidor (alojado en España). Son rangos orientativos,
   // no una medida real: se cambian aqui si el servidor se muda.
