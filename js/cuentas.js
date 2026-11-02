@@ -97,7 +97,7 @@
     sb.from("solicitudes").select("*").maybeSingle().then(function (r) {
       if (r.error) { aviso(caja, "No se pudo leer tu ficha: " + r.error.message, true); return; }
       miFicha = r.data;
-      if (!miFicha || editando) pintarFormulario(caja, miFicha);
+      if (!miFicha || editando) pintarFormulario(caja, editando === "nueva" ? { id: miFicha.id, cuenta_deseada: miFicha.cuenta_deseada, nueva: true } : miFicha);
       else pintarEstado(caja, miFicha);
     });
   }
@@ -115,6 +115,7 @@
     if (f.estado === "pendiente") html += "<p>El staff la leerá en cuanto pueda. Mientras tanto puedes corregirla.</p>";
     if (f.estado === "rechazada") html += '<p>Si quieres hablarlo, abre un ticket en el <a href="' + esc(CONFIG.discord) + '" target="_blank" rel="noopener">Discord</a>.</p>';
     if (editable) html += '<button class="btn primary" type="button" data-cu="editar">Editar la ficha</button>';
+    if (f.estado === "rechazada") html += '<p>Puedes presentar otro personaje con una ficha nueva.</p><button class="btn primary" type="button" data-cu="nueva">Hacer una ficha nueva</button>';
     caja.innerHTML = html + "</div>";
   }
 
@@ -155,8 +156,8 @@
       campo("cu-avatar", "Retrato (opcional)", '<input id="cu-avatar" type="file" accept="image/png,image/jpeg,image/webp">',
         "PNG, JPG o WEBP, hasta 2 MB." + (f.avatar ? " Ya tienes uno; sube otro solo si quieres cambiarlo." : "")) +
       "</fieldset>" +
-      '<label class="cu-check"><input id="cu-normas" type="checkbox"' + (f.id ? " checked" : "") + '> He leído las <a href="#reglas">normas</a> y las acepto. *</label>' +
-      '<div class="cu-acciones"><button class="btn primary" type="submit">' + (f.id ? "Guardar cambios" : "Enviar la ficha") + "</button>" +
+      '<label class="cu-check"><input id="cu-normas" type="checkbox"' + (f.id && !f.nueva ? " checked" : "") + '> He leído las <a href="#reglas">normas</a> y las acepto. *</label>' +
+      '<div class="cu-acciones"><button class="btn primary" type="submit">' + (f.id && !f.nueva ? "Guardar cambios" : "Enviar la ficha") + "</button>" +
       (f.id ? '<button class="btn" type="button" data-cu="cancelar">Cancelar</button>' : "") + "</div>" +
       '<div id="cu-msg" aria-live="polite"></div></form>';
     var h = $("cu-historia"), n = $("cu-cuenta");
@@ -190,6 +191,7 @@
       rasgos: v("cu-rasgos") || null,
       historia: historia
     };
+    if (editando === "nueva") datos.avatar = null;   // ficha nueva: el retrato viejo no vale
     aviso(msg, "Enviando…");
     var uid = sesion.user.id;
     var paso = Promise.resolve();
@@ -312,6 +314,7 @@
     if (a === "entrar") entrar(b.getAttribute("data-volver"));
     else if (a === "salir") salir();
     else if (a === "editar") { editando = true; pintarTodo(); }
+    else if (a === "nueva") { editando = "nueva"; pintarTodo(); }
     else if (a === "cancelar") { editando = false; pintarTodo(); }
     else if (a === "filtro") { staffFiltro = b.getAttribute("data-f"); staffSel = null; pintarTodo(); }
     else if (a === "ver") { staffSel = b.getAttribute("data-id"); pintarTodo(); window.scrollTo(0, 0); }
