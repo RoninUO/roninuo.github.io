@@ -40,6 +40,10 @@ var MENU = [
     "texto": "Cómo jugar"
   },
   {
+    "id": "solicitud",
+    "texto": "Solicitar cuenta"
+  },
+  {
     "id": "mundo",
     "texto": "El mundo"
   },

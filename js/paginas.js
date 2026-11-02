@@ -103,7 +103,7 @@ var PAGINAS = {
         <ol class="steps">
           <li><div><b>Descarga el lanzador</b><span class="muted">Todo viaje empieza con un paso. Descarga el lanzador desde <a href="#descargas">Descargas</a>: instala el juego con el arte de Hinokage y lo mantiene al día. Es el único camino a las islas.</span></div></li>
           <li><div><b>Forja a tu personaje</b><span class="muted">Antes de que la ceniza te traiga, decide quién eres: un nombre de la época (más abajo tienes ideas), de dónde vienes y qué dejaste atrás. El staff leerá tu historia y la aprobará antes de que cruces.</span></div></li>
-          <li><div><b>Pide tu cuenta</b><span class="muted">Abre un ticket en el <a href="https://discord.gg/KMvqtdeKM" target="_blank" rel="noopener">Discord</a> con tus datos, el nombre y la historia. Una cuenta, una vida: tu personaje no se borra, solo se retira con seppuku (suicidio ritual).</span></div></li>
+          <li><div><b>Pide tu cuenta</b><span class="muted">Rellena la ficha en <a href="#solicitud">Solicitar cuenta</a>: entras con tu Discord y el staff te responde allí mismo. Una cuenta, una vida: tu personaje no se borra, solo se retira con seppuku (suicidio ritual). Para casos especiales, un ticket en el <a href="https://discord.gg/KMvqtdeKM" target="_blank" rel="noopener">Discord</a>.</span></div></li>
           <li><div><b>Despierta en el templo</b><span class="muted">Abres los ojos en el templo de Hoshikawa-mura (aldea del río de las estrellas), en Haibara (llanura de ceniza), sin ropa y sin nada. Joen, el monje del templo, te contará lo que le pasó a las islas y te preguntará tu nombre, de dónde vienes y quién eras. Después te vestirá, te dará de comer y unos mon (monedas de cobre), y te dejará en la puerta, frente a la llanura.</span></div></li>
           <li><div><b>Busca tu camino</b><span class="muted">Llegas como Heimin (gente común), sin amo y sin nombre en las crónicas. Tai (cuerpo), Gi (técnica) y Shin (mente) suben entrenando, hasta 225 entre las tres y 125 en cada una; con las flechas de cada una decides cuál sube, cuál cede y cuál se queda fija. Trabaja, aprende con tutores, gana honor y pide a un maestro que te acepte. Ningún clan te espera: tendrás que ganártelo.</span></div></li>
         </ol>
@@ -127,6 +127,21 @@ var PAGINAS = {
           <li>Los Biwa hoshi (bardos ciegos) llevaban nombres terminados en -ichi.</li>
           <li>Un Shinobi (ninja) tiene un alias para su ryu (clan) y una tapadera para el mundo; en el juego se le ve con la tapadera.</li>
         </ul>
+      </div>
+    </div>
+`,
+  "solicitud": `    <div class="panel">
+      <div class="panel-h"><h2>Solicitar cuenta</h2><span class="kj" aria-hidden="true">願書</span></div>
+      <div class="panel-b">
+        <p>Una persona, una cuenta, un personaje. Rellena su ficha y el staff la leerá antes de darte la cuenta del juego. Aquí mismo verás si está aprobada o si te piden cambios.</p>
+        <div id="cu-solicitud"><p class="muted">Cargando…</p></div>
+      </div>
+    </div>
+`,
+  "staff": `    <div class="panel">
+      <div class="panel-h"><h2>Solicitudes (staff)</h2><span class="kj" aria-hidden="true">審査</span></div>
+      <div class="panel-b">
+        <div id="cu-staff"><p class="muted">Cargando…</p></div>
       </div>
     </div>
 `,

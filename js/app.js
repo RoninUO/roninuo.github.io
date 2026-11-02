@@ -36,9 +36,12 @@
   // ---------------------------------------------------------------- Paginas
   function pintarPaginas() {
     var html = "";
-    MENU.forEach(function (m) {
-      if (PAGINAS[m.id] === undefined) return;
-      html += '<div data-page="' + m.id + '"' + (m.id === "inicio" ? "" : " hidden") + ">" + PAGINAS[m.id] + "</div>\n";
+    // las del menu y, detras, las que no salen en el (como #staff)
+    var ids = MENU.map(function (m) { return m.id; });
+    Object.keys(PAGINAS).forEach(function (k) { if (ids.indexOf(k) < 0) ids.push(k); });
+    ids.forEach(function (id) {
+      if (PAGINAS[id] === undefined) return;
+      html += '<div data-page="' + id + '"' + (id === "inicio" ? "" : " hidden") + ">" + PAGINAS[id] + "</div>\n";
     });
     $("contenido").innerHTML = html;
     // los enlaces al Discord de las paginas salen de CONFIG

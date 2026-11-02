@@ -329,3 +329,42 @@ ul.ping b { font-variant-numeric: tabular-nums; }
 .reloj { gap: 8px; }
 .reloj-cod { color: var(--band-muted); font-size: 11.5px; letter-spacing: .04em; }
 .reloj-fila .silueta { width: 27px; height: 24px; }
+
+/* Solicitud de cuenta y revision del staff */
+.cu-sesion { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; padding: 8px 0 14px; border-bottom: 1px solid var(--line); margin-bottom: 16px; font-size: 14px; }
+.cu-sesion .btn { padding: 5px 12px; font-size: 13px; }
+.cu-aviso { margin: 10px 0 0; padding: 8px 12px; border-left: 3px solid var(--ai); background: var(--ai-soft); font-size: 14px; }
+.cu-aviso.malo { border-color: var(--shu); background: var(--shu-soft); }
+.cu-form fieldset { border: 1px solid var(--line); padding: 12px 16px 4px; margin: 0 0 16px; min-width: 0; }
+.cu-form legend { font-family: var(--f-display); font-weight: 800; padding: 0 6px; }
+.cu-campo { display: grid; gap: 4px; margin-bottom: 12px; min-width: 0; }
+.cu-campo label { font-weight: 700; font-size: 14px; }
+.cu-campo small { font-size: 12.5px; line-height: 1.45; }
+.cu-campo input, .cu-campo select, .cu-campo textarea { font: inherit; font-size: 14.5px; padding: 7px 9px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); width: 100%; box-sizing: border-box; }
+.cu-campo textarea { resize: vertical; }
+.cu-campo input:focus, .cu-campo select:focus, .cu-campo textarea:focus { outline: 2px solid var(--shu); outline-offset: 1px; }
+.cu-fila { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0 14px; }
+.cu-check { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; margin: 4px 0 14px; }
+.cu-acciones { display: flex; gap: 10px; flex-wrap: wrap; }
+.cu-estado { border: 1px solid var(--line); padding: 14px 16px; display: grid; gap: 8px; justify-items: start; }
+.cu-estado h3 { margin: 0; font-family: var(--f-display); font-size: 22px; }
+.cu-estado p { margin: 0; }
+.cu-etq { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border: 1px solid currentColor; }
+.est-pendiente .cu-etq, .cu-etq.est-pendiente { color: var(--kin); }
+.est-cambios .cu-etq, .cu-etq.est-cambios { color: var(--shu); }
+.est-aprobada .cu-etq, .cu-etq.est-aprobada { color: var(--ai); }
+.est-rechazada .cu-etq, .cu-etq.est-rechazada { color: var(--muted); }
+.cu-nota { padding: 8px 12px; background: var(--kin-soft); border-left: 3px solid var(--kin); }
+.cu-filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.cu-filtro { font: inherit; font-size: 13px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: 5px 11px; border-radius: 999px; cursor: pointer; }
+.cu-filtro[aria-pressed="true"] { background: var(--ai); border-color: var(--ai); color: #fff; }
+.cu-tabla { width: 100%; border-collapse: collapse; font-size: 14px; }
+.cu-tabla th, .cu-tabla td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
+.cu-link { font: inherit; font-weight: 700; color: var(--ai); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+.cu-ficha { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 18px; margin: 16px 0; }
+.cu-retrato { width: 150px; height: 188px; border: 1px solid var(--line); display: grid; place-items: center; background: var(--paper); overflow: hidden; }
+.cu-retrato img { width: 100%; height: 100%; object-fit: cover; }
+.cu-ficha h3 { margin: 0 0 8px; font-family: var(--f-display); font-size: 22px; }
+.cu-kv dd { text-align: left; font-weight: 400; }
+.cu-historia { white-space: pre-wrap; }
+@media (max-width: 560px) { .cu-ficha { grid-template-columns: 1fr; } .cu-tabla th:nth-child(4), .cu-tabla td:nth-child(4) { display: none; } }
