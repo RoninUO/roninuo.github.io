@@ -20,9 +20,9 @@ var CONFIG = {
   // Ping estimado al servidor (alojado en España). Son rangos orientativos,
   // no una medida real: se cambian aqui si el servidor se muda.
   ping: [
-    { nombre: "España", bandera: "es", ms: "20-50" },
-    { nombre: "Argentina", bandera: "ar", ms: "210-260" },
-    { nombre: "Chile", bandera: "cl", ms: "220-270" }
+    { nombre: "España", bandera: "es", ms: "10-40" },
+    { nombre: "Argentina", bandera: "ar", ms: "190-240" },
+    { nombre: "Chile", bandera: "cl", ms: "210-260" }
   ]
 };
 
@@ -77,7 +77,7 @@ var NOTICIAS = [
     "fecha": "2026-11-02",
     "etiqueta": "Diario de desarrollo",
     "titulo": "Hinokage ya tiene mapa",
-    "texto": "Las islas ya se pueden recorrer: las tierras de los tres clanes, Haibara en el centro, arrozales inundados, playas, el volcán y sus grietas de lava, y los sekisho (puestos de control) en las fronteras. Además, cada cuenta tendrá un único personaje, que solo se retira con seppuku (suicidio ritual), y cada jugador reparte 225 puntos entre Tai, Gi y Shin como prefiera, hasta 125 en cada una."
+    "texto": "Las islas ya se pueden recorrer: las tierras de los tres clanes, Haibara en el centro, arrozales inundados, playas, el volcán y sus grietas de lava, y los sekisho (puestos de control) en las fronteras. Además, cada cuenta tendrá un único personaje, que solo se retira con seppuku (suicidio ritual), y las stats se entrenan hasta 225 entre Tai, Gi y Shin, con un máximo de 125 en cada una: cada jugador decide hacia dónde las lleva."
   },
   {
     "fecha": "2026-10-31",
