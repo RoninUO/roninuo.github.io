@@ -375,3 +375,4 @@ ul.ping b { font-variant-numeric: tabular-nums; }
 .cu-comando { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 14px; font-size: 14px; }
 .cu-comando code { background: var(--paper); border: 1px solid var(--line); padding: 4px 8px; }
 .cu-comando .btn { padding: 4px 10px; font-size: 12.5px; }
+.cu-sesion-bot { display: flex; gap: 8px; flex-wrap: wrap; }

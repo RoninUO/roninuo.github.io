@@ -18,7 +18,7 @@
     rechazada: "Rechazada"
   };
   var CONSTITUCION = ["Delgada", "Enjuta", "Normal", "Fibrosa", "Fuerte", "Robusta", "Corpulenta"];
-  var sb = null, sesion = null, miFicha = null, editando = false;
+  var sb = null, sesion = null, miFicha = null, editando = false, soyStaff = null;
   var staffFiltro = "pendiente", staffSel = null;
 
   function $(id) { return document.getElementById(id); }
@@ -56,6 +56,7 @@
       var antes = sesion && sesion.user ? sesion.user.id : null;
       var ahora = s && s.user ? s.user.id : null;
       sesion = s;
+      if (antes !== ahora) soyStaff = null;
       // vuelta del login de Discord: limpiar ?code= y volver a la pagina
       if (location.search.indexOf("code=") >= 0) {
         var volver = lee("rn_volver") || "solicitud";
@@ -77,9 +78,25 @@
   }
   function salir() { sb.auth.signOut().then(function () { miFicha = null; pintarTodo(); }); }
 
-  function cabeceraSesion() {
+  function enlaceStaff() {
+    return '<a class="btn cu-enlace-staff" href="#staff">Panel del staff</a>';
+  }
+  function cabeceraSesion(enStaff) {
     return '<div class="cu-sesion"><span>Conectado como <b>' + esc(nombreDiscord(sesion.user)) + '</b></span>' +
-      '<button class="btn" type="button" data-cu="salir">Salir</button></div>';
+      '<span class="cu-sesion-bot">' + (soyStaff && !enStaff ? enlaceStaff() : "") +
+      '<button class="btn" type="button" data-cu="salir">Salir</button></span></div>';
+  }
+  // el enlace al panel solo lo ve el staff (la base de datos decide quien lo es)
+  function mirarStaff() {
+    if (!sesion || soyStaff !== null) return;
+    soyStaff = false;
+    sb.rpc("es_staff").then(function (r) {
+      soyStaff = !!(r && r.data);
+      if (!soyStaff) return;
+      Array.prototype.forEach.call(document.querySelectorAll("#cu-solicitud .cu-sesion-bot"), function (b) {
+        if (!b.querySelector(".cu-enlace-staff")) b.insertAdjacentHTML("afterbegin", enlaceStaff());
+      });
+    });
   }
   function botonEntrar(volver) {
     return '<button class="btn primary btn-dc" type="button" data-cu="entrar" data-volver="' + volver + '">Entrar con Discord</button>';
@@ -88,6 +105,7 @@
   function pintarTodo(error) {
     var a = $("cu-solicitud"), b = $("cu-staff");
     if (error) { if (a) aviso(a, error, true); if (b) aviso(b, error, true); return; }
+    mirarStaff();
     if (a) pintarSolicitud(a);
     if (b) pintarStaff(b);
   }
@@ -245,11 +263,11 @@
   // ------------------------------------------------------------ staff
   function pintarStaff(caja) {
     if (!sesion) { caja.innerHTML = "<p>Solo para el staff.</p>" + botonEntrar("staff"); return; }
-    caja.innerHTML = cabeceraSesion() + '<p class="muted">Comprobando permisos…</p>';
+    caja.innerHTML = cabeceraSesion(true) + '<p class="muted">Comprobando permisos…</p>';
     sb.rpc("es_staff").then(function (r) {
       if (r.error) { aviso(caja, "Error: " + r.error.message, true); return; }
       if (!r.data) {
-        caja.innerHTML = cabeceraSesion() + "<p>Esta cuenta no es del staff. Si deberías serlo, pásale este identificador a quien administra Supabase:</p><p><code>" + esc(sesion.user.id) + "</code></p>";
+        caja.innerHTML = cabeceraSesion(true) + "<p>Esta cuenta no es del staff. Si deberías serlo, pásale este identificador a quien administra Supabase:</p><p><code>" + esc(sesion.user.id) + "</code></p>";
         return;
       }
       if (staffSel) pintarFichaStaff(caja, staffSel); else pintarListaStaff(caja);
@@ -260,7 +278,7 @@
     var filtros = ["pendiente", "cambios", "aprobada", "rechazada", "todas"].map(function (e) {
       return '<button type="button" class="cu-filtro" aria-pressed="' + (staffFiltro === e) + '" data-cu="filtro" data-f="' + e + '">' + (e === "todas" ? "Todas" : ESTADOS[e]) + "</button>";
     }).join("");
-    caja.innerHTML = cabeceraSesion() + '<div class="cu-filtros">' + filtros + '</div><div id="cu-lista"><p class="muted">Cargando…</p></div>';
+    caja.innerHTML = cabeceraSesion(true) + '<div class="cu-filtros">' + filtros + '</div><div id="cu-lista"><p class="muted">Cargando…</p></div>';
     var q = sb.from("solicitudes").select("id,nombre,apellido,discord,estado,creada,actualizada").order("actualizada", { ascending: false });
     if (staffFiltro !== "todas") q = q.eq("estado", staffFiltro);
     q.then(function (r) {
@@ -276,7 +294,7 @@
   }
 
   function pintarFichaStaff(caja, id) {
-    caja.innerHTML = cabeceraSesion() + '<p class="muted">Cargando…</p>';
+    caja.innerHTML = cabeceraSesion(true) + '<p class="muted">Cargando…</p>';
     sb.from("solicitudes").select("*").eq("id", id).single().then(function (r) {
       if (r.error) return aviso(caja, r.error.message, true);
       var f = r.data;
@@ -284,7 +302,7 @@
       var opts = ["pendiente", "cambios", "aprobada", "rechazada"].map(function (e) {
         return '<option value="' + e + '"' + (f.estado === e ? " selected" : "") + ">" + ESTADOS[e] + "</option>";
       }).join("");
-      caja.innerHTML = cabeceraSesion() +
+      caja.innerHTML = cabeceraSesion(true) +
         '<button type="button" class="btn" data-cu="volver">← Volver a la lista</button>' +
         '<div class="cu-ficha"><div class="cu-retrato" id="cu-retrato">' + (f.avatar ? "" : '<span class="muted">Sin retrato</span>') + "</div><div>" +
         "<h3>" + esc(f.nombre) + (f.apellido ? " " + esc(f.apellido) : "") + "</h3>" +
