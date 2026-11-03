@@ -99,7 +99,7 @@
       return;
     }
     caja.innerHTML = cabeceraSesion() + '<p class="muted">Cargando tu ficha…</p>';
-    sb.from("solicitudes").select("*").maybeSingle().then(function (r) {
+    sb.from("solicitudes").select("*").eq("user_id", sesion.user.id).maybeSingle().then(function (r) {
       if (r.error) { aviso(caja, "No se pudo leer tu ficha: " + r.error.message, true); return; }
       miFicha = r.data;
       if (!miFicha || editando) pintarFormulario(caja, editando === "nueva" ? { id: miFicha.id, cuenta_deseada: miFicha.cuenta_deseada, nueva: true } : miFicha);
