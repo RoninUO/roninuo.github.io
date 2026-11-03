@@ -52,7 +52,9 @@
     sb = window.supabase.createClient(SB_URL, SB_KEY, {
       auth: { flowType: "pkce", detectSessionInUrl: true, persistSession: true }
     });
-    sb.auth.onAuthStateChange(function (_ev, s) {
+    sb.auth.onAuthStateChange(function (ev, s) {
+      var antes = sesion && sesion.user ? sesion.user.id : null;
+      var ahora = s && s.user ? s.user.id : null;
       sesion = s;
       // vuelta del login de Discord: limpiar ?code= y volver a la pagina
       if (location.search.indexOf("code=") >= 0) {
@@ -61,6 +63,9 @@
         history.replaceState(null, "", location.pathname + "#" + volver);
         window.dispatchEvent(new HashChangeEvent("hashchange"));
       }
+      // Al volver a la pestana Supabase renueva el token y avisa: si sigue siendo
+      // la misma persona no se repinta (se borraba lo que estaba escribiendo).
+      if (antes === ahora && ev !== "INITIAL_SESSION") return;
       pintarTodo();
     });
     sb.auth.getSession().then(function (r) { sesion = r.data.session; pintarTodo(); });
@@ -164,6 +169,26 @@
     var cuenta = function () { n.textContent = h.value.length; };
     h.addEventListener("input", cuenta); cuenta();
     $("cu-form").addEventListener("submit", enviar);
+    // borrador: lo escrito se guarda en este navegador hasta enviar la ficha
+    var clave = "rn_borrador_" + sesion.user.id;
+    var b = null;
+    try { b = JSON.parse(lee(clave) || "null"); } catch (e) { b = null; }
+    if (b && (!f.id || f.nueva)) {
+      Object.keys(b).forEach(function (id) {
+        var el = $(id);
+        if (!el || el.type === "file") return;
+        if (el.type === "checkbox") el.checked = !!b[id]; else el.value = b[id];
+      });
+      cuenta();
+    }
+    $("cu-form").addEventListener("input", function () {
+      var d = {};
+      Array.prototype.forEach.call($("cu-form").querySelectorAll("input, textarea, select"), function (el) {
+        if (!el.id || el.type === "file") return;
+        d[el.id] = el.type === "checkbox" ? el.checked : el.value;
+      });
+      guarda(clave, JSON.stringify(d));
+    });
   }
 
   function enviar(ev) {
@@ -208,6 +233,7 @@
     }).then(function (r) {
       if (r.error) throw r.error;
       editando = false;
+      guarda("rn_borrador_" + uid, null);
       pintarTodo();
     }).catch(function (e) {
       var m = e.message || String(e);
