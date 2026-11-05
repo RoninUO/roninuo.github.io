@@ -1,0 +1,3783 @@
+{
+  "version": "2026-11-06.003358",
+  "servidor": {
+    "host": "127.0.0.1",
+    "puerto": 5293
+  },
+  "cliente_version": "7.0.94.2",
+  "ejecutable": "ClassicUO/ClassicUO.exe",
+  "ajustes": "ClassicUO/settings.json",
+  "dir_uo": "../",
+  "noticias": [
+    "Bienvenido a RoninUO. El servidor esta en desarrollo."
+  ],
+  "web": "https://roninuo.github.io",
+  "discord": "https://discord.gg/KMvqtdeKM",
+  "lanzador": {
+    "version": "",
+    "url": "",
+    "sha256": ""
+  },
+  "base": "https://github.com/RoninUO/roninuo-cliente/releases/download/cliente/",
+  "archivos": [
+    {
+      "ruta": "Anim1.def",
+      "tam": 92,
+      "sha256": "40348b160303bf1accf2b2fa795741bff516e818c5688d6550f0a6078b2b2236",
+      "gz": "40348b160303bf1accf2.gz",
+      "gztam": 76
+    },
+    {
+      "ruta": "Anim1024.bin",
+      "tam": 4082540,
+      "sha256": "90ba1811e8ff3d26f3b3795119cd8a52adf10c8b32a956ef12a17177233890c0",
+      "gz": "90ba1811e8ff3d26f3b3.gz",
+      "gztam": 941678
+    },
+    {
+      "ruta": "Anim2.def",
+      "tam": 2779,
+      "sha256": "e47d04fabc7446a8866fb9369bda2b18bc7fddab3d87e49e39c1527b7b7d6774",
+      "gz": "e47d04fabc7446a8866f.gz",
+      "gztam": 560
+    },
+    {
+      "ruta": "Anim256.bin",
+      "tam": 4082540,
+      "sha256": "2b831b3a0a1da392790f83c9a504f20828d2276e694951ecd1d6a08316644f84",
+      "gz": "2b831b3a0a1da392790f.gz",
+      "gztam": 931363
+    },
+    {
+      "ruta": "AnimationFrame1.uop",
+      "tam": 103930525,
+      "sha256": "a9545e66a28e6c3b316a5be3ce2aa0da4820a2b87e307cab04315b596f3a9ad2",
+      "gz": "a9545e66a28e6c3b316a.gz",
+      "gztam": 103953079
+    },
+    {
+      "ruta": "AnimationFrame2.uop",
+      "tam": 117623261,
+      "sha256": "e1ec48e2c24d3d16bd4f3c34b2da7b2ccdc51c79fb481b84b65dfd48434c86a0",
+      "gz": "e1ec48e2c24d3d16bd4f.gz",
+      "gztam": 117602536
+    },
+    {
+      "ruta": "AnimationFrame3.uop",
+      "tam": 270925825,
+      "sha256": "6c7f0d610f1cd48097b908f05d9e0cd6f7a317054b052195a97af90a9850d10a",
+      "gz": "6c7f0d610f1cd48097b9.gz",
+      "gztam": 270948325
+    },
+    {
+      "ruta": "AnimationFrame4.uop",
+      "tam": 115970995,
+      "sha256": "31ac8eae9751f310bd85acd940e5ef2480197c3988fb08c4bb5a346ac36e53a8",
+      "gz": "31ac8eae9751f310bd85.gz",
+      "gztam": 115994348
+    },
+    {
+      "ruta": "AnimationFrame6.uop",
+      "tam": 23596117,
+      "sha256": "d6475b662bb1ec7b8334f51562207434486ef95c1791628fb2b69d1359132ac6",
+      "gz": "d6475b662bb1ec7b8334.gz",
+      "gztam": 23453208
+    },
+    {
+      "ruta": "AnimationSequence.uop",
+      "tam": 119894,
+      "sha256": "0651d15b248bb540d16514bf1f76c5fd3e4b1f84a487ae5b79a86182b09711b9",
+      "gz": "0651d15b248bb540d165.gz",
+      "gztam": 101676
+    },
+    {
+      "ruta": "Antx1024.bin",
+      "tam": 28660,
+      "sha256": "0a6eb18fb060797aad59e6efede43a6cc3f3e47257cf9de1312197aee7bf8885",
+      "gz": "0a6eb18fb060797aad59.gz",
+      "gztam": 4594
+    },
+    {
+      "ruta": "Antx256.bin",
+      "tam": 377120,
+      "sha256": "a44083be4b67f2a7df3a33950ded089008fdc17985370dfd1fabf47f13d4f397",
+      "gz": "a44083be4b67f2a7df3a.gz",
+      "gztam": 40836
+    },
+    {
+      "ruta": "Arttable.cfg",
+      "tam": 2874,
+      "sha256": "0ae58cbaa93c4715d43499c322af55e6f7fc32517369ea73c9cc7a21477669ef",
+      "gz": "0ae58cbaa93c4715d434.gz",
+      "gztam": 772
+    },
+    {
+      "ruta": "Binkw32.dll",
+      "tam": 291328,
+      "sha256": "f2ad88706cf898ff489c5b3f19fac5a4d51dd59110b8e919b518c1d0f9a9b73a",
+      "gz": "f2ad88706cf898ff489c.gz",
+      "gztam": 130910
+    },
+    {
+      "ruta": "Blueprints.tbp",
+      "tam": 94993,
+      "sha256": "916eb661152b25c6a0eb52b838eb3340ade9f02d849e46f49c011ee297cb9c36",
+      "gz": "916eb661152b25c6a0eb.gz",
+      "gztam": 54920
+    },
+    {
+      "ruta": "Body.def",
+      "tam": 4043,
+      "sha256": "2fbd408fcc96d1c0b382c4fd5c4efc798e2e5093e59a14ed6be9146b4a81cdab",
+      "gz": "2fbd408fcc96d1c0b382.gz",
+      "gztam": 1620
+    },
+    {
+      "ruta": "Bodyconv.def",
+      "tam": 35387,
+      "sha256": "d86b9fe825ed55185bd4a0206d5534d7db3bba22f9e57909847c9c10d14d5da1",
+      "gz": "d86b9fe825ed55185bd4.gz",
+      "gztam": 9567
+    },
+    {
+      "ruta": "Chat.cht",
+      "tam": 3124,
+      "sha256": "4ee6acf74d591db4d4ed1f2518cfed6825ad08565c2a2653630015617a68d51c",
+      "gz": "4ee6acf74d591db4d4ed.gz",
+      "gztam": 1402
+    },
+    {
+      "ruta": "Chat.deu",
+      "tam": 4826,
+      "sha256": "ac1a1fc3ef3afced52103d30b8349a53e957edfb58db4738926e4e4dfe38d291",
+      "gz": "ac1a1fc3ef3afced5210.gz",
+      "gztam": 1555
+    },
+    {
+      "ruta": "Chat.enu",
+      "tam": 4240,
+      "sha256": "efe99ac3846002bb20058b37a18d2ced3923ce67b213015b803c0ccb4f362f06",
+      "gz": "efe99ac3846002bb2005.gz",
+      "gztam": 1371
+    },
+    {
+      "ruta": "Chat.esp",
+      "tam": 4428,
+      "sha256": "a89d64fee41a096986baeb0b73e64f062709be2cfc8983aea8ff027430ee9f66",
+      "gz": "a89d64fee41a096986ba.gz",
+      "gztam": 1432
+    },
+    {
+      "ruta": "Chat.fra",
+      "tam": 4456,
+      "sha256": "b1e32e96bdfc67c49d2be1ab9b1364a29e0586546cffd935d44d56c9f0102af6",
+      "gz": "b1e32e96bdfc67c49d2b.gz",
+      "gztam": 1492
+    },
+    {
+      "ruta": "Chat.jpn",
+      "tam": 3624,
+      "sha256": "17fe02fecf8b0087ffd066f62bcb4b69480f5c6ad881674aaa2ca625c689be2a",
+      "gz": "17fe02fecf8b0087ffd0.gz",
+      "gztam": 1172
+    },
+    {
+      "ruta": "Chat.kor",
+      "tam": 4440,
+      "sha256": "4acba31217e51cb0130695e634a19dfb7c46f3187b0f829a4dd646f603c91225",
+      "gz": "4acba31217e51cb01306.gz",
+      "gztam": 1598
+    },
+    {
+      "ruta": "ClassicUO/ClassicUO.exe",
+      "tam": 213288,
+      "sha256": "1d2faec6351bbf40e385788894ee3189912337726fab3e3db05509e7a55e3145",
+      "gz": "1d2faec6351bbf40e385.gz",
+      "gztam": 124130
+    },
+    {
+      "ruta": "ClassicUO/ClassicUO.exe.config",
+      "tam": 553,
+      "sha256": "9e33249d43563df004ea6a52562bb406f446e4bc2366379bcd7cb785bdf4af77",
+      "gz": "9e33249d43563df004ea.gz",
+      "gztam": 342
+    },
+    {
+      "ruta": "ClassicUO/FAudio.dll",
+      "tam": 340358,
+      "sha256": "6712e5affbd1ab0c4f819f0711e70c4a5b7ddbaee82b5c051b8a773c20261061",
+      "gz": "6712e5affbd1ab0c4f81.gz",
+      "gztam": 139171
+    },
+    {
+      "ruta": "ClassicUO/FNA.dll.config",
+      "tam": 858,
+      "sha256": "f4674782072a44aa0cfd9551e2d8e5b4adfae186373a5d66b67a6dab9a2d34e4",
+      "gz": "f4674782072a44aa0cfd.gz",
+      "gztam": 270
+    },
+    {
+      "ruta": "ClassicUO/FNA3D.dll",
+      "tam": 759349,
+      "sha256": "cc4fce4770c36b6f5b4897d883a87b7d30e61734726aa837527f07dc23cd5491",
+      "gz": "cc4fce4770c36b6f5b48.gz",
+      "gztam": 321625
+    },
+    {
+      "ruta": "ClassicUO/SDL3.dll",
+      "tam": 4667392,
+      "sha256": "eb46fbc3ceaf11a06ea4b9ea63f1783fbe8616018d70feb1711c68e1a6ab2e2e",
+      "gz": "eb46fbc3ceaf11a06ea4.gz",
+      "gztam": 1386167
+    },
+    {
+      "ruta": "ClassicUO/System.Buffers.dll",
+      "tam": 20856,
+      "sha256": "accccfbe45d9f08ffeed9916e37b33e98c65be012cfff6e7fa7b67210ce1fefb",
+      "gz": "accccfbe45d9f08ffeed.gz",
+      "gztam": 11547
+    },
+    {
+      "ruta": "ClassicUO/System.Memory.dll",
+      "tam": 142240,
+      "sha256": "bf3fb84664f4097f1a8a9bc71a51dcf8cf1a905d4080a4d290da1730866e856f",
+      "gz": "bf3fb84664f4097f1a8a.gz",
+      "gztam": 60612
+    },
+    {
+      "ruta": "ClassicUO/System.Numerics.Vectors.dll",
+      "tam": 115856,
+      "sha256": "1d3ef8698281e7cf7371d1554afef5872b39f96c26da772210a33da041ba1183",
+      "gz": "1d3ef8698281e7cf7371.gz",
+      "gztam": 33022
+    },
+    {
+      "ruta": "ClassicUO/System.Runtime.CompilerServices.Unsafe.dll",
+      "tam": 18024,
+      "sha256": "37768488e8ef45729bc7d9a2677633c6450042975bb96516e186da6cb9cd0dcf",
+      "gz": "37768488e8ef45729bc7.gz",
+      "gztam": 9632
+    },
+    {
+      "ruta": "ClassicUO/cuo.dll",
+      "tam": 14872344,
+      "sha256": "0b73edb75ac25f84bb065a7522a323866eddb5f3baa0e09d62fab3ac88cf20b3",
+      "gz": "0b73edb75ac25f84bb06.gz",
+      "gztam": 6504359
+    },
+    {
+      "ruta": "ClassicUO/cuoapi.dll",
+      "tam": 30496,
+      "sha256": "06188dcc56a52a8cc93c7a88aeba27576787df7f0ebc2f5539f3f3526365bc75",
+      "gz": "06188dcc56a52a8cc93c.gz",
+      "gztam": 18034
+    },
+    {
+      "ruta": "ClassicUO/libtheorafile.dll",
+      "tam": 1242040,
+      "sha256": "037001becd22f98d2897a3fc388f92ca9a80b56f9b41ba4507f4452c5f1cdf87",
+      "gz": "037001becd22f98d2897.gz",
+      "gztam": 572553
+    },
+    {
+      "ruta": "ClassicUO/zlib.dll",
+      "tam": 113152,
+      "sha256": "fcf9f36b66fd053e4bfe4c599d5bd37bc66d6891a7af8616079786b942f316f3",
+      "gz": "fcf9f36b66fd053e4bfe.gz",
+      "gztam": 59608
+    },
+    {
+      "ruta": "ClientPicker.exe",
+      "tam": 126976,
+      "sha256": "d55a83372238428f0a839279e5d332302fbf6f28f7857bbb15427874958905a5",
+      "gz": "d55a83372238428f0a83.gz",
+      "gztam": 57451
+    },
+    {
+      "ruta": "Cliloc.chs",
+      "tam": 46760,
+      "sha256": "4e1124e1aaaea05d37f9918954c5e8b3826f8b1e04afea8ce6459d9c07a66838",
+      "gz": "4e1124e1aaaea05d37f9.gz",
+      "gztam": 20864
+    },
+    {
+      "ruta": "Cliloc.cht",
+      "tam": 1999404,
+      "sha256": "d5ed3e0e16188f51ef2bd5d3feec4a585998fdc49e8ab49ff6154bf64ccfd817",
+      "gz": "d5ed3e0e16188f51ef2b.gz",
+      "gztam": 1438551
+    },
+    {
+      "ruta": "Cliloc.deu",
+      "tam": 722864,
+      "sha256": "0f32f731b41b3999b1e74fd75c06d7dc390d463a6f4e1381dea0206426362556",
+      "gz": "0f32f731b41b3999b1e7.gz",
+      "gztam": 410368
+    },
+    {
+      "ruta": "Cliloc.enu",
+      "tam": 3752170,
+      "sha256": "ccad0afe5d62ce18885f972faa3c8b6b50b0689d9618a73287417174578680a9",
+      "gz": "ccad0afe5d62ce18885f.gz",
+      "gztam": 1267506
+    },
+    {
+      "ruta": "Cliloc.esp",
+      "tam": 679624,
+      "sha256": "f542cd25bd7e4c4d84dadbf5db9bc2cbe0fac6b7f339d718c0146c612b1e3e51",
+      "gz": "f542cd25bd7e4c4d84da.gz",
+      "gztam": 206916
+    },
+    {
+      "ruta": "Cliloc.fra",
+      "tam": 739140,
+      "sha256": "5d1c42383026bd4ce634933fd37eb86b3458564dd928410d0743d95e408eef82",
+      "gz": "5d1c42383026bd4ce634.gz",
+      "gztam": 410657
+    },
+    {
+      "ruta": "Cliloc.jpn",
+      "tam": 5454922,
+      "sha256": "0fb026ec3e1aa7b060bb17ef7fdbb82198cc728addf465d4d0bedf8a98632b14",
+      "gz": "0fb026ec3e1aa7b060bb.gz",
+      "gztam": 3353434
+    },
+    {
+      "ruta": "Cliloc.kor",
+      "tam": 5261423,
+      "sha256": "d03cd060405da7b9bc74c7777622be1b97b45fbd3ff4a578d7285813dafe6fd3",
+      "gz": "d03cd060405da7b9bc74.gz",
+      "gztam": 3521376
+    },
+    {
+      "ruta": "Corpse.def",
+      "tam": 3769,
+      "sha256": "9bc572c3643acbcd1e299e6def4297c57da586624e373a45da88f72654b7c02a",
+      "gz": "9bc572c3643acbcd1e29.gz",
+      "gztam": 1456
+    },
+    {
+      "ruta": "Credits.dat",
+      "tam": 13358,
+      "sha256": "c7e70e6a1fb652790b2809de3508fae146c7ab9f1a481e5e5f8e9ae547000497",
+      "gz": "c7e70e6a1fb652790b28.gz",
+      "gztam": 4227
+    },
+    {
+      "ruta": "Data/assetmap.xml",
+      "tam": 4908,
+      "sha256": "902b0a3f1c1cff66d57c31dc74f34494d7979f97b25f59b603963b66e7541de5",
+      "gz": "902b0a3f1c1cff66d57c.gz",
+      "gztam": 758
+    },
+    {
+      "ruta": "Default.mac",
+      "tam": 749,
+      "sha256": "5f1cd206ef351fbafecb6cec1239ebfd0007932bddbacea8fdcf88a0d1bb1553",
+      "gz": "5f1cd206ef351fbafecb.gz",
+      "gztam": 268
+    },
+    {
+      "ruta": "Equipconv.def",
+      "tam": 8017,
+      "sha256": "ee650d81d88205745958cc6b6adf0c1f656f294dd0e97d58716e95142a2243ff",
+      "gz": "ee650d81d88205745958.gz",
+      "gztam": 1957
+    },
+    {
+      "ruta": "GDF/UO-MCE.lnk",
+      "tam": 601,
+      "sha256": "5b80d5e8480a05d477b11225d7bf9b9e85a5968788f54008e4b458fc9e542c92",
+      "gz": "5b80d5e8480a05d477b1.gz",
+      "gztam": 418
+    },
+    {
+      "ruta": "GDF/UO-MCE.mcl",
+      "tam": 952,
+      "sha256": "069f9bf102fa3c53f72afb6db70a9b5ee27c924a1d6d71f1b471cb69da65d790",
+      "gz": "069f9bf102fa3c53f72a.gz",
+      "gztam": 367
+    },
+    {
+      "ruta": "GDF/UO-MCE.png",
+      "tam": 67882,
+      "sha256": "9bce6f6a93d0815bedf9cd85904302da604405a3b7860e3faed59c0efac9042e",
+      "gz": "9bce6f6a93d0815bedf9.gz",
+      "gztam": 67930
+    },
+    {
+      "ruta": "GDF/UOClassicGDF.dll",
+      "tam": 221184,
+      "sha256": "918766ca41c4d7a39980afb3ae7c3360e3646ff0583f86283194b22fada8aaa6",
+      "gz": "918766ca41c4d7a39980.gz",
+      "gztam": 169166
+    },
+    {
+      "ruta": "Gesture.cht",
+      "tam": 804,
+      "sha256": "7cacd609b109bf5a55d748609329a78b2d707575b1610aedca24d6ca4ad72a49",
+      "gz": "7cacd609b109bf5a55d7.gz",
+      "gztam": 311
+    },
+    {
+      "ruta": "Gesture.deu",
+      "tam": 664,
+      "sha256": "b7027862c8f2b314d0e7a174c118d73e683fa1ffaac7b9f302dfb8f47caaa014",
+      "gz": "b7027862c8f2b314d0e7.gz",
+      "gztam": 320
+    },
+    {
+      "ruta": "Gesture.enu",
+      "tam": 586,
+      "sha256": "8c6e3dc6c44d1d42135c3cd286b90406b861490fe868fd49f313fc10fecb9135",
+      "gz": "8c6e3dc6c44d1d42135c.gz",
+      "gztam": 258
+    },
+    {
+      "ruta": "Gesture.esp",
+      "tam": 670,
+      "sha256": "2fb15679db2e0917e0e310d9891fc872b90ba6a0898ac1530e7efb5c5de7f5b2",
+      "gz": "2fb15679db2e0917e0e3.gz",
+      "gztam": 293
+    },
+    {
+      "ruta": "Gesture.fra",
+      "tam": 670,
+      "sha256": "462c19701043139290e5c12c936dc933c4e0d86520993410b9dc57fd11ba8522",
+      "gz": "462c19701043139290e5.gz",
+      "gztam": 314
+    },
+    {
+      "ruta": "Gesture.jpn",
+      "tam": 834,
+      "sha256": "5b514cbf74f376c5a8b5fefc309513efca97ecd8a20a251ab080b5054728b6b6",
+      "gz": "5b514cbf74f376c5a8b5.gz",
+      "gztam": 310
+    },
+    {
+      "ruta": "Gesture.kor",
+      "tam": 808,
+      "sha256": "d7318c1736139f77ca6db88a5d700ead751b1e0f1c8845d8f902c1efaa84f10e",
+      "gz": "d7318c1736139f77ca6d.gz",
+      "gztam": 297
+    },
+    {
+      "ruta": "Granny.dll",
+      "tam": 492032,
+      "sha256": "a33bf57258ce71caf4d755364a7e44192a5a1433b98b6db4aaaf6542ba5f6c58",
+      "gz": "a33bf57258ce71caf4d7.gz",
+      "gztam": 210285
+    },
+    {
+      "ruta": "Gt_0000.cht",
+      "tam": 312,
+      "sha256": "98bdfdc2bee01cae32bec5fc8fcb85a116e2dffeae866978e5a0d5b30d7f98e9",
+      "gz": "98bdfdc2bee01cae32be.gz",
+      "gztam": 181
+    },
+    {
+      "ruta": "Gt_0000.deu",
+      "tam": 306,
+      "sha256": "0077e043a26bb9f950aca97ead75172cd41be2d99f4ff2b2a4ac04ce246440a1",
+      "gz": "0077e043a26bb9f950ac.gz",
+      "gztam": 190
+    },
+    {
+      "ruta": "Gt_0000.enu",
+      "tam": 124,
+      "sha256": "3d932fec53f6f0815344a61a2306fb9961d847f23e19b13292d5c18c3d976c50",
+      "gz": "3d932fec53f6f0815344.gz",
+      "gztam": 79
+    },
+    {
+      "ruta": "Gt_0000.esp",
+      "tam": 348,
+      "sha256": "ba9944e48a413434c082041cbf3aea57db88d1283995baaba04d650984badb94",
+      "gz": "ba9944e48a413434c082.gz",
+      "gztam": 229
+    },
+    {
+      "ruta": "Gt_0000.fra",
+      "tam": 282,
+      "sha256": "cea158069d15c6f522f71127e1ef3d60bb0ee280405b92c5f53c09478d38a39b",
+      "gz": "cea158069d15c6f522f7.gz",
+      "gztam": 190
+    },
+    {
+      "ruta": "Gt_0000.jpn",
+      "tam": 278,
+      "sha256": "039117ba1f1396a748fba59f00400fc2b61345a5f649ffd4ea3589cadfcc4637",
+      "gz": "039117ba1f1396a748fb.gz",
+      "gztam": 163
+    },
+    {
+      "ruta": "Gt_0000.kor",
+      "tam": 178,
+      "sha256": "a28fad418e02f68c17b1f2107f1e675d84061019139d32d26a9d42f785685196",
+      "gz": "a28fad418e02f68c17b1.gz",
+      "gztam": 86
+    },
+    {
+      "ruta": "Gt_1010.cht",
+      "tam": 1332,
+      "sha256": "9a6ab9da709cadded73ae8c57d179d2d849b17f9c145bcab91f75eae56b88373",
+      "gz": "9a6ab9da709cadded73a.gz",
+      "gztam": 349
+    },
+    {
+      "ruta": "Gt_1010.deu",
+      "tam": 1444,
+      "sha256": "d20d9ab630d3531d6bd763a79532870e844b40f90f0362bee73ccc74cf6dcbd3",
+      "gz": "d20d9ab630d3531d6bd7.gz",
+      "gztam": 383
+    },
+    {
+      "ruta": "Gt_1010.enu",
+      "tam": 372,
+      "sha256": "5eb5ee615617061c10c73f5bd80aff295045d194ae7cabb944dbb2a566aac113",
+      "gz": "5eb5ee615617061c10c7.gz",
+      "gztam": 84
+    },
+    {
+      "ruta": "Gt_1010.esp",
+      "tam": 372,
+      "sha256": "836bb0b23c5892299868b8ce00547e84098df1f1a16c1c14def6c3a6e561da39",
+      "gz": "836bb0b23c5892299868.gz",
+      "gztam": 84
+    },
+    {
+      "ruta": "Gt_1010.fra",
+      "tam": 2234,
+      "sha256": "6c73e7d75e1fa17d85ed0f34ab197522d747dd23ac9e7dc8075e5cd711c11186",
+      "gz": "6c73e7d75e1fa17d85ed.gz",
+      "gztam": 597
+    },
+    {
+      "ruta": "Gt_1010.jpn",
+      "tam": 2290,
+      "sha256": "5e09ea4bf901eefd4c5b34c43982b6a5c0aac4b14f91251ff815d5525f8f5078",
+      "gz": "5e09ea4bf901eefd4c5b.gz",
+      "gztam": 612
+    },
+    {
+      "ruta": "Gt_1010.kor",
+      "tam": 674,
+      "sha256": "5de8df0f331d5d4c35ae2f5ef4d0995b806c667304c3a4f8e72ea1ccd6842bce",
+      "gz": "5de8df0f331d5d4c35ae.gz",
+      "gztam": 89
+    },
+    {
+      "ruta": "Gt_2000.cht",
+      "tam": 1150,
+      "sha256": "1cdaab075b111e616dc1ff0e29c020244d862e9b559c6a568b75e6ae2f13df31",
+      "gz": "1cdaab075b111e616dc1.gz",
+      "gztam": 493
+    },
+    {
+      "ruta": "Gt_2000.deu",
+      "tam": 1414,
+      "sha256": "9389e3962fc38a47b11696e9e23c1c115792e871c42d4f7840aa7e86614fb012",
+      "gz": "9389e3962fc38a47b116.gz",
+      "gztam": 568
+    },
+    {
+      "ruta": "Gt_2000.enu",
+      "tam": 302,
+      "sha256": "d4675d37a604d10d1c14819391fa12c288dfa7ce2245a56c8f564b6218dce70a",
+      "gz": "d4675d37a604d10d1c14.gz",
+      "gztam": 79
+    },
+    {
+      "ruta": "Gt_2000.esp",
+      "tam": 1610,
+      "sha256": "ff33d47a3144534106cfe6343a2b477cf94d3b855c350a57e314beae26c3b7af",
+      "gz": "ff33d47a3144534106cf.gz",
+      "gztam": 711
+    },
+    {
+      "ruta": "Gt_2000.fra",
+      "tam": 1586,
+      "sha256": "77315f5e306dddacc638b10f98c497d6073b89154a605f79428220163afab7ca",
+      "gz": "77315f5e306dddacc638.gz",
+      "gztam": 688
+    },
+    {
+      "ruta": "Gt_2000.jpn",
+      "tam": 1832,
+      "sha256": "9f50ada086c93e03771c2f7f07f4daaa6c652f917d5c946adda93b1f26b22405",
+      "gz": "9f50ada086c93e03771c.gz",
+      "gztam": 750
+    },
+    {
+      "ruta": "Gt_2000.kor",
+      "tam": 534,
+      "sha256": "d19698b70bd1248fca46e0947769f4caebfbe80a171994e244ff96e61d7bfc28",
+      "gz": "d19698b70bd1248fca46.gz",
+      "gztam": 87
+    },
+    {
+      "ruta": "Gt_2310.cht",
+      "tam": 132,
+      "sha256": "862715da365337b398f1cab4e436b86f105215c812f0c77c3283e599e903c19d",
+      "gz": "862715da365337b398f1.gz",
+      "gztam": 104
+    },
+    {
+      "ruta": "Gt_2310.deu",
+      "tam": 112,
+      "sha256": "d725a768a6695c216d1513b24f09230ef24b82be58f2f26da40620116010fcd0",
+      "gz": "d725a768a6695c216d15.gz",
+      "gztam": 100
+    },
+    {
+      "ruta": "Gt_2310.enu",
+      "tam": 84,
+      "sha256": "0ed5f886bf7298da6a96ceabc4dd8f507aa5bc4258714d9bbeb8857534fd323e",
+      "gz": "0ed5f886bf7298da6a96.gz",
+      "gztam": 78
+    },
+    {
+      "ruta": "Gt_2310.esp",
+      "tam": 128,
+      "sha256": "4e413e9938bd97ecb4f2635a395d335fb10fb5cd48286ae9197c75df48f22d6b",
+      "gz": "4e413e9938bd97ecb4f2.gz",
+      "gztam": 103
+    },
+    {
+      "ruta": "Gt_2310.fra",
+      "tam": 126,
+      "sha256": "33b0b85331815088539c75c368d3afc557cb48ccbdc727d33dce42801d645a4e",
+      "gz": "33b0b85331815088539c.gz",
+      "gztam": 106
+    },
+    {
+      "ruta": "Gt_2310.jpn",
+      "tam": 126,
+      "sha256": "7b7e0c9551a10ff7e5315199877ba9766a9c8e86876fd9774f51fdf7ea723119",
+      "gz": "7b7e0c9551a10ff7e531.gz",
+      "gztam": 102
+    },
+    {
+      "ruta": "Gt_2310.kor",
+      "tam": 98,
+      "sha256": "75fc69561802e1140485ca51e7887519285568b8948db376dd2e9705b680e2d2",
+      "gz": "75fc69561802e1140485.gz",
+      "gztam": 85
+    },
+    {
+      "ruta": "Gt_2400.cht",
+      "tam": 520,
+      "sha256": "1c9b5068a1b0b113dd698e8323e0dfae96d79d1a746a9e3a6cf3ad89d8fb10b0",
+      "gz": "1c9b5068a1b0b113dd69.gz",
+      "gztam": 170
+    },
+    {
+      "ruta": "Gt_2400.deu",
+      "tam": 474,
+      "sha256": "bcb119c265ca9494a33d6f7c73b235a0d4fa5329af990cade671ead8e56d5e86",
+      "gz": "bcb119c265ca9494a33d.gz",
+      "gztam": 187
+    },
+    {
+      "ruta": "Gt_2400.enu",
+      "tam": 198,
+      "sha256": "81eedcab77725a542ec81bc15589d2bc9084a4485eb5d4dd572cc009744beb8b",
+      "gz": "81eedcab77725a542ec8.gz",
+      "gztam": 79
+    },
+    {
+      "ruta": "Gt_2400.esp",
+      "tam": 1024,
+      "sha256": "e16840405df2b143ae4266e943db51dd51ca9d40d8a6824df0867707a5385ae2",
+      "gz": "e16840405df2b143ae42.gz",
+      "gztam": 449
+    },
+    {
+      "ruta": "Gt_2400.fra",
+      "tam": 996,
+      "sha256": "97efb0246df445945fef8129054d18a02e275389982288f0d481a6677b3cc904",
+      "gz": "97efb0246df445945fef.gz",
+      "gztam": 440
+    },
+    {
+      "ruta": "Gt_2400.jpn",
+      "tam": 1042,
+      "sha256": "f4d86c0d09dc87d097c61ba4d03142be0a13821aeedddc12c33e2f1a86c189ec",
+      "gz": "f4d86c0d09dc87d097c6.gz",
+      "gztam": 466
+    },
+    {
+      "ruta": "Gt_2400.kor",
+      "tam": 328,
+      "sha256": "6b1b57b43c2f3e4038798beb769bad729242512c58fb29533b0f417e99bb91e2",
+      "gz": "6b1b57b43c2f3e403879.gz",
+      "gztam": 86
+    },
+    {
+      "ruta": "Gt_4000.cht",
+      "tam": 3548,
+      "sha256": "441b48a424d3abc8e21983afd6a7955d62c632ff354a34e0e2836dc264606a11",
+      "gz": "441b48a424d3abc8e219.gz",
+      "gztam": 321
+    },
+    {
+      "ruta": "Gt_4000.deu",
+      "tam": 774,
+      "sha256": "3a9296afb70da9d07f4d08c12caa7e0ba4a579b9806b6b5dde5b1b529c8832b0",
+      "gz": "3a9296afb70da9d07f4d.gz",
+      "gztam": 216
+    },
+    {
+      "ruta": "Gt_4000.enu",
+      "tam": 654,
+      "sha256": "ef22e955f8c503241adfc78690abde626905d3155c4ca5a4bd83a3c908d622f5",
+      "gz": "ef22e955f8c503241adf.gz",
+      "gztam": 198
+    },
+    {
+      "ruta": "Gt_4000.esp",
+      "tam": 736,
+      "sha256": "60fec828cc85ae1d8372981c68dab65388d4d8a02de13137f22041f2b09bf2de",
+      "gz": "60fec828cc85ae1d8372.gz",
+      "gztam": 218
+    },
+    {
+      "ruta": "Gt_4000.fra",
+      "tam": 690,
+      "sha256": "80022ff40dac06ae2a4811d4c3ba988ca1c6206a57c5232ed3a044f30d1b89b6",
+      "gz": "80022ff40dac06ae2a48.gz",
+      "gztam": 211
+    },
+    {
+      "ruta": "Gt_4000.jpn",
+      "tam": 654,
+      "sha256": "416be4cc0508837eb5ad96ef160c7679ede0bb67bcdf5bfdc8885777c33c6bf9",
+      "gz": "416be4cc0508837eb5ad.gz",
+      "gztam": 198
+    },
+    {
+      "ruta": "Gt_4000.kor",
+      "tam": 804,
+      "sha256": "4a1e95f4ad7571bdb53139dccca073f8c96a9a6948dda99bb72f8b7522598f64",
+      "gz": "4a1e95f4ad7571bdb531.gz",
+      "gztam": 201
+    },
+    {
+      "ruta": "Gt_5000.cht",
+      "tam": 568,
+      "sha256": "f1d16116a5b17f795a8faea33c11e97fcedfff74b56dcecaefc6e58c57927404",
+      "gz": "f1d16116a5b17f795a8f.gz",
+      "gztam": 159
+    },
+    {
+      "ruta": "Gt_5000.deu",
+      "tam": 450,
+      "sha256": "8ea720f388eee5c36ab55c48456b6f907d5dc0190e3dd42661efabceaa25ac7a",
+      "gz": "8ea720f388eee5c36ab5.gz",
+      "gztam": 197
+    },
+    {
+      "ruta": "Gt_5000.enu",
+      "tam": 276,
+      "sha256": "0c4f5ed30d1f9c2c0962d5a2aecf25b4970e499636d88a299fafc1a1df557300",
+      "gz": "0c4f5ed30d1f9c2c0962.gz",
+      "gztam": 79
+    },
+    {
+      "ruta": "Gt_5000.esp",
+      "tam": 536,
+      "sha256": "04d8c47ca01ab1e19d62f014ffaf4379fed4297f2d2f0df44771cd2c0efe2789",
+      "gz": "04d8c47ca01ab1e19d62.gz",
+      "gztam": 246
+    },
+    {
+      "ruta": "Gt_5000.fra",
+      "tam": 572,
+      "sha256": "4b78ed64fb8469089202edaac847fb1dade045878ffb92a565553867ae3a2c56",
+      "gz": "4b78ed64fb8469089202.gz",
+      "gztam": 259
+    },
+    {
+      "ruta": "Gt_5000.jpn",
+      "tam": 680,
+      "sha256": "84b9a1d19b821518227c76981d8223349a3aa290b381d66419468c67653a26ec",
+      "gz": "84b9a1d19b821518227c.gz",
+      "gztam": 244
+    },
+    {
+      "ruta": "Gt_5000.kor",
+      "tam": 484,
+      "sha256": "f9352a3c8d96b3d4be8b5e50dea0e873d5bdd9bcd2222b141a957ddafbc1dd62",
+      "gz": "f9352a3c8d96b3d4be8b.gz",
+      "gztam": 88
+    },
+    {
+      "ruta": "Gt_5400.cht",
+      "tam": 142,
+      "sha256": "e56efd0fc06eb6d674666f8d4ac156c048aa917d666b37ed3dce12d1055fb0a2",
+      "gz": "e56efd0fc06eb6d67466.gz",
+      "gztam": 125
+    },
+    {
+      "ruta": "Gt_5400.deu",
+      "tam": 156,
+      "sha256": "af55cec8be09aef5f11a33047d157ce16bd68ba173894f7dc107b1cf690c39d0",
+      "gz": "af55cec8be09aef5f11a.gz",
+      "gztam": 143
+    },
+    {
+      "ruta": "Gt_5400.enu",
+      "tam": 90,
+      "sha256": "67910e859f374bf7a087c743412e5afceb1e4bad264b62323449174c861882dc",
+      "gz": "67910e859f374bf7a087.gz",
+      "gztam": 79
+    },
+    {
+      "ruta": "Gt_5400.esp",
+      "tam": 146,
+      "sha256": "af6c003be05735ddffdabdd5e509c194245cd6aa701a665cac4dcaf2988dfd08",
+      "gz": "af6c003be05735ddffda.gz",
+      "gztam": 133
+    },
+    {
+      "ruta": "Gt_5400.fra",
+      "tam": 148,
+      "sha256": "74ff428bc90f6930c15e3ae0613f15e8a8958f18ce07f496b48bcdfeb4ce6185",
+      "gz": "74ff428bc90f6930c15e.gz",
+      "gztam": 134
+    },
+    {
+      "ruta": "Gt_5400.jpn",
+      "tam": 156,
+      "sha256": "7e2c5bedbc106c241ea9bda2dafe65e999e8878d2a9c37b0a2fbb50bd97aff84",
+      "gz": "7e2c5bedbc106c241ea9.gz",
+      "gztam": 141
+    },
+    {
+      "ruta": "Gt_5400.kor",
+      "tam": 110,
+      "sha256": "6b89c84a8606fa415d9d13844683a1799068a81deea62ff2c3698ad08f147ee5",
+      "gz": "6b89c84a8606fa415d9d.gz",
+      "gztam": 85
+    },
+    {
+      "ruta": "Helpindx.dat",
+      "tam": 8915,
+      "sha256": "827e10160b88c5c087e66de3041d3322fc51fdbb6813ba5aaba443f6d85cd5d3",
+      "gz": "827e10160b88c5c087e6.gz",
+      "gztam": 3201
+    },
+    {
+      "ruta": "INTLOC02.ENU",
+      "tam": 1736,
+      "sha256": "a83bbea1c88ba1009c38cfdff8f62c4ebd92a537247e0c6ef297f74ab5b5d06e",
+      "gz": "a83bbea1c88ba1009c38.gz",
+      "gztam": 951
+    },
+    {
+      "ruta": "INTLOC02.JPN",
+      "tam": 3320,
+      "sha256": "523a923e03cb85324653c4fe4c6db0cb6600baf4b683f5582bd4c0c4cd6a43e7",
+      "gz": "523a923e03cb85324653.gz",
+      "gztam": 1232
+    },
+    {
+      "ruta": "INTLOC02.KOR",
+      "tam": 1614,
+      "sha256": "b35cfe0de350ab28fc1ebbf8e4a0daab13ad8a30268357db81d0919a837530fd",
+      "gz": "b35cfe0de350ab28fc1e.gz",
+      "gztam": 992
+    },
+    {
+      "ruta": "INTLOC06.CHT",
+      "tam": 2190,
+      "sha256": "bdc9174aaf4b0581fed67d6b3d26cb3d22c61a7e586d577c0071538d55cbb865",
+      "gz": "bdc9174aaf4b0581fed6.gz",
+      "gztam": 1189
+    },
+    {
+      "ruta": "INTLOC06.ENU",
+      "tam": 2622,
+      "sha256": "7003a1bd2cf75b78c38d76210803fe0acd86f74b7294d1806f4f9b9c6bdbc596",
+      "gz": "7003a1bd2cf75b78c38d.gz",
+      "gztam": 1157
+    },
+    {
+      "ruta": "INTLOC06.JPN",
+      "tam": 4080,
+      "sha256": "b923450ba18a5636e6a4d4fee1421658c8f7917b2b48c3cbadbdc4c7b65b4e1c",
+      "gz": "b923450ba18a5636e6a4.gz",
+      "gztam": 1757
+    },
+    {
+      "ruta": "INTLOC06.KOR",
+      "tam": 3046,
+      "sha256": "e3367c117e562db834d3ddf231cc9e99312427b1aa4177d813de50ecd8f7ce57",
+      "gz": "e3367c117e562db834d3.gz",
+      "gztam": 1293
+    },
+    {
+      "ruta": "INTLOC10.CHT",
+      "tam": 30724,
+      "sha256": "3ffc126f7fdf83146a658449e0be517664c251c98edc0d8fee49a4bb9ff4d244",
+      "gz": "3ffc126f7fdf83146a65.gz",
+      "gztam": 14278
+    },
+    {
+      "ruta": "INTLOC10.ENU",
+      "tam": 37834,
+      "sha256": "78b2d0861866013239e166679412d4ad674750e2fedb6405c8f8a641a565db5d",
+      "gz": "78b2d0861866013239e1.gz",
+      "gztam": 12591
+    },
+    {
+      "ruta": "INTLOC10.JPN",
+      "tam": 39172,
+      "sha256": "4250d0fcf533fc75dce3caa1ade25f466f9431d247fb4935af6b744efd0a5e45",
+      "gz": "4250d0fcf533fc75dce3.gz",
+      "gztam": 13795
+    },
+    {
+      "ruta": "INTLOC10.KOR",
+      "tam": 41906,
+      "sha256": "10aad96a268f987168ab155edcf2594d0ccf9523b3e781bb97d4eb5c3466acbd",
+      "gz": "10aad96a268f987168ab.gz",
+      "gztam": 13378
+    },
+    {
+      "ruta": "Igrping.dll",
+      "tam": 20480,
+      "sha256": "cdb77abb556f73cbb643abe99af4d898533f244e9bbe86a11934960e54f8a073",
+      "gz": "cdb77abb556f73cbb643.gz",
+      "gztam": 2941
+    },
+    {
+      "ruta": "Intloc00.cht",
+      "tam": 8728,
+      "sha256": "1e0977493e7280a3d78896709a5c5d0ef090602bc53ed63b93d40e3d97a4d998",
+      "gz": "1e0977493e7280a3d788.gz",
+      "gztam": 4229
+    },
+    {
+      "ruta": "Intloc00.deu",
+      "tam": 11674,
+      "sha256": "5cc8dc3ec3f1d02c328d82b8497689ce93333d52606a31f8d5d040ec0b7a1267",
+      "gz": "5cc8dc3ec3f1d02c328d.gz",
+      "gztam": 4467
+    },
+    {
+      "ruta": "Intloc00.esp",
+      "tam": 10282,
+      "sha256": "0e7e5a3ba4c790b2ad9b8f6067db1f4d58f55b56bed8567e82beabe681d52a70",
+      "gz": "0e7e5a3ba4c790b2ad9b.gz",
+      "gztam": 4102
+    },
+    {
+      "ruta": "Intloc00.fra",
+      "tam": 11640,
+      "sha256": "21e6dbc3f3961d742397d8a9c4727c1d3e3401485f2f9ae368c4f6f0b71181cc",
+      "gz": "21e6dbc3f3961d742397.gz",
+      "gztam": 4352
+    },
+    {
+      "ruta": "Intloc00.jpn",
+      "tam": 11084,
+      "sha256": "f66699f53565f559e66629d80ae1def260155f7453996f2444ff75eab4c8fa66",
+      "gz": "f66699f53565f559e666.gz",
+      "gztam": 4168
+    },
+    {
+      "ruta": "Intloc00.kor",
+      "tam": 12360,
+      "sha256": "654f354950b63e2fa7129d3b5a5be09df2d092b0e559151792f72a294676003b",
+      "gz": "654f354950b63e2fa712.gz",
+      "gztam": 4682
+    },
+    {
+      "ruta": "Intloc01.cht",
+      "tam": 468,
+      "sha256": "45dcd04907ba418f754047db4ecc5e90d9faefe980014b1206e862b6bb1ef545",
+      "gz": "45dcd04907ba418f7540.gz",
+      "gztam": 313
+    },
+    {
+      "ruta": "Intloc01.deu",
+      "tam": 588,
+      "sha256": "ff6112327af15b3faa842852698cbf722aa9320d3b8e6ee911c1172479966781",
+      "gz": "ff6112327af15b3faa84.gz",
+      "gztam": 362
+    },
+    {
+      "ruta": "Intloc01.enu",
+      "tam": 464,
+      "sha256": "40a15469e8f80a1849a213b31fc70f2e9339328c73e51dc2d4a1a1f9703151f9",
+      "gz": "40a15469e8f80a1849a2.gz",
+      "gztam": 306
+    },
+    {
+      "ruta": "Intloc01.esp",
+      "tam": 500,
+      "sha256": "cfd737f07828e13ccb4fc4f1bfd710633e6a3716b27537a47f0a80d8fa1ea3f7",
+      "gz": "cfd737f07828e13ccb4f.gz",
+      "gztam": 329
+    },
+    {
+      "ruta": "Intloc01.fra",
+      "tam": 506,
+      "sha256": "346e4c9e704b1d574c308c92fe290b4480bab94851c9b47546c9ed4c8e2a7a6c",
+      "gz": "346e4c9e704b1d574c30.gz",
+      "gztam": 334
+    },
+    {
+      "ruta": "Intloc01.jpn",
+      "tam": 532,
+      "sha256": "a1133fe3320797d120b4a4c2c01f273893c8ac49c7ee24bc711386c685e67d2e",
+      "gz": "a1133fe3320797d120b4.gz",
+      "gztam": 348
+    },
+    {
+      "ruta": "Intloc01.kor",
+      "tam": 500,
+      "sha256": "64aa7e912349e4a3a86e632e52065f4af5a93fcce327f03da37f9129bf86401a",
+      "gz": "64aa7e912349e4a3a86e.gz",
+      "gztam": 334
+    },
+    {
+      "ruta": "Intloc02.cht",
+      "tam": 1574,
+      "sha256": "6f563e0462a0461241fea4ae0c45262c7d59f9bc2e85706a4de128f7a212d26e",
+      "gz": "6f563e0462a0461241fe.gz",
+      "gztam": 1044
+    },
+    {
+      "ruta": "Intloc02.deu",
+      "tam": 2094,
+      "sha256": "20a546e6a552c71b7c5a36bfc6def3cb73df1175c1dd8a79bc352820d1470f7a",
+      "gz": "20a546e6a552c71b7c5a.gz",
+      "gztam": 1115
+    },
+    {
+      "ruta": "Intloc02.esp",
+      "tam": 1972,
+      "sha256": "f6113f57393329efa10e4fec10d8f8e340e0dee11c99ac7c61ec55b3032e4153",
+      "gz": "f6113f57393329efa10e.gz",
+      "gztam": 1050
+    },
+    {
+      "ruta": "Intloc02.fra",
+      "tam": 2058,
+      "sha256": "b002201b946b452b5f26e99f2b3510a0a903c75b952c7cfe62a1f31eaf1798f3",
+      "gz": "b002201b946b452b5f26.gz",
+      "gztam": 1096
+    },
+    {
+      "ruta": "Intrface.def",
+      "tam": 414676,
+      "sha256": "60bc39836f4b68a375d01159f1d29aab0d960d46628ab8f63d74b9ede327948b",
+      "gz": "60bc39836f4b68a375d0.gz",
+      "gztam": 38246
+    },
+    {
+      "ruta": "Intro.cht",
+      "tam": 1354,
+      "sha256": "fb94779ca3755dbd61bca58b4abe670c189710928b4f3c69939569e62df04809",
+      "gz": "fb94779ca3755dbd61bc.gz",
+      "gztam": 1037
+    },
+    {
+      "ruta": "Intro.deu",
+      "tam": 1982,
+      "sha256": "86185ef50939438f6e9facac419ac7516b4e0534fc71ed9abb9b929d8993152c",
+      "gz": "86185ef50939438f6e9f.gz",
+      "gztam": 1174
+    },
+    {
+      "ruta": "Intro.enu",
+      "tam": 1816,
+      "sha256": "24798fd2ecc50e18a8d6fd3234a6ec9973f4079fb151a3b1ba2bcfec54cf5c87",
+      "gz": "24798fd2ecc50e18a8d6.gz",
+      "gztam": 1073
+    },
+    {
+      "ruta": "Intro.esp",
+      "tam": 1894,
+      "sha256": "51a4f32e468cb2e666d2989f1bd45f71c9e4a333d8a8556f016740e88a218d26",
+      "gz": "51a4f32e468cb2e666d2.gz",
+      "gztam": 1115
+    },
+    {
+      "ruta": "Intro.fra",
+      "tam": 1950,
+      "sha256": "3b55ddb6a9a26a54ec8e8ece74e052f0c815e78f72d5d7e967bfa1e6e3439415",
+      "gz": "3b55ddb6a9a26a54ec8e.gz",
+      "gztam": 1144
+    },
+    {
+      "ruta": "Intro.jpn",
+      "tam": 1636,
+      "sha256": "5763a9af0a8ae958c6817fcd5a16664bb4917d69da488ccddc4c6852bc3749cb",
+      "gz": "5763a9af0a8ae958c681.gz",
+      "gztam": 926
+    },
+    {
+      "ruta": "Intro.kor",
+      "tam": 1990,
+      "sha256": "4b36adca0f75acd9d7a2589db6872a4d0b1aa41a03d21be8e0063669e326d21b",
+      "gz": "4b36adca0f75acd9d7a2.gz",
+      "gztam": 1195
+    },
+    {
+      "ruta": "Keynames.txt",
+      "tam": 410,
+      "sha256": "8cba8885990796ea6300b09394d5fc4b70ee3660dbafd692e84f396dfc271a07",
+      "gz": "8cba8885990796ea6300.gz",
+      "gztam": 268
+    },
+    {
+      "ruta": "Langcode.iff",
+      "tam": 4612,
+      "sha256": "cae80cbe4ad853af71c031e68e1e408cae59f7806dd07b9590560250457b36c0",
+      "gz": "cae80cbe4ad853af71c0.gz",
+      "gztam": 1735
+    },
+    {
+      "ruta": "Login.cfg",
+      "tam": 227,
+      "sha256": "9114186953d48e5cba3cdba3caf17e8b46eced30520b8e9436069a1764990b51",
+      "gz": "9114186953d48e5cba3c.gz",
+      "gztam": 168
+    },
+    {
+      "ruta": "Macros.txt",
+      "tam": 1040,
+      "sha256": "0e44c97e0bb97c64365c1ab8e1bc5af8d28e93ddfcd1a38b0eee03ff61f82544",
+      "gz": "0e44c97e0bb97c64365c.gz",
+      "gztam": 326
+    },
+    {
+      "ruta": "MainMisc.uop",
+      "tam": 117702,
+      "sha256": "a68959f9cf84bf8a9bc400171fa3393eadb48b7f8e2e69cb56059757f1d4b185",
+      "gz": "a68959f9cf84bf8a9bc4.gz",
+      "gztam": 59793
+    },
+    {
+      "ruta": "MultiCollection.uop",
+      "tam": 568927,
+      "sha256": "905a81d578663fbbc061b2221bd5d150511ecce32469a4ccdeaa7e47f12fe8b1",
+      "gz": "905a81d578663fbbc061.gz",
+      "gztam": 400620
+    },
+    {
+      "ruta": "Multimap.rle",
+      "tam": 320056,
+      "sha256": "f5e20a50b9ee8a282f0b6563a0e625b2deed0d1a5f0438115d27455198484ccf",
+      "gz": "f5e20a50b9ee8a282f0b.gz",
+      "gztam": 170408
+    },
+    {
+      "ruta": "Music.def",
+      "tam": 7,
+      "sha256": "bfa505efd4e434104f2079356737ddf40b70c7b19a41aa67eeb89d600b88b921",
+      "gz": "bfa505efd4e434104f20.gz",
+      "gztam": 31
+    },
+    {
+      "ruta": "Music/Digital/ASkaranLullaby.mp3",
+      "tam": 2791444,
+      "sha256": "b0a873cf09532cb2d8138ef18d70c9cabd6b27f9c373fafd68d663ab01a27ab1",
+      "gz": "b0a873cf09532cb2d813.gz",
+      "gztam": 2764243
+    },
+    {
+      "ruta": "Music/Digital/Ambrosia.mp3",
+      "tam": 452648,
+      "sha256": "802e7f8f2ff24c8bae5fc6ab39bddfeec63e11f068689efe8c9bb0aabdd035c9",
+      "gz": "802e7f8f2ff24c8bae5f.gz",
+      "gztam": 447415
+    },
+    {
+      "ruta": "Music/Digital/AnvilStrikeInMinoc.mp3",
+      "tam": 1308212,
+      "sha256": "1195cf9291a8bdd9fe86b4471c003977762cd77cb86bc2f6a78f20cb7947bd48",
+      "gz": "1195cf9291a8bdd9fe86.gz",
+      "gztam": 1302493
+    },
+    {
+      "ruta": "Music/Digital/BattleOnStones.mp3",
+      "tam": 1489505,
+      "sha256": "835a50b28ef44691a3bd7e7f365e19af63370c5991e1b3b233116db9d2cb86b8",
+      "gz": "835a50b28ef44691a3bd.gz",
+      "gztam": 1479115
+    },
+    {
+      "ruta": "Music/Digital/BlackthornsMarch.mp3",
+      "tam": 1054302,
+      "sha256": "82c16544fcf05901710e8577b06b76db55a8acde51b35e1ad121b555405215f1",
+      "gz": "82c16544fcf05901710e.gz",
+      "gztam": 1049769
+    },
+    {
+      "ruta": "Music/Digital/Boattravel.mp3",
+      "tam": 147538,
+      "sha256": "e7fadfb513030d8f547f9f1b42fc41262ade3c44725d9a6b0b5cef77599aa7e2",
+      "gz": "e7fadfb513030d8f547f.gz",
+      "gztam": 145050
+    },
+    {
+      "ruta": "Music/Digital/Britain1.mp3",
+      "tam": 317230,
+      "sha256": "6a53597943e1fda83a8cb17b561d061dfca8cfe3cb73fdf613068726f75ca225",
+      "gz": "6a53597943e1fda83a8c.gz",
+      "gztam": 311554
+    },
+    {
+      "ruta": "Music/Digital/Britainpos.mp3",
+      "tam": 431123,
+      "sha256": "521d0d2c53788e5368a337fe5893625e57f115a42119fe90a3099a9a5ba41d1f",
+      "gz": "521d0d2c53788e5368a3.gz",
+      "gztam": 424339
+    },
+    {
+      "ruta": "Music/Digital/Bucsden.mp3",
+      "tam": 475845,
+      "sha256": "a031ce8dbfa4646ec55df2003f1047f067e4ef96708b1edeb493a6d5f0d3b7d8",
+      "gz": "a031ce8dbfa4646ec55d.gz",
+      "gztam": 470901
+    },
+    {
+      "ruta": "Music/Digital/Castle.mp3",
+      "tam": 1727971,
+      "sha256": "20d2fdbcceee77272cfe686589d0e6f94a16dd87dbfd8f7e4738d83ad477a54e",
+      "gz": "20d2fdbcceee77272cfe.gz",
+      "gztam": 1722736
+    },
+    {
+      "ruta": "Music/Digital/Citynightedit.mp3",
+      "tam": 1922611,
+      "sha256": "ba28554126145b4678e13d84152077c46cf19fd9e59370fd86b9705b3374d090",
+      "gz": "ba28554126145b4678e1.gz",
+      "gztam": 1893095
+    },
+    {
+      "ruta": "Music/Digital/CodexShrine.mp3",
+      "tam": 608131,
+      "sha256": "8b5cb17544d85c57e2067e02a3c10f96f7bcd5482950368ced6ad9cea5db815b",
+      "gz": "8b5cb17544d85c57e206.gz",
+      "gztam": 604348
+    },
+    {
+      "ruta": "Music/Digital/Config.txt",
+      "tam": 2031,
+      "sha256": "4c61af1f64bab5cc6cf86b8169d0dae95ea32223ab0e9d92d2ccb6aef24af077",
+      "gz": "4c61af1f64bab5cc6cf8.gz",
+      "gztam": 992
+    },
+    {
+      "ruta": "Music/Digital/ConversationWithGwenno.mp3",
+      "tam": 848980,
+      "sha256": "2e1cabf053e39ee1e0afc6887437fed4e4ca2cf40bdcf74d3b99559e3f5a6927",
+      "gz": "2e1cabf053e39ee1e0af.gz",
+      "gztam": 832301
+    },
+    {
+      "ruta": "Music/Digital/Cove.mp3",
+      "tam": 469994,
+      "sha256": "82a654ad6fef8c259192a21d55aee828cf4cb8c318d88142fd77b598f2c5d19d",
+      "gz": "82a654ad6fef8c259192.gz",
+      "gztam": 465269
+    },
+    {
+      "ruta": "Music/Digital/Deathtune.mp3",
+      "tam": 164256,
+      "sha256": "154c9e7137734e609ead6ad35ca4109f23745a0672739d5e74c0a39a058b062d",
+      "gz": "154c9e7137734e609ead.gz",
+      "gztam": 136818
+    },
+    {
+      "ruta": "Music/Digital/Docktown.mp3",
+      "tam": 629551,
+      "sha256": "02c4b92537512e92226be41c2dd2a854fe7c0d80ec0c5bdfcba788d02f9f9b08",
+      "gz": "02c4b92537512e92226b.gz",
+      "gztam": 617852
+    },
+    {
+      "ruta": "Music/Digital/Dragonshi.mp3",
+      "tam": 400194,
+      "sha256": "825b3e50715e312046e43243964841b9abafe8096d556ae162b0ff5223dcb820",
+      "gz": "825b3e50715e312046e4.gz",
+      "gztam": 396335
+    },
+    {
+      "ruta": "Music/Digital/Dragonslo.mp3",
+      "tam": 466859,
+      "sha256": "fd5e2034c3ef55229e0dad5e3865cc482e8c6b7d4f89c37043aa3e974929c3e5",
+      "gz": "fd5e2034c3ef55229e0d.gz",
+      "gztam": 461897
+    },
+    {
+      "ruta": "Music/Digital/Dungeon.mp3",
+      "tam": 464351,
+      "sha256": "16f294d4e28e3efc887712dca5029b8b1db2c87ce6c8cd5fc71432535d8babba",
+      "gz": "16f294d4e28e3efc8877.gz",
+      "gztam": 457498
+    },
+    {
+      "ruta": "Music/Digital/DungeonOutpost.mp3",
+      "tam": 1106463,
+      "sha256": "add8a55d8e1390dd9283905098e41b9f0222cce23bf20d2b1edaee206b4a93cc",
+      "gz": "add8a55d8e1390dd9283.gz",
+      "gztam": 1100683
+    },
+    {
+      "ruta": "Music/Digital/DupresNightInTrinsic.mp3",
+      "tam": 1416359,
+      "sha256": "5ad087b1f750aa753127b06ba7c49949c3e1e1264b10d2f36be3fd8971e90fb3",
+      "gz": "5ad087b1f750aa753127.gz",
+      "gztam": 1410604
+    },
+    {
+      "ruta": "Music/Digital/FayaxionAndTheSix.mp3",
+      "tam": 1353142,
+      "sha256": "099d21cc90e56df0dc9615417d1944ffd1846fff56decf96b9745047ae3a6bcd",
+      "gz": "099d21cc90e56df0dc96.gz",
+      "gztam": 1346652
+    },
+    {
+      "ruta": "Music/Digital/Festival.mp3",
+      "tam": 2063174,
+      "sha256": "088626cece0b5c8d0630c57c155d22018f2c2adc16867152342db2a2ae71066d",
+      "gz": "088626cece0b5c8d0630.gz",
+      "gztam": 2060158
+    },
+    {
+      "ruta": "Music/Digital/FlightOfTheNexus.mp3",
+      "tam": 1213126,
+      "sha256": "dc74968450a0a5a7cad31cddb727d4e3d2648ff94d3f0b707ce3ea96916dce4b",
+      "gz": "dc74968450a0a5a7cad3.gz",
+      "gztam": 1208533
+    },
+    {
+      "ruta": "Music/Digital/GalehavenJaunt.mp3",
+      "tam": 1483232,
+      "sha256": "cfcd46b5e47aff5c0d217d5ee4dc9b75571e52c99a7fb53f27d87f057485cf25",
+      "gz": "cfcd46b5e47aff5c0d21.gz",
+      "gztam": 1477460
+    },
+    {
+      "ruta": "Music/Digital/GargoyleQueen.mp3",
+      "tam": 659853,
+      "sha256": "b8222586902257a80e83dece49d719331bb3be7cb96f52442f714c3b950bc6f2",
+      "gz": "b8222586902257a80e83.gz",
+      "gztam": 657653
+    },
+    {
+      "ruta": "Music/Digital/Gargoyles.mp3",
+      "tam": 423809,
+      "sha256": "8e41c1d99adb8405ebe4ecacac7612d71414ce5f301191f3b5adfdc5b28cb404",
+      "gz": "8e41c1d99adb8405ebe4.gz",
+      "gztam": 419064
+    },
+    {
+      "ruta": "Music/Digital/GenericCombat.mp3",
+      "tam": 658286,
+      "sha256": "ba1f67786f12e83b87f92cb4315630add3c969356a9a2bf5d815fc014bb29864",
+      "gz": "ba1f67786f12e83b87f9.gz",
+      "gztam": 656145
+    },
+    {
+      "ruta": "Music/Digital/GoodEndGame.mp3",
+      "tam": 1028506,
+      "sha256": "60c9a99729dfe3bd2a0ee8046310974b12334e083750266dbdee174b10f07d68",
+      "gz": "60c9a99729dfe3bd2a0e.gz",
+      "gztam": 1016789
+    },
+    {
+      "ruta": "Music/Digital/GoodVsEvil.mp3",
+      "tam": 912313,
+      "sha256": "486191b9f58781c97c82178f5736a7e282fad90eaefa9251b3f118649d2f97d4",
+      "gz": "486191b9f58781c97c82.gz",
+      "gztam": 903374
+    },
+    {
+      "ruta": "Music/Digital/Goodevil.mp3",
+      "tam": 406255,
+      "sha256": "52777b0896956e8a13e74a313e0d42f9e71f937b65322795b09f191385aaa29d",
+      "gz": "52777b0896956e8a13e7.gz",
+      "gztam": 401618
+    },
+    {
+      "ruta": "Music/Digital/GreatEarthSerpentsTheme.mp3",
+      "tam": 1015748,
+      "sha256": "c58fa4b2e02e9004d420557d304405e7751e23689e8f6b37d9e48cf65ef520ab",
+      "gz": "c58fa4b2e02e9004d420.gz",
+      "gztam": 1004154
+    },
+    {
+      "ruta": "Music/Digital/Holycity.mp3",
+      "tam": 652016,
+      "sha256": "3b64d65f5d45a07bc5009f745fbed159f504f64b2d7346d58d0bc9828c9ee3b5",
+      "gz": "3b64d65f5d45a07bc500.gz",
+      "gztam": 647470
+    },
+    {
+      "ruta": "Music/Digital/Honor.mp3",
+      "tam": 1768073,
+      "sha256": "2d26cd086fd4f84e16d2ed8cecac67e9c85538093b3d48f642d262c848f5e853",
+      "gz": "2d26cd086fd4f84e16d2.gz",
+      "gztam": 1756694
+    },
+    {
+      "ruta": "Music/Digital/HumanLevel.mp3",
+      "tam": 652539,
+      "sha256": "6140c3e538d6a7be6f5dacc8c3ed3040f65a69cad8bd166cb0e6b064ae1405a3",
+      "gz": "6140c3e538d6a7be6f5d.gz",
+      "gztam": 650152
+    },
+    {
+      "ruta": "Music/Digital/Humanoids.mp3",
+      "tam": 504475,
+      "sha256": "a4a79cb6c3f451116050cb9e2fd8fac3dd04bc9818079eec103a6698712ba468",
+      "gz": "a4a79cb6c3f451116050.gz",
+      "gztam": 497490
+    },
+    {
+      "ruta": "Music/Digital/HumanoidsU9.mp3",
+      "tam": 599258,
+      "sha256": "93ea4795e2e35959e1984078c0963213b43af5407bcacb0bd6b37da679c451aa",
+      "gz": "93ea4795e2e35959e198.gz",
+      "gztam": 592984
+    },
+    {
+      "ruta": "Music/Digital/Jhelom.mp3",
+      "tam": 293406,
+      "sha256": "9ee43ae09a46a3cd680118a983b178a998912bb04bb88602be07b82ff9b46a2b",
+      "gz": "9ee43ae09a46a3cd6801.gz",
+      "gztam": 290597
+    },
+    {
+      "ruta": "Music/Digital/JhelomToArms.mp3",
+      "tam": 1041240,
+      "sha256": "5babecb0d27a020455a9a291b98631d3a61104e4653f71e669df5e4fa8217e31",
+      "gz": "5babecb0d27a020455a9.gz",
+      "gztam": 1036632
+    },
+    {
+      "ruta": "Music/Digital/Lbc.mp3",
+      "tam": 142732,
+      "sha256": "232f40f24a7a600647c6158a766c45937fa764f4c04431b4df76840941c5957e",
+      "gz": "232f40f24a7a600647c6.gz",
+      "gztam": 138867
+    },
+    {
+      "ruta": "Music/Digital/Linelle.mp3",
+      "tam": 288808,
+      "sha256": "e630719278e2572e04ce2f72ef970054a042899ed0c66e9ed798087d7fee7bde",
+      "gz": "e630719278e2572e04ce.gz",
+      "gztam": 284372
+    },
+    {
+      "ruta": "Music/Digital/LoginLoop.mp3",
+      "tam": 628506,
+      "sha256": "66b651bc472b9b48abe3f87fb5850232e87d33e0a89579a9f5cae40009d41f0b",
+      "gz": "66b651bc472b9b48abe3.gz",
+      "gztam": 625843
+    },
+    {
+      "ruta": "Music/Digital/Medieval.mp3",
+      "tam": 2415077,
+      "sha256": "b08f6315447a3c93d58561a3e06e8462e12b2778bb598bafded8cb9a3256a5d3",
+      "gz": "b08f6315447a3c93d585.gz",
+      "gztam": 2409686
+    },
+    {
+      "ruta": "Music/Digital/MidnightInYew.mp3",
+      "tam": 1364114,
+      "sha256": "bfd5a7e93772f5bbac69d3f22e634cb95a717b3e53771f96ab3420bec49d6c9f",
+      "gz": "bfd5a7e93772f5bbac69.gz",
+      "gztam": 1357945
+    },
+    {
+      "ruta": "Music/Digital/MinocNegative.mp3",
+      "tam": 549736,
+      "sha256": "bf2eb05a4b24102609fd5559371aec72c304fc5583ec1dde41db55f57b0b84f7",
+      "gz": "bf2eb05a4b24102609fd.gz",
+      "gztam": 543960
+    },
+    {
+      "ruta": "Music/Digital/Minocpos.mp3",
+      "tam": 532061,
+      "sha256": "d0bc5ae86b392cbd6f9610fd2bd478fe37205a1d456a5d9101ad39a56ac12969",
+      "gz": "d0bc5ae86b392cbd6f96.gz",
+      "gztam": 524308
+    },
+    {
+      "ruta": "Music/Digital/MoonglowSonata.mp3",
+      "tam": 2082481,
+      "sha256": "ccd606a6d39b74a8e6dd38ff10b879ee972cde70f74d734c71ae7ff92acc73d6",
+      "gz": "ccd606a6d39b74a8e6dd.gz",
+      "gztam": 2067296
+    },
+    {
+      "ruta": "Music/Digital/Moonglowpos.mp3",
+      "tam": 482532,
+      "sha256": "26609a919db9692eaea4a756efd8f3cf87e5c952b2f95fb80a98732b8ab0f395",
+      "gz": "26609a919db9692eaea4.gz",
+      "gztam": 473364
+    },
+    {
+      "ruta": "Music/Digital/NewMaginciaMarch.mp3",
+      "tam": 1026089,
+      "sha256": "f9884efad319b3bee147eff31617e31ea4bf2c8e0e1f95178d71aee0eafcf206",
+      "gz": "f9884efad319b3bee147.gz",
+      "gztam": 1021407
+    },
+    {
+      "ruta": "Music/Digital/Newmagincia.mp3",
+      "tam": 499878,
+      "sha256": "b5fec9730290bd8f590d2f44c7605f2d73b45031a70ba8ad114e9672404f98b6",
+      "gz": "b5fec9730290bd8f590d.gz",
+      "gztam": 493939
+    },
+    {
+      "ruta": "Music/Digital/NorthernForestBattleonStones.mp3",
+      "tam": 1546971,
+      "sha256": "fbcc1a32d9e7eac6691ad5f626e3322f252201966e791a5145a48458f670f2d8",
+      "gz": "fbcc1a32d9e7eac6691a.gz",
+      "gztam": 1542510
+    },
+    {
+      "ruta": "Music/Digital/Nujelm.mp3",
+      "tam": 434676,
+      "sha256": "315dea88c38e8127ce7fb40a2e33deeddcd2b64e1ac0bd233b16463748363aab",
+      "gz": "315dea88c38e8127ce7f.gz",
+      "gztam": 428119
+    },
+    {
+      "ruta": "Music/Digital/NujelmWaltz.mp3",
+      "tam": 1358889,
+      "sha256": "9f97dc153c9cb19a82ac0b9ffbf8e5848053006e5f27d92c2766736c19534bde",
+      "gz": "9f97dc153c9cb19a82ac.gz",
+      "gztam": 1350994
+    },
+    {
+      "ruta": "Music/Digital/Overlordv2.mp3",
+      "tam": 784926,
+      "sha256": "6dc195840db24bdc5ca5951af6a9c4411a663e549cd7a8dc2dfb5178b1376e1f",
+      "gz": "6dc195840db24bdc5ca5.gz",
+      "gztam": 773608
+    },
+    {
+      "ruta": "Music/Digital/Paws.mp3",
+      "tam": 914393,
+      "sha256": "9d58ed5c95a8814e29dc1cf8c1b4807d4fc20dd3ab7145328f1cc02fa475164e",
+      "gz": "9d58ed5c95a8814e29dc.gz",
+      "gztam": 905566
+    },
+    {
+      "ruta": "Music/Digital/PrimevalLich.mp3",
+      "tam": 658286,
+      "sha256": "cad6659832a436920bcc129f4d5c34a5a8f7f91532f5a027888d070296a58f4c",
+      "gz": "cad6659832a436920bcc.gz",
+      "gztam": 656156
+    },
+    {
+      "ruta": "Music/Digital/Pubtune.mp3",
+      "tam": 388910,
+      "sha256": "0de07f79c308873fba74649191eff16d3913ce4df870ca5a1cfd015a78805393",
+      "gz": "0de07f79c308873fba74.gz",
+      "gztam": 383599
+    },
+    {
+      "ruta": "Music/Digital/QueenPalace.mp3",
+      "tam": 606041,
+      "sha256": "0551f1323850286b9e52a1b95cd6f20f0a29c766515b3b41e09408ef8895a6cb",
+      "gz": "0551f1323850286b9e52.gz",
+      "gztam": 603371
+    },
+    {
+      "ruta": "Music/Digital/RoyalCity.mp3",
+      "tam": 666645,
+      "sha256": "2a148f9e330e89fb2c2c5f58112ad4c8fa57a6c6826b17b262b2d7630ad46b8e",
+      "gz": "2a148f9e330e89fb2c2c.gz",
+      "gztam": 662750
+    },
+    {
+      "ruta": "Music/Digital/Scarabreapos.mp3",
+      "tam": 385357,
+      "sha256": "3dfc255dc2a06f4040cbd9666a5805e962a4ed13e9f19410cbcd4834e8ca5e4b",
+      "gz": "3dfc255dc2a06f4040cb.gz",
+      "gztam": 380756
+    },
+    {
+      "ruta": "Music/Digital/SelimsBar.mp3",
+      "tam": 1752804,
+      "sha256": "853ae91e214857a7800cd1001c300c636ea28bb09852a127069a52fc2705f3ac",
+      "gz": "853ae91e214857a7800c.gz",
+      "gztam": 1735009
+    },
+    {
+      "ruta": "Music/Digital/SherrysSong.mp3",
+      "tam": 1529730,
+      "sha256": "b469b2a86f8bb2637f0ff913b64ea4c062afb88ede8b36056c90996413f0a309",
+      "gz": "b469b2a86f8bb2637f0f.gz",
+      "gztam": 1520958
+    },
+    {
+      "ruta": "Music/Digital/SlasherVeil.mp3",
+      "tam": 656196,
+      "sha256": "cb9a31505e5223a113fac33ec21bd4590b19b9acf18d5414da71a9e3c0208684",
+      "gz": "cb9a31505e5223a113fa.gz",
+      "gztam": 652919
+    },
+    {
+      "ruta": "Music/Digital/StarlightInBritain.mp3",
+      "tam": 1345828,
+      "sha256": "8ede2a9b7cdb06a9e32816b263de47ca38c8f54c0e280dad18634b6f8c106b9c",
+      "gz": "8ede2a9b7cdb06a9e328.gz",
+      "gztam": 1340484
+    },
+    {
+      "ruta": "Music/Digital/Stones.mp3",
+      "tam": 1861798,
+      "sha256": "bf7ccd1f8c766f5623163dd9733d70994f0a2dac45a8b45cc02d4208318e39b1",
+      "gz": "bf7ccd1f8c766f562316.gz",
+      "gztam": 1419078
+    },
+    {
+      "ruta": "Music/Digital/Stones1.mp3",
+      "tam": 1087528,
+      "sha256": "2773da94d629fd836dec0f1c1bbf0ac7b1fe14bd1f9bc7e0afdd9baa8c99b53f",
+      "gz": "2773da94d629fd836dec.gz",
+      "gztam": 1067983
+    },
+    {
+      "ruta": "Music/Digital/StygianAbyss.mp3",
+      "tam": 622237,
+      "sha256": "2cec30d8b851a2f5c466ffb194ca252af71f92d47eb34de11cb9a4d9e5a834e3",
+      "gz": "2cec30d8b851a2f5c466.gz",
+      "gztam": 615713
+    },
+    {
+      "ruta": "Music/Digital/StygianDragon.mp3",
+      "tam": 644702,
+      "sha256": "9003f3f7aa1e3cac9889c74228910682ab112afadc529aa1734d1aadb9e77998",
+      "gz": "9003f3f7aa1e3cac9889.gz",
+      "gztam": 642793
+    },
+    {
+      "ruta": "Music/Digital/Taiko.mp3",
+      "tam": 1819584,
+      "sha256": "6c85ace46bc7523cdf2d4d86624129f0a1ef6e00fdf50ab25720b816438fe86b",
+      "gz": "6c85ace46bc7523cdf2d.gz",
+      "gztam": 1802428
+    },
+    {
+      "ruta": "Music/Digital/Tavern1.mp3",
+      "tam": 180975,
+      "sha256": "43c2781b94274bec137fc138f5a0abc3f3ca0407c9fe4fcb166c66f94f7fca08",
+      "gz": "43c2781b94274bec137f.gz",
+      "gztam": 177916
+    },
+    {
+      "ruta": "Music/Digital/Tavern2.mp3",
+      "tam": 147120,
+      "sha256": "004fd9d6461333efff5958c5be4ba23eaa373cfb54165a99a31b6cd943c526bf",
+      "gz": "004fd9d6461333efff59.gz",
+      "gztam": 144532
+    },
+    {
+      "ruta": "Music/Digital/Tavern3.mp3",
+      "tam": 147747,
+      "sha256": "b4f70d574899790fbbad5638b5eb4d540a291eb60e2d00cbbfcd461a9e8a24a7",
+      "gz": "b4f70d574899790fbbad.gz",
+      "gztam": 144486
+    },
+    {
+      "ruta": "Music/Digital/TheVesperMist.mp3",
+      "tam": 1242906,
+      "sha256": "9366e543424b5a509209c15cccddb88f583f151d7f5893aa69c48c068f61c627",
+      "gz": "9366e543424b5a509209.gz",
+      "gztam": 1237015
+    },
+    {
+      "ruta": "Music/Digital/TheWanderer.mp3",
+      "tam": 2003824,
+      "sha256": "9e6aa817958e04a2e99c991062b7b9dfa5bd498f246b7389dabba3f4836a1b4e",
+      "gz": "9e6aa817958e04a2e99c.gz",
+      "gztam": 1978965
+    },
+    {
+      "ruta": "Music/Digital/TokunoDungeon.mp3",
+      "tam": 711365,
+      "sha256": "661db702715514792030ceeb069bf2021f553e674a764697d10920ef56dd5788",
+      "gz": "661db702715514792030.gz",
+      "gztam": 702159
+    },
+    {
+      "ruta": "Music/Digital/Townlife.mp3",
+      "tam": 2783002,
+      "sha256": "589bbaacb3be43a6d430a58ac5bcfde5f0b17ea007c4a6ec695905ced0a6d17b",
+      "gz": "589bbaacb3be43a6d430.gz",
+      "gztam": 2725311
+    },
+    {
+      "ruta": "Music/Digital/Trinsicpos.mp3",
+      "tam": 490474,
+      "sha256": "4b5fc0cafc70ca0fd87db08da48c83baab1b46ed7b32a554953239ec4f80ecea",
+      "gz": "4b5fc0cafc70ca0fd87d.gz",
+      "gztam": 485894
+    },
+    {
+      "ruta": "Music/Digital/Turfin.mp3",
+      "tam": 385566,
+      "sha256": "13af1df7a81745561e3d749d2ff7e77291c86805b58c384e34819f79b8244d25",
+      "gz": "13af1df7a81745561e3d.gz",
+      "gztam": 378465
+    },
+    {
+      "ruta": "Music/Digital/UltimaVIISerpentIsleCombat.mp3",
+      "tam": 2282586,
+      "sha256": "d60207713636fb64113b7c76f4ee037fa2adc5067d2560ffc88a324694343971",
+      "gz": "d60207713636fb64113b.gz",
+      "gztam": 2258321
+    },
+    {
+      "ruta": "Music/Digital/ValoriaShips.mp3",
+      "tam": 946167,
+      "sha256": "36d5841d1b8fc2ec3653fda15c617ec8d4aeabfe93749678a4abe151dd0a08de",
+      "gz": "36d5841d1b8fc2ec3653.gz",
+      "gztam": 939326
+    },
+    {
+      "ruta": "Music/Digital/Valoriapos.mp3",
+      "tam": 448887,
+      "sha256": "73e669fc0f11f165bc9505d1e736918fb02db94a77902e07cde518edbcad4b9b",
+      "gz": "73e669fc0f11f165bc95.gz",
+      "gztam": 444416
+    },
+    {
+      "ruta": "Music/Digital/Vesper1.mp3",
+      "tam": 295705,
+      "sha256": "a967b19828f9ecd1e16786751c1836d130b1f2bbaf2b5b6f4357ed583ad1f9e4",
+      "gz": "a967b19828f9ecd1e167.gz",
+      "gztam": 290369
+    },
+    {
+      "ruta": "Music/Digital/Victory.mp3",
+      "tam": 141896,
+      "sha256": "8764c409d8fa966c8f800271c283e961f557ab5ab9dfb0e0c600ad88255b204c",
+      "gz": "8764c409d8fa966c8f80.gz",
+      "gztam": 139238
+    },
+    {
+      "ruta": "Music/Digital/Void.mp3",
+      "tam": 645224,
+      "sha256": "20d34f03f1ad8d6e8a97a817acb6d11012a4f62b7e5450d020845cc4871ce87d",
+      "gz": "20d34f03f1ad8d6e8a97.gz",
+      "gztam": 641951
+    },
+    {
+      "ruta": "Music/Digital/Walking.mp3",
+      "tam": 2751215,
+      "sha256": "0ca3c37b00e7c4214015848318d6e5cbcc5c066722c70ca3bdc21b666ab68529",
+      "gz": "0ca3c37b00e7c4214015.gz",
+      "gztam": 2533119
+    },
+    {
+      "ruta": "Music/Digital/Yew1.mp3",
+      "tam": 282539,
+      "sha256": "dc499d079eebac2448c37c4eaed349a2981d3640395f1339c3f616d5118dafb1",
+      "gz": "dc499d079eebac2448c3.gz",
+      "gztam": 276202
+    },
+    {
+      "ruta": "Music/Digital/Yewpos.mp3",
+      "tam": 480652,
+      "sha256": "5429ad047cc89865bb67f05fd9132084713b914537d7d7034d15019638de0681",
+      "gz": "5429ad047cc89865bb67.gz",
+      "gztam": 471444
+    },
+    {
+      "ruta": "Music/Digital/Zento.mp3",
+      "tam": 1187421,
+      "sha256": "a604419bc70168ecaad464289ffa7232ab45beca30a227034ba75ff141c5a3d6",
+      "gz": "a604419bc70168ecaad4.gz",
+      "gztam": 1172770
+    },
+    {
+      "ruta": "Music/Digital/dread_horn_area.mp3",
+      "tam": 4803523,
+      "sha256": "ec78d21fad8dc3ec3540e9d6e82bd9c4872e609fecb957f68cd5206d33d8dcfc",
+      "gz": "ec78d21fad8dc3ec3540.gz",
+      "gztam": 4799881
+    },
+    {
+      "ruta": "Music/Digital/elf_city_1.mp3",
+      "tam": 12857596,
+      "sha256": "230c426261528e39f708fb1edfda9210aca3fdaf6421c8584e12fcc267676b81",
+      "gz": "230c426261528e39f708.gz",
+      "gztam": 12851260
+    },
+    {
+      "ruta": "Music/Digital/grizzle_dungeon.mp3",
+      "tam": 4807702,
+      "sha256": "dad8c9c26238a55211c5d67bbedfd3070b2416e18bc505f0dd9bb2906dcbb949",
+      "gz": "dad8c9c26238a55211c5.gz",
+      "gztam": 4802784
+    },
+    {
+      "ruta": "Music/Digital/melisandes_lair.mp3",
+      "tam": 4803523,
+      "sha256": "f3764e035f67defbd16ff9298c8657cb26f86aa6ae778688736966d89b9609e5",
+      "gz": "f3764e035f67defbd16f.gz",
+      "gztam": 4796317
+    },
+    {
+      "ruta": "Music/Digital/paroxysmus_lair.mp3",
+      "tam": 4806657,
+      "sha256": "d71bd900b27130b0a7e1ffe658da0c6b3734fd649c6dbb3286172ac6ca714741",
+      "gz": "d71bd900b27130b0a7e1.gz",
+      "gztam": 4793873
+    },
+    {
+      "ruta": "Music/Intro.bik",
+      "tam": 30779652,
+      "sha256": "240c88c723ec30ca0fc1d131145a2fb6c265f1698139ace8fe9c14d01ec520c4",
+      "gz": "240c88c723ec30ca0fc1.gz",
+      "gztam": 29368077
+    },
+    {
+      "ruta": "OPTNUOTD.CHT",
+      "tam": 6724,
+      "sha256": "24f5436ee2a7931acaf6b55d6e3df3fadff23ff64ae5f121bd91879cd20cf56e",
+      "gz": "24f5436ee2a7931acaf6.gz",
+      "gztam": 2558
+    },
+    {
+      "ruta": "OPTNUOTD.DEU",
+      "tam": 5450,
+      "sha256": "8c664942e71c502c1f50e89e8dfce17e030a8c07e5846ce703d6959f4d1caf1d",
+      "gz": "8c664942e71c502c1f50.gz",
+      "gztam": 2370
+    },
+    {
+      "ruta": "OPTNUOTD.ENU",
+      "tam": 4982,
+      "sha256": "ce66ef0e0712263eea481792ea27de7e2cfd412e8016042e30dd95df584b53f4",
+      "gz": "ce66ef0e0712263eea48.gz",
+      "gztam": 2116
+    },
+    {
+      "ruta": "OPTNUOTD.ESP",
+      "tam": 5572,
+      "sha256": "2c03556e7c21ff3b62dd0955fe1e867d79ce4a9ab3ecb9820976c5a0238b0f57",
+      "gz": "2c03556e7c21ff3b62dd.gz",
+      "gztam": 2413
+    },
+    {
+      "ruta": "OPTNUOTD.FRA",
+      "tam": 5480,
+      "sha256": "c5c8cd40c2684b8e760f4c97de0174a2b8694a07e47b5a41ad7eee6866f7b2c6",
+      "gz": "c5c8cd40c2684b8e760f.gz",
+      "gztam": 2375
+    },
+    {
+      "ruta": "OPTNUOTD.JPN",
+      "tam": 6184,
+      "sha256": "7f16c9b324dde5d8273c7b03acdccdc35fde15a4b9dc3ba68f9f13d98dcc5e41",
+      "gz": "7f16c9b324dde5d8273c.gz",
+      "gztam": 2317
+    },
+    {
+      "ruta": "OPTNUOTD.KOR",
+      "tam": 6758,
+      "sha256": "9ab7f6d0dd795e7e5b23c90c64848203ce7a98d479032c928791097cf8ed140c",
+      "gz": "9ab7f6d0dd795e7e5b23.gz",
+      "gztam": 2536
+    },
+    {
+      "ruta": "Obscene.lst",
+      "tam": 61,
+      "sha256": "597ef436ebfccdf3ff339ee7c56893662c7bdcaca08d5933e1c9e0631cce5225",
+      "gz": "597ef436ebfccdf3ff33.gz",
+      "gztam": 77
+    },
+    {
+      "ruta": "Owo.exe",
+      "tam": 73728,
+      "sha256": "9d4af73194cadab9fe06a6367b624f4641aedabd1c420b08d1e5828405a5367d",
+      "gz": "9d4af73194cadab9fe06.gz",
+      "gztam": 38312
+    },
+    {
+      "ruta": "Patchw32.dll",
+      "tam": 202240,
+      "sha256": "19486800845b74be3487f1319d6f249ce85e8b47df586dd8e9b9cbb46875ae93",
+      "gz": "19486800845b74be3487.gz",
+      "gztam": 107810
+    },
+    {
+      "ruta": "Prof.txt",
+      "tam": 2149,
+      "sha256": "bec323eefa57bd47391a48bc57d5d5b451c7b269fa4dcbcf987ab51532432c81",
+      "gz": "bec323eefa57bd47391a.gz",
+      "gztam": 551
+    },
+    {
+      "ruta": "Professn.cht",
+      "tam": 6388,
+      "sha256": "754d8f643ff26fbcf336fa1c00efdc4aae92f9562ce207f8fd0f77c64327ebd1",
+      "gz": "754d8f643ff26fbcf336.gz",
+      "gztam": 4124
+    },
+    {
+      "ruta": "Professn.deu",
+      "tam": 12598,
+      "sha256": "1c2e794fddd4d0bef1bfdf8b0e2f2715d73ca5f3897b1fb5cb81b8267024c098",
+      "gz": "1c2e794fddd4d0bef1bf.gz",
+      "gztam": 5152
+    },
+    {
+      "ruta": "Professn.enu",
+      "tam": 11256,
+      "sha256": "3da9be1912b7029b4ee4ad23af4addc5a717a8f1ee542c64aacf1b5d69bbb9bd",
+      "gz": "3da9be1912b7029b4ee4.gz",
+      "gztam": 4622
+    },
+    {
+      "ruta": "Professn.esp",
+      "tam": 11882,
+      "sha256": "a1192f1e60ce04c6e29619bfec27757e188df621d9e9527c4a8c629555ec67d3",
+      "gz": "a1192f1e60ce04c6e296.gz",
+      "gztam": 4682
+    },
+    {
+      "ruta": "Professn.fra",
+      "tam": 13350,
+      "sha256": "bd67c87c99b67eacc6cdd59dc96bf0ee5c8ac3d92735e8c94d2e5e6211fc0280",
+      "gz": "bd67c87c99b67eacc6cd.gz",
+      "gztam": 5129
+    },
+    {
+      "ruta": "Professn.jpn",
+      "tam": 9578,
+      "sha256": "bae8ea1e8ed93ea27f73e437e020243af68730675cc6331feb899a95952c8936",
+      "gz": "bae8ea1e8ed93ea27f73.gz",
+      "gztam": 4578
+    },
+    {
+      "ruta": "Professn.kor",
+      "tam": 10726,
+      "sha256": "e6cc1ab21ac466f6594837e7be897f3f7d58470e059cb3abb65d5a93f0880323",
+      "gz": "e6cc1ab21ac466f65948.gz",
+      "gztam": 4645
+    },
+    {
+      "ruta": "SDL2.dll",
+      "tam": 1364480,
+      "sha256": "b3516903e97055caf9450a723833835d6d8dcb2024526f3fc0f3a0b216974a2c",
+      "gz": "b3516903e97055caf945.gz",
+      "gztam": 544253
+    },
+    {
+      "ruta": "SDL2_image.dll",
+      "tam": 229376,
+      "sha256": "6cf3ef42225f9cb039b68e463ee86af6acf2373a82cd5a7ef2cdee308146be76",
+      "gz": "6cf3ef42225f9cb039b6.gz",
+      "gztam": 128873
+    },
+    {
+      "ruta": "SDL2_ttf.dll",
+      "tam": 1461760,
+      "sha256": "0b89721770517616e178907966c0135d9153918a9e5e2a8c52904cbf1e26dc12",
+      "gz": "0b89721770517616e178.gz",
+      "gztam": 731521
+    },
+    {
+      "ruta": "SKILL16.CHT",
+      "tam": 626,
+      "sha256": "fbcadadc375972b04c34560b42ea3b2767eaf4616b8354d996b3ab0b26b7bb5d",
+      "gz": "fbcadadc375972b04c34.gz",
+      "gztam": 409
+    },
+    {
+      "ruta": "SKILL16.ENU",
+      "tam": 648,
+      "sha256": "3ba94adace989f3e97f8e387f1fc4a2e4ee3a88eff5b37459cf239cc4a6daa69",
+      "gz": "3ba94adace989f3e97f8.gz",
+      "gztam": 379
+    },
+    {
+      "ruta": "SKILL16.JPN",
+      "tam": 612,
+      "sha256": "5476df00c327b9366fd188582041ffccac9eccd6d781050ed8ed2275dd3f20b1",
+      "gz": "5476df00c327b9366fd1.gz",
+      "gztam": 401
+    },
+    {
+      "ruta": "SKILL16.KOR",
+      "tam": 706,
+      "sha256": "38f21e680aff6087e91872d0ed2216f1da725f570d07e7a62a8c1c02a84e16a4",
+      "gz": "38f21e680aff6087e918.gz",
+      "gztam": 449
+    },
+    {
+      "ruta": "SKILL30.CHT",
+      "tam": 370,
+      "sha256": "01458c5ed0be9da736e0bd1c9a71bdebf638b41b96582ccdecdaeaececadaf95",
+      "gz": "01458c5ed0be9da736e0.gz",
+      "gztam": 314
+    },
+    {
+      "ruta": "SKILL30.ENU",
+      "tam": 422,
+      "sha256": "326aac0752a118362b452a40829c2f5db057d640e055f9db48bbee785ae3685b",
+      "gz": "326aac0752a118362b45.gz",
+      "gztam": 309
+    },
+    {
+      "ruta": "SKILL30.JPN",
+      "tam": 376,
+      "sha256": "9dd6ce89ea7ac5c002b9227925990106724fdd90088c3a4f3757966876c0deea",
+      "gz": "9dd6ce89ea7ac5c002b9.gz",
+      "gztam": 296
+    },
+    {
+      "ruta": "SKILL30.KOR",
+      "tam": 448,
+      "sha256": "069af9da54a92f90dc4f645afaeafb37d0d1e7585869c5e6974976fe1480c393",
+      "gz": "069af9da54a92f90dc4f.gz",
+      "gztam": 352
+    },
+    {
+      "ruta": "SKILNAME.ENU",
+      "tam": 654,
+      "sha256": "ba6f552f4fc1cfbd12dccf410b61593552634bf560ad62042f8b2a18ba131fe7",
+      "gz": "ba6f552f4fc1cfbd12dc.gz",
+      "gztam": 413
+    },
+    {
+      "ruta": "SKILNAME.JPN",
+      "tam": 448,
+      "sha256": "2947df6849eb8b49edaa87174ccf582d03dcadcca90523765d0c9c983c8762b7",
+      "gz": "2947df6849eb8b49edaa.gz",
+      "gztam": 403
+    },
+    {
+      "ruta": "SKILNAME.KOR",
+      "tam": 492,
+      "sha256": "8169b293134365dcc3700fd846a010f9430dfc1ba059cd92d6e4e62cce6342c1",
+      "gz": "8169b293134365dcc370.gz",
+      "gztam": 422
+    },
+    {
+      "ruta": "Skilname.cht",
+      "tam": 526,
+      "sha256": "fa658ea5d88fa55e1fe492afd1d921d0df38ce0137d74121f5f16c460c8786f9",
+      "gz": "fa658ea5d88fa55e1fe4.gz",
+      "gztam": 382
+    },
+    {
+      "ruta": "Skilname.deu",
+      "tam": 698,
+      "sha256": "bf7ad307373b8bfbf0ee2639668906572349acbc9b78d8a5ad2873e06b233307",
+      "gz": "bf7ad307373b8bfbf0ee.gz",
+      "gztam": 454
+    },
+    {
+      "ruta": "Skilname.esp",
+      "tam": 628,
+      "sha256": "3cb9a71c29a3522e89f6a60e263fbd85527338672a90ed667de37dd9cf170a6c",
+      "gz": "3cb9a71c29a3522e89f6.gz",
+      "gztam": 416
+    },
+    {
+      "ruta": "Skilname.fra",
+      "tam": 586,
+      "sha256": "8bec97f8049b76534ed3d91250e070c2b592f3b55ed730b6d68f62cc457f769e",
+      "gz": "8bec97f8049b76534ed3.gz",
+      "gztam": 400
+    },
+    {
+      "ruta": "Sound.def",
+      "tam": 10249,
+      "sha256": "ab80e0243dea9d28fa0cb780c538bc144c614ee275370bbaecff95d8b183461e",
+      "gz": "ab80e0243dea9d28fa0c.gz",
+      "gztam": 2682
+    },
+    {
+      "ruta": "TexTerr.def",
+      "tam": 5112,
+      "sha256": "6e5440326e5c813028b1c78e87631cc042ab0661ff180cbf89f565d314fd7825",
+      "gz": "6e5440326e5c813028b1.gz",
+      "gztam": 1180
+    },
+    {
+      "ruta": "Tile1024.txt",
+      "tam": 11902,
+      "sha256": "e11812f888d5cb65e8975df34d321efa3557b5fa7182a148660965efbc0af5d1",
+      "gz": "e11812f888d5cb65e897.gz",
+      "gztam": 3065
+    },
+    {
+      "ruta": "Tile256.txt",
+      "tam": 14219,
+      "sha256": "c21b438c36467d29ed28d2426d0e68f220406dfee10680eccfe45fb09d65409f",
+      "gz": "c21b438c36467d29ed28.gz",
+      "gztam": 3192
+    },
+    {
+      "ruta": "Tilehelp.cht",
+      "tam": 19988,
+      "sha256": "62af5dc90a11d1dcae725395083adc3135035647903db880739634bc98b4db6f",
+      "gz": "62af5dc90a11d1dcae72.gz",
+      "gztam": 8889
+    },
+    {
+      "ruta": "Tilehelp.deu",
+      "tam": 34832,
+      "sha256": "fdc0e0e0e7c41ae927a90c43dbad3cf64466f8e009b4a7d150ef495daec86d1a",
+      "gz": "fdc0e0e0e7c41ae927a9.gz",
+      "gztam": 10655
+    },
+    {
+      "ruta": "Tilehelp.enu",
+      "tam": 27086,
+      "sha256": "d4de5b6804bca37d49c23da66303669396f7431cab4961245f0339f946a027f0",
+      "gz": "d4de5b6804bca37d49c2.gz",
+      "gztam": 9020
+    },
+    {
+      "ruta": "Tilehelp.esp",
+      "tam": 28058,
+      "sha256": "1c7fd41c4c31e217ffc65583889a76bd4faa8a1b6da405c2f7cd18820cd2da67",
+      "gz": "1c7fd41c4c31e217ffc6.gz",
+      "gztam": 9370
+    },
+    {
+      "ruta": "Tilehelp.fra",
+      "tam": 29038,
+      "sha256": "dc7261d73b7c772123043672e528541ccb01156246bfd71ae472689a18a332f9",
+      "gz": "dc7261d73b7c77212304.gz",
+      "gztam": 9565
+    },
+    {
+      "ruta": "Tilehelp.jpn",
+      "tam": 21742,
+      "sha256": "8715a7b832ee4cf7b58f0fe93540129ebad5191bbb4f4a3ed46f8ca066259127",
+      "gz": "8715a7b832ee4cf7b58f.gz",
+      "gztam": 7919
+    },
+    {
+      "ruta": "Tilehelp.kor",
+      "tam": 26024,
+      "sha256": "cabb84bcd35d30e62c68ab8e33f9197fe9c494815c7e93ab926b2f5e46a3ec9e",
+      "gz": "cabb84bcd35d30e62c68.gz",
+      "gztam": 9273
+    },
+    {
+      "ruta": "Tooltips.cht",
+      "tam": 1518,
+      "sha256": "0d9f5fab6b49ff66b7d97bd6c2f7b11fdc3dc241a6de32f796a39751862a750c",
+      "gz": "0d9f5fab6b49ff66b7d9.gz",
+      "gztam": 664
+    },
+    {
+      "ruta": "Tooltips.deu",
+      "tam": 1762,
+      "sha256": "2463103d8e8a34c32dd263786a07e6d314ab86597a0f91861becc2e2f9296391",
+      "gz": "2463103d8e8a34c32dd2.gz",
+      "gztam": 737
+    },
+    {
+      "ruta": "Tooltips.enu",
+      "tam": 1448,
+      "sha256": "ea41e845a57cac83c85e619ba96206f8e31d4f1f867012d2c3c3c676b1de40a0",
+      "gz": "ea41e845a57cac83c85e.gz",
+      "gztam": 596
+    },
+    {
+      "ruta": "Tooltips.esp",
+      "tam": 1690,
+      "sha256": "60bc3a59a8d570bc67c309dcee86063adf5cd9642a6395941ffc325652d11cc2",
+      "gz": "60bc3a59a8d570bc67c3.gz",
+      "gztam": 688
+    },
+    {
+      "ruta": "Tooltips.fra",
+      "tam": 1794,
+      "sha256": "5c6e56f22096e2890bc5f7591291b28c7c3b0b6126c074a6a68dba73e5dea02e",
+      "gz": "5c6e56f22096e2890bc5.gz",
+      "gztam": 735
+    },
+    {
+      "ruta": "Tooltips.jpn",
+      "tam": 1240,
+      "sha256": "81ea9f5776688e553de1aa69a6c53f54418dcf9e880adaac5d60b2ee9c8a164d",
+      "gz": "81ea9f5776688e553de1.gz",
+      "gztam": 686
+    },
+    {
+      "ruta": "Tooltips.kor",
+      "tam": 2152,
+      "sha256": "e1e2b7cd7a69ff0dbf6b2bee31a7dc70996060cfe92883d91f8830d770e51860",
+      "gz": "e1e2b7cd7a69ff0dbf6b.gz",
+      "gztam": 791
+    },
+    {
+      "ruta": "Transerv.exe",
+      "tam": 59904,
+      "sha256": "36cb9e331e09b8d63b246e49875347ed693c3d9ab81953bf28ec17d110fb90d0",
+      "gz": "36cb9e331e09b8d63b24.gz",
+      "gztam": 28934
+    },
+    {
+      "ruta": "UO-patch.cfg",
+      "tam": 780,
+      "sha256": "936d7c98fad0ea290a74fb9dcdc11b506491af27d353ad21f358c539ed58f69d",
+      "gz": "936d7c98fad0ea290a74.gz",
+      "gztam": 293
+    },
+    {
+      "ruta": "UO.bin",
+      "tam": 583256,
+      "sha256": "422c8fbbbe2105c4486bea88c9a6dea27a0e07d233ebd96f3f659143f3d83417",
+      "gz": "422c8fbbbe2105c4486b.gz",
+      "gztam": 283868
+    },
+    {
+      "ruta": "UO.exe",
+      "tam": 583256,
+      "sha256": "422c8fbbbe2105c4486bea88c9a6dea27a0e07d233ebd96f3f659143f3d83417",
+      "gz": "422c8fbbbe2105c4486b.gz",
+      "gztam": 283868
+    },
+    {
+      "ruta": "UO.exe.manifest",
+      "tam": 551,
+      "sha256": "51e1759297609aa396a83eb4ce1db8f662b754fdd9e0b32acaf02130d3863ffc",
+      "gz": "51e1759297609aa396a8.gz",
+      "gztam": 317
+    },
+    {
+      "ruta": "UOPatch.exe",
+      "tam": 73728,
+      "sha256": "8ec46f4be79d16a4688f4705ff948d7794f10f2d0d9558c1fea4631c5b256a63",
+      "gz": "8ec46f4be79d16a4688f.gz",
+      "gztam": 34481
+    },
+    {
+      "ruta": "Uo.cfg",
+      "tam": 612,
+      "sha256": "dca109af7ad7f8afd15124a7659f858e21424803844d4fc0a7b5989082d3845a",
+      "gz": "dca109af7ad7f8afd151.gz",
+      "gztam": 343
+    },
+    {
+      "ruta": "Uobscene.lst",
+      "tam": 1048,
+      "sha256": "82e067e387d8d265edb2fa41cf1a1c91d1ed120ca715bf6fe5200d56a4968ce9",
+      "gz": "82e067e387d8d265edb2.gz",
+      "gztam": 391
+    },
+    {
+      "ruta": "Uomax.cfg",
+      "tam": 528,
+      "sha256": "6199efff819de0d4c090c7b3fa8de06a3649ccad0bd93fe35283a96f7b182461",
+      "gz": "6199efff819de0d4c090.gz",
+      "gztam": 289
+    },
+    {
+      "ruta": "Uoreg.cfg",
+      "tam": 545,
+      "sha256": "cc6a35de0d79bdfaace36cc8b721c374c466af00cb52163fbe36a5a9cf5350f9",
+      "gz": "cc6a35de0d79bdfaace3.gz",
+      "gztam": 296
+    },
+    {
+      "ruta": "Uoupg.cfg",
+      "tam": 331,
+      "sha256": "811e4009b5a2158cb94db126fb717a7894f6907d7c26a91a6dd55c2719009e39",
+      "gz": "811e4009b5a2158cb94d.gz",
+      "gztam": 176
+    },
+    {
+      "ruta": "Version.dat",
+      "tam": 4,
+      "sha256": "20833032bd75eeab4f3227d41e580f40113fe548da70f117edd9beae52e61f12",
+      "gz": "20833032bd75eeab4f32.gz",
+      "gztam": 28
+    },
+    {
+      "ruta": "Version.txt",
+      "tam": 9,
+      "sha256": "7745124819e6aa6c3ac9187de19cf859b5df50988af6c6dbe9a4f5a4a2ec3c40",
+      "gz": "7745124819e6aa6c3ac9.gz",
+      "gztam": 33
+    },
+    {
+      "ruta": "anim.idx",
+      "tam": 1785720,
+      "sha256": "64adf0ba0fb47019ec5d0a233819605c8fb15a156bc5c19db790c13a22adfbed",
+      "gz": "64adf0ba0fb47019ec5d.gz",
+      "gztam": 223135
+    },
+    {
+      "ruta": "anim.mul",
+      "tam": 194950053,
+      "sha256": "2d890d6b79dc9f05398f192ef07c3aabc4cf42b680ea2dc966a0a270da683d9a",
+      "gz": "2d890d6b79dc9f05398f.gz",
+      "gztam": 126653683
+    },
+    {
+      "ruta": "anim2.idx",
+      "tam": 779100,
+      "sha256": "4ccc46f740eb609361181cd0c1af108e0876f366e011c4de05de890ae8e368d7",
+      "gz": "4ccc46f740eb60936118.gz",
+      "gztam": 64966
+    },
+    {
+      "ruta": "anim2.mul",
+      "tam": 212120796,
+      "sha256": "ff19f79463dcbaa861b3c3a225fc7f2b74b6fbb12f8d4a7728c65274eacc5707",
+      "gz": "ff19f79463dcbaa861b3.gz",
+      "gztam": 138302384
+    },
+    {
+      "ruta": "anim3.idx",
+      "tam": 1558200,
+      "sha256": "a487e99439849f152a54f64acd6f4e7e8a14e6f8eb6ee35ac660d8b9a7e03d2e",
+      "gz": "a487e99439849f152a54.gz",
+      "gztam": 112321
+    },
+    {
+      "ruta": "anim3.mul",
+      "tam": 151108798,
+      "sha256": "305d2ba3923447a749b4caf120713935d4b3ff89c7c149cd0ca1faa3449fccb7",
+      "gz": "305d2ba3923447a749b4.gz",
+      "gztam": 90304903
+    },
+    {
+      "ruta": "anim4.idx",
+      "tam": 1016400,
+      "sha256": "7ebf2fbb3d0fc3bc901c6d20175b2fbcc8e84b30e370e43c222df2d0c94c7d58",
+      "gz": "7ebf2fbb3d0fc3bc901c.gz",
+      "gztam": 133928
+    },
+    {
+      "ruta": "anim4.mul",
+      "tam": 102667178,
+      "sha256": "97803b7fa973076e46f77a7591af073e43a454f7cb12efe8799ad3941295bfb1",
+      "gz": "97803b7fa973076e46f7.gz",
+      "gztam": 61104155
+    },
+    {
+      "ruta": "anim5.idx",
+      "tam": 951300,
+      "sha256": "81baa1623188c969e4b2db5df6ad3385e72ebbc0b18feb62eee87b84a2085db9",
+      "gz": "81baa1623188c969e4b2.gz",
+      "gztam": 75577
+    },
+    {
+      "ruta": "anim5.mul",
+      "tam": 99973041,
+      "sha256": "82904b8d295445182a494abc513c4021fb805b0ae25021fc7247a3bdd6606aae",
+      "gz": "82904b8d295445182a49.gz",
+      "gztam": 79131989
+    },
+    {
+      "ruta": "anim6.idx",
+      "tam": 949200,
+      "sha256": "95d7f8a09aace7f1da7e489ed27058e9b988de8aad630351f266e24670f8374b",
+      "gz": "95d7f8a09aace7f1da7e.gz",
+      "gztam": 90777
+    },
+    {
+      "ruta": "anim6.mul",
+      "tam": 48762346,
+      "sha256": "918976721e944c73109cc50b6ee4e35adcbc46428bbbe5edd402a184c22cec1d",
+      "gz": "918976721e944c73109c.gz",
+      "gztam": 33236737
+    },
+    {
+      "ruta": "animdata.mul",
+      "tam": 4486748,
+      "sha256": "70191185ee77435040a9841cf227365d95a31b99903cd61b5597c5ad2562d371",
+      "gz": "70191185ee77435040a9.gz",
+      "gztam": 10556
+    },
+    {
+      "ruta": "animinfo.mul",
+      "tam": 4000,
+      "sha256": "c6ab4c1d615a638221fd1f81e5d31db34820a1cfb8ef18c1c5b4e1c3554c434a",
+      "gz": "c6ab4c1d615a638221fd.gz",
+      "gztam": 44
+    },
+    {
+      "ruta": "art.def",
+      "tam": 11266,
+      "sha256": "9cd4dc579cb66ee26e10c3713332a607e061c047c0781958eca0d678886faa48",
+      "gz": "9cd4dc579cb66ee26e10.gz",
+      "gztam": 2857
+    },
+    {
+      "ruta": "art.mul",
+      "tam": 168166110,
+      "sha256": "8a35bc54e4e05418a53f9bcee493a8a1494581a52f16930ee63ae0659d93cf2d",
+      "gz": "8a35bc54e4e05418a53f.gz",
+      "gztam": 63074116
+    },
+    {
+      "ruta": "artLegacyMUL.uop",
+      "tam": 156654403,
+      "sha256": "b35c5e234622ade14e581361519a8d61974cca6b493f8b68f95c5b9ac29f1e1a",
+      "gz": "b35c5e234622ade14e58.gz",
+      "gztam": 84305220
+    },
+    {
+      "ruta": "artidx.mul",
+      "tam": 982608,
+      "sha256": "0186fdaf719505afa6a02682f5a646af37c9ef18f99f8707504e1be07a6e54ef",
+      "gz": "0186fdaf719505afa6a0.gz",
+      "gztam": 213588
+    },
+    {
+      "ruta": "client.exe",
+      "tam": 3616768,
+      "sha256": "6eefcdc345fcfd54da00d63045b5b753d51ecd8b90e30c414fcf14a6f5929b80",
+      "gz": "6eefcdc345fcfd54da00.gz",
+      "gztam": 1717691
+    },
+    {
+      "ruta": "client_beta.exe",
+      "tam": 4984320,
+      "sha256": "374c3c8c253fb5afa38e49d3aa0223fa041425168fa82459909b027b691ef62e",
+      "gz": "374c3c8c253fb5afa38e.gz",
+      "gztam": 2331602
+    },
+    {
+      "ruta": "client_tc.exe",
+      "tam": 3325952,
+      "sha256": "6507e703b0ae65fa7ba174f53f86317ac3b736f0b12c1a8e86240b4cb03b5146",
+      "gz": "6507e703b0ae65fa7ba1.gz",
+      "gztam": 1600578
+    },
+    {
+      "ruta": "dbghelp.dll",
+      "tam": 940032,
+      "sha256": "412f6c0ed936316275e68e21df7255e4e35fad14e114e479e8c5c9d75ecac88c",
+      "gz": "412f6c0ed936316275e6.gz",
+      "gztam": 434898
+    },
+    {
+      "ruta": "desktop.nwb",
+      "tam": 164,
+      "sha256": "cf605f27ab175ffef44bb618d72d014222d14109b28ddb77884562ce55826c88",
+      "gz": "cf605f27ab175ffef44b.gz",
+      "gztam": 120
+    },
+    {
+      "ruta": "doors.txt",
+      "tam": 2437,
+      "sha256": "eaef95839e2bf7b75e7e82891996eaba982e402345b1507f524c01e18a702334",
+      "gz": "eaef95839e2bf7b75e7e.gz",
+      "gztam": 990
+    },
+    {
+      "ruta": "facet00.mul",
+      "tam": 12216710,
+      "sha256": "14c496f799aeae6cf2366e7583a2fe052b10a2d5372a75c3e7b32fad860bc5f0",
+      "gz": "14c496f799aeae6cf236.gz",
+      "gztam": 4038457
+    },
+    {
+      "ruta": "facet01.mul",
+      "tam": 12214226,
+      "sha256": "89f5eb34350b671978decd8d399eb07fc2bc5033c90548825534be81405f1c7e",
+      "gz": "89f5eb34350b671978de.gz",
+      "gztam": 4032196
+    },
+    {
+      "ruta": "facet02.mul",
+      "tam": 2391218,
+      "sha256": "69a9af0750ad884a1c0893556cd4ed4aba3208ae43e40b8a8641bd42e8b059d6",
+      "gz": "69a9af0750ad884a1c08.gz",
+      "gztam": 760353
+    },
+    {
+      "ruta": "facet03.mul",
+      "tam": 1540203,
+      "sha256": "c5e0f80d316eb6616c4865b853581a613b666da1f15c2fa43bb0f95165c58b15",
+      "gz": "c5e0f80d316eb6616c48.gz",
+      "gztam": 498673
+    },
+    {
+      "ruta": "facet04.mul",
+      "tam": 823137,
+      "sha256": "09609bb4459519fc58d75b78246a606aa59e13c2957f136a1faca986b53ebc7b",
+      "gz": "09609bb4459519fc58d7.gz",
+      "gztam": 272830
+    },
+    {
+      "ruta": "facet05.mul",
+      "tam": 1850459,
+      "sha256": "e659d00439940b482704c30153f6f47cf1347b42ec60bfbcec61b62831590515",
+      "gz": "e659d00439940b482704.gz",
+      "gztam": 588920
+    },
+    {
+      "ruta": "floors.txt",
+      "tam": 5700,
+      "sha256": "4ce9866766583f947365120ba7bd2cde304b4add6668bf4cf9667e27d94c6f1b",
+      "gz": "4ce9866766583f947365.gz",
+      "gztam": 2245
+    },
+    {
+      "ruta": "fonts.mul",
+      "tam": 884909,
+      "sha256": "793b73a293b490c54c15618edd66a84670449e17ce778093c6fe056f8a2298bc",
+      "gz": "793b73a293b490c54c15.gz",
+      "gztam": 40724
+    },
+    {
+      "ruta": "gamegen.txt",
+      "tam": 11,
+      "sha256": "04573bda88f391b42f3035828bcb00331e26652da5952b8d4dee1d0c2cb216eb",
+      "gz": "04573bda88f391b42f30.gz",
+      "gztam": 35
+    },
+    {
+      "ruta": "glew32.dll",
+      "tam": 424960,
+      "sha256": "c087c55e2b1f12c1528ecda97a55cc74ed0a8073bf1f35e52b4957138e8c5704",
+      "gz": "c087c55e2b1f12c1528e.gz",
+      "gztam": 132891
+    },
+    {
+      "ruta": "gump.def",
+      "tam": 1369,
+      "sha256": "2b2fcaf377614604337d5da3acfe511df435236559ace1e77c24c9c19b466775",
+      "gz": "2b2fcaf377614604337d.gz",
+      "gztam": 646
+    },
+    {
+      "ruta": "gumpartLegacyMUL.uop",
+      "tam": 83051569,
+      "sha256": "54c1704c793d720a967cca618dcd096b99ba51b98872b5401f83f6feaea2fae4",
+      "gz": "54c1704c793d720a967c.gz",
+      "gztam": 81659636
+    },
+    {
+      "ruta": "hues.mul",
+      "tam": 265500,
+      "sha256": "37e50418e65af6cf3ac30af70c32238578b321a11b6af90583fca600aeefa268",
+      "gz": "37e50418e65af6cf3ac3.gz",
+      "gztam": 101500
+    },
+    {
+      "ruta": "intloc00.enu",
+      "tam": 9648,
+      "sha256": "bd1037c479e49edcf856b577f252de8cf82d23bd8f6feb9764cede5c24b3a797",
+      "gz": "bd1037c479e49edcf856.gz",
+      "gztam": 3979
+    },
+    {
+      "ruta": "intloc11.enu",
+      "tam": 358,
+      "sha256": "3a88378452ab1be9d7b65e5619c6c2615cdafd62a17bc7b05e4dbc822ce023c2",
+      "gz": "3a88378452ab1be9d7b6.gz",
+      "gztam": 255
+    },
+    {
+      "ruta": "light.mul",
+      "tam": 2910700,
+      "sha256": "fa766be0fbd6626ac6b98e3cca025a907ecd89b060c8daac01f998cd2db14af8",
+      "gz": "fa766be0fbd6626ac6b9.gz",
+      "gztam": 355982
+    },
+    {
+      "ruta": "lightidx.mul",
+      "tam": 1200,
+      "sha256": "3bedae724e5f7fb75e678a5445bacc38e4b1fed082e5d298cb34486bfcfcde75",
+      "gz": "3bedae724e5f7fb75e67.gz",
+      "gztam": 351
+    },
+    {
+      "ruta": "map0LegacyMUL.uop",
+      "tam": 89965542,
+      "sha256": "770a4f20baaf193be4daf72bcf4b3acc1f1181fbd65e25ff6c5d2e156e1354d2",
+      "gz": "770a4f20baaf193be4da.gz",
+      "gztam": 17100098
+    },
+    {
+      "ruta": "map0xLegacyMUL.uop",
+      "tam": 89923808,
+      "sha256": "e1e5b11bbc17dc585d1f32592866e806f86718633ff484231d812d6ce1885ad6",
+      "gz": "e1e5b11bbc17dc585d1f.gz",
+      "gztam": 17135477
+    },
+    {
+      "ruta": "map1LegacyMUL.uop",
+      "tam": 89965543,
+      "sha256": "a086ff0a76ed5cfec429f73d86715897414a375298a494e72be12fcb10ea8a5a",
+      "gz": "a086ff0a76ed5cfec429.gz",
+      "gztam": 16934171
+    },
+    {
+      "ruta": "map1xLegacyMUL.uop",
+      "tam": 89965543,
+      "sha256": "76e4cfe046ce34201811bd43dd9ae1a27ee9421af2546b0497565e4431849df8",
+      "gz": "76e4cfe046ce34201811.gz",
+      "gztam": 16935198
+    },
+    {
+      "ruta": "map2LegacyMUL.uop",
+      "tam": 11326368,
+      "sha256": "1a3778af3ceecfa92157d7479825b2eff38a76ad9a0c0e593fa85d12030f809f",
+      "gz": "1a3778af3ceecfa92157.gz",
+      "gztam": 3036948
+    },
+    {
+      "ruta": "map2xLegacyMUL.uop",
+      "tam": 11326368,
+      "sha256": "5863d2ab90f6b82f363414861b25f807e62acab9e0be31087f50307495584cb7",
+      "gz": "5863d2ab90f6b82f3634.gz",
+      "gztam": 3036143
+    },
+    {
+      "ruta": "map3.mul",
+      "tam": 16056320,
+      "sha256": "2f0d7febf668dddd1788118c1d6c1b0b199bf6f4b81d688ff3594f3ecd78c958",
+      "gz": "2f0d7febf668dddd1788.gz",
+      "gztam": 2612976
+    },
+    {
+      "ruta": "map3LegacyMUL.uop",
+      "tam": 16093906,
+      "sha256": "127823ed1a8553c0955d81d2868ed80402a895e97ffa450ecce6dee194595046",
+      "gz": "127823ed1a8553c0955d.gz",
+      "gztam": 3465398
+    },
+    {
+      "ruta": "map4LegacyMUL.uop",
+      "tam": 6456971,
+      "sha256": "52879006959d28ddebc274c6e0ea3483bec1bb9260bc05f1db77e734fa5c27bb",
+      "gz": "52879006959d28ddebc2.gz",
+      "gztam": 1660297
+    },
+    {
+      "ruta": "map5LegacyMUL.uop",
+      "tam": 16093905,
+      "sha256": "1a6da9e8f3e3558cbfe111d66d0cbfd7a574ed62a90166324b59a91bf5f88d16",
+      "gz": "1a6da9e8f3e3558cbfe1.gz",
+      "gztam": 2884202
+    },
+    {
+      "ruta": "map5xLegacyMUL.uop",
+      "tam": 16093905,
+      "sha256": "b3f168bd37d43da900259f3b4c8eccd468b8e359ffff1f6dd8b107e33ec361cb",
+      "gz": "b3f168bd37d43da90025.gz",
+      "gztam": 2885255
+    },
+    {
+      "ruta": "mft.myp",
+      "tam": 1630612,
+      "sha256": "43212da591ce497ddf9f20e67971e6e3bd78b899901b08ba6bbf7f79594cbb79",
+      "gz": "43212da591ce497ddf9f.gz",
+      "gztam": 1597710
+    },
+    {
+      "ruta": "misc.txt",
+      "tam": 6818,
+      "sha256": "e4d2c6f271234de2c85c1f5c4066c1324b328cdec20f2692f844aac159a05149",
+      "gz": "e4d2c6f271234de2c85c.gz",
+      "gztam": 2465
+    },
+    {
+      "ruta": "mobtypes.txt",
+      "tam": 45509,
+      "sha256": "dafc9829a5933ee27f41ad8fc08e394603901b5f1bfd2eb0bcb769ff4f1ddf57",
+      "gz": "dafc9829a5933ee27f41.gz",
+      "gztam": 9814
+    },
+    {
+      "ruta": "multi.idx",
+      "tam": 101760,
+      "sha256": "4e28b9631b5e3143b5a77d923f5896246cf114bdad2dd5952e7c22b9899180e0",
+      "gz": "4e28b9631b5e3143b5a7.gz",
+      "gztam": 2993
+    },
+    {
+      "ruta": "multi.mul",
+      "tam": 994832,
+      "sha256": "2a26f4def2f030ec7f96057fc98a2a59fac1561848f59a3e45f477a5e1f8b7a0",
+      "gz": "2a26f4def2f030ec7f96.gz",
+      "gztam": 128828
+    },
+    {
+      "ruta": "notes/english/button.jpg",
+      "tam": 1575,
+      "sha256": "2d1b70e32bd07d6ccf59b8ada57bbc67585b82b1a0b539c93cab86233345ef28",
+      "gz": "2d1b70e32bd07d6ccf59.gz",
+      "gztam": 1506
+    },
+    {
+      "ruta": "notes/english/button_read-more.gif",
+      "tam": 1270,
+      "sha256": "c77e0cdf7e9a2441fd129350bb640ad1b07d7a352987d834d21df17e9db17d87",
+      "gz": "c77e0cdf7e9a2441fd12.gz",
+      "gztam": 1150
+    },
+    {
+      "ruta": "notes/english/noteBanner.jpg",
+      "tam": 16250,
+      "sha256": "fbdd3aee87b0f93167ba278ef9c00e52ac0446bf10d2d5a21ed8816d76230a98",
+      "gz": "fbdd3aee87b0f93167ba.gz",
+      "gztam": 16238
+    },
+    {
+      "ruta": "notes/english/notes.css",
+      "tam": 2143,
+      "sha256": "87a079b9696fa5964558a0a775b122fd5653d182ce44dff64c6bf31428c67755",
+      "gz": "87a079b9696fa5964558.gz",
+      "gztam": 515
+    },
+    {
+      "ruta": "notes/english/patcher.css",
+      "tam": 6856,
+      "sha256": "3f586b94857914ada4d82e709dd05961847e5927d4de538f9a4fd8c6b0973de8",
+      "gz": "3f586b94857914ada4d8.gz",
+      "gztam": 1536
+    },
+    {
+      "ruta": "notes/english/patcher_ad.jpg",
+      "tam": 33182,
+      "sha256": "bd58d814bff4caec8028b9a3f36d5d2fdd0265300f3790db6cacc38830a587dc",
+      "gz": "bd58d814bff4caec8028.gz",
+      "gztam": 32782
+    },
+    {
+      "ruta": "notes/english/patcher_bg-main.jpg",
+      "tam": 17752,
+      "sha256": "6eae74cb4496c7ec5f19a0c75cdd0bfe06ecd3ed1df2012025cf611f88d87ac0",
+      "gz": "6eae74cb4496c7ec5f19.gz",
+      "gztam": 15621
+    },
+    {
+      "ruta": "notes/english/patcher_bg-main_with-ad-border.jpg",
+      "tam": 16969,
+      "sha256": "a72cfd62b70fc938c7304d3bb5364ff15be36863ff75dced2ed7f167a55a331d",
+      "gz": "a72cfd62b70fc938c730.gz",
+      "gztam": 14795
+    },
+    {
+      "ruta": "notes/english/patcher_bg-tile.jpg",
+      "tam": 39550,
+      "sha256": "152fb853fbb4bde980588d4ad7a246987460ef46802cc3ee7f61a549979baff4",
+      "gz": "152fb853fbb4bde98058.gz",
+      "gztam": 39518
+    },
+    {
+      "ruta": "notes/english/patchnotes.xsl",
+      "tam": 3561,
+      "sha256": "c0065fce6f05b6627cbbadce6db37190301f24223ac849c460be0142b5114df5",
+      "gz": "c0065fce6f05b6627cbb.gz",
+      "gztam": 805
+    },
+    {
+      "ruta": "notes/english/readme.html",
+      "tam": 2096,
+      "sha256": "8714b1f92aaa796862ebd8a86035dd807d1c0298ac1bac2e23a33b42eb6bf8bd",
+      "gz": "8714b1f92aaa796862eb.gz",
+      "gztam": 882
+    },
+    {
+      "ruta": "notes/english/readme.xml",
+      "tam": 44714,
+      "sha256": "f3291279929f7c06489fbc8ff97e869095e65ffdec6c33e8fa00692216f5091f",
+      "gz": "f3291279929f7c06489f.gz",
+      "gztam": 6869
+    },
+    {
+      "ruta": "notes/english/readme_files/colorschememapping.xml",
+      "tam": 313,
+      "sha256": "4a01b543e17223e3bfc083514697119854e7d6231398e266ee567bd2219e590e",
+      "gz": "4a01b543e17223e3bfc0.gz",
+      "gztam": 215
+    },
+    {
+      "ruta": "notes/english/readme_files/filelist.xml",
+      "tam": 204,
+      "sha256": "4a2dac9ba011f0e7d021ebcea0c09afd8051eb8ba54598d44ce9fc831217cf1c",
+      "gz": "4a2dac9ba011f0e7d021.gz",
+      "gztam": 154
+    },
+    {
+      "ruta": "notes/english/readme_files/themedata.thmx",
+      "tam": 3081,
+      "sha256": "6e6b9d1eedb553723a40059b12d6148506dbc52eb959da5f01ba45a256925f05",
+      "gz": "6e6b9d1eedb553723a40.gz",
+      "gztam": 2749
+    },
+    {
+      "ruta": "notes/english/util.js",
+      "tam": 512,
+      "sha256": "f228a1c6d4b209d9d88129932614705f26bb361749cb07a43937da3c7e24d939",
+      "gz": "f228a1c6d4b209d9d881.gz",
+      "gztam": 230
+    },
+    {
+      "ruta": "notes/japanese/button.jpg",
+      "tam": 1575,
+      "sha256": "2d1b70e32bd07d6ccf59b8ada57bbc67585b82b1a0b539c93cab86233345ef28",
+      "gz": "2d1b70e32bd07d6ccf59.gz",
+      "gztam": 1506
+    },
+    {
+      "ruta": "notes/japanese/button_read-more.gif",
+      "tam": 1270,
+      "sha256": "c77e0cdf7e9a2441fd129350bb640ad1b07d7a352987d834d21df17e9db17d87",
+      "gz": "c77e0cdf7e9a2441fd12.gz",
+      "gztam": 1150
+    },
+    {
+      "ruta": "notes/japanese/noteBanner.jpg",
+      "tam": 16250,
+      "sha256": "fbdd3aee87b0f93167ba278ef9c00e52ac0446bf10d2d5a21ed8816d76230a98",
+      "gz": "fbdd3aee87b0f93167ba.gz",
+      "gztam": 16238
+    },
+    {
+      "ruta": "notes/japanese/notes.css",
+      "tam": 2143,
+      "sha256": "87a079b9696fa5964558a0a775b122fd5653d182ce44dff64c6bf31428c67755",
+      "gz": "87a079b9696fa5964558.gz",
+      "gztam": 515
+    },
+    {
+      "ruta": "notes/japanese/patcher.css",
+      "tam": 6856,
+      "sha256": "3f586b94857914ada4d82e709dd05961847e5927d4de538f9a4fd8c6b0973de8",
+      "gz": "3f586b94857914ada4d8.gz",
+      "gztam": 1536
+    },
+    {
+      "ruta": "notes/japanese/patcher_ad.jpg",
+      "tam": 33182,
+      "sha256": "bd58d814bff4caec8028b9a3f36d5d2fdd0265300f3790db6cacc38830a587dc",
+      "gz": "bd58d814bff4caec8028.gz",
+      "gztam": 32782
+    },
+    {
+      "ruta": "notes/japanese/patcher_bg-main.jpg",
+      "tam": 17752,
+      "sha256": "6eae74cb4496c7ec5f19a0c75cdd0bfe06ecd3ed1df2012025cf611f88d87ac0",
+      "gz": "6eae74cb4496c7ec5f19.gz",
+      "gztam": 15621
+    },
+    {
+      "ruta": "notes/japanese/patcher_bg-main_with-ad-border.jpg",
+      "tam": 16969,
+      "sha256": "a72cfd62b70fc938c7304d3bb5364ff15be36863ff75dced2ed7f167a55a331d",
+      "gz": "a72cfd62b70fc938c730.gz",
+      "gztam": 14795
+    },
+    {
+      "ruta": "notes/japanese/patcher_bg-tile.jpg",
+      "tam": 39550,
+      "sha256": "152fb853fbb4bde980588d4ad7a246987460ef46802cc3ee7f61a549979baff4",
+      "gz": "152fb853fbb4bde98058.gz",
+      "gztam": 39518
+    },
+    {
+      "ruta": "notes/japanese/patchnote.gif",
+      "tam": 748,
+      "sha256": "8a4d0e276fcae61f91d4b46b59e2d833ed87dd3e830fcd59cac8d89887c5bfeb",
+      "gz": "8a4d0e276fcae61f91d4.gz",
+      "gztam": 743
+    },
+    {
+      "ruta": "notes/japanese/patchnotes.xsl",
+      "tam": 3561,
+      "sha256": "c0065fce6f05b6627cbbadce6db37190301f24223ac849c460be0142b5114df5",
+      "gz": "c0065fce6f05b6627cbb.gz",
+      "gztam": 805
+    },
+    {
+      "ruta": "notes/japanese/readme.html",
+      "tam": 2162,
+      "sha256": "a31c4a4e99106ca0f6b6e8156edf7a671301a0fd833c8eab44cf1a2080e4b60d",
+      "gz": "a31c4a4e99106ca0f6b6.gz",
+      "gztam": 943
+    },
+    {
+      "ruta": "notes/japanese/readme.xml",
+      "tam": 8868,
+      "sha256": "b968f2fcd0fce32c07bfdce0536976d6aac6dd25cc347baedfacaae8283657a1",
+      "gz": "b968f2fcd0fce32c07bf.gz",
+      "gztam": 2969
+    },
+    {
+      "ruta": "notes/japanese/readme_files/colorschememapping.xml",
+      "tam": 313,
+      "sha256": "4a01b543e17223e3bfc083514697119854e7d6231398e266ee567bd2219e590e",
+      "gz": "4a01b543e17223e3bfc0.gz",
+      "gztam": 215
+    },
+    {
+      "ruta": "notes/japanese/readme_files/filelist.xml",
+      "tam": 204,
+      "sha256": "4a2dac9ba011f0e7d021ebcea0c09afd8051eb8ba54598d44ce9fc831217cf1c",
+      "gz": "4a2dac9ba011f0e7d021.gz",
+      "gztam": 154
+    },
+    {
+      "ruta": "notes/japanese/readme_files/themedata.thmx",
+      "tam": 3081,
+      "sha256": "6e6b9d1eedb553723a40059b12d6148506dbc52eb959da5f01ba45a256925f05",
+      "gz": "6e6b9d1eedb553723a40.gz",
+      "gztam": 2749
+    },
+    {
+      "ruta": "notes/japanese/util.js",
+      "tam": 512,
+      "sha256": "f228a1c6d4b209d9d88129932614705f26bb361749cb07a43937da3c7e24d939",
+      "gz": "f228a1c6d4b209d9d881.gz",
+      "gztam": 230
+    },
+    {
+      "ruta": "notes/korean/button.jpg",
+      "tam": 1575,
+      "sha256": "2d1b70e32bd07d6ccf59b8ada57bbc67585b82b1a0b539c93cab86233345ef28",
+      "gz": "2d1b70e32bd07d6ccf59.gz",
+      "gztam": 1506
+    },
+    {
+      "ruta": "notes/korean/button_read-more.gif",
+      "tam": 1270,
+      "sha256": "c77e0cdf7e9a2441fd129350bb640ad1b07d7a352987d834d21df17e9db17d87",
+      "gz": "c77e0cdf7e9a2441fd12.gz",
+      "gztam": 1150
+    },
+    {
+      "ruta": "notes/korean/noteBanner.jpg",
+      "tam": 16250,
+      "sha256": "fbdd3aee87b0f93167ba278ef9c00e52ac0446bf10d2d5a21ed8816d76230a98",
+      "gz": "fbdd3aee87b0f93167ba.gz",
+      "gztam": 16238
+    },
+    {
+      "ruta": "notes/korean/notes.css",
+      "tam": 2143,
+      "sha256": "87a079b9696fa5964558a0a775b122fd5653d182ce44dff64c6bf31428c67755",
+      "gz": "87a079b9696fa5964558.gz",
+      "gztam": 515
+    },
+    {
+      "ruta": "notes/korean/patcher.css",
+      "tam": 6856,
+      "sha256": "3f586b94857914ada4d82e709dd05961847e5927d4de538f9a4fd8c6b0973de8",
+      "gz": "3f586b94857914ada4d8.gz",
+      "gztam": 1536
+    },
+    {
+      "ruta": "notes/korean/patcher_ad.jpg",
+      "tam": 33182,
+      "sha256": "bd58d814bff4caec8028b9a3f36d5d2fdd0265300f3790db6cacc38830a587dc",
+      "gz": "bd58d814bff4caec8028.gz",
+      "gztam": 32782
+    },
+    {
+      "ruta": "notes/korean/patcher_bg-main.jpg",
+      "tam": 17752,
+      "sha256": "6eae74cb4496c7ec5f19a0c75cdd0bfe06ecd3ed1df2012025cf611f88d87ac0",
+      "gz": "6eae74cb4496c7ec5f19.gz",
+      "gztam": 15621
+    },
+    {
+      "ruta": "notes/korean/patcher_bg-main_with-ad-border.jpg",
+      "tam": 16969,
+      "sha256": "a72cfd62b70fc938c7304d3bb5364ff15be36863ff75dced2ed7f167a55a331d",
+      "gz": "a72cfd62b70fc938c730.gz",
+      "gztam": 14795
+    },
+    {
+      "ruta": "notes/korean/patcher_bg-tile.jpg",
+      "tam": 39550,
+      "sha256": "152fb853fbb4bde980588d4ad7a246987460ef46802cc3ee7f61a549979baff4",
+      "gz": "152fb853fbb4bde98058.gz",
+      "gztam": 39518
+    },
+    {
+      "ruta": "notes/korean/patchnotes.xsl",
+      "tam": 3561,
+      "sha256": "c0065fce6f05b6627cbbadce6db37190301f24223ac849c460be0142b5114df5",
+      "gz": "c0065fce6f05b6627cbb.gz",
+      "gztam": 805
+    },
+    {
+      "ruta": "notes/korean/readme.html",
+      "tam": 2096,
+      "sha256": "8714b1f92aaa796862ebd8a86035dd807d1c0298ac1bac2e23a33b42eb6bf8bd",
+      "gz": "8714b1f92aaa796862eb.gz",
+      "gztam": 882
+    },
+    {
+      "ruta": "notes/korean/readme.xml",
+      "tam": 44714,
+      "sha256": "f3291279929f7c06489fbc8ff97e869095e65ffdec6c33e8fa00692216f5091f",
+      "gz": "f3291279929f7c06489f.gz",
+      "gztam": 6869
+    },
+    {
+      "ruta": "notes/korean/readme_files/colorschememapping.xml",
+      "tam": 313,
+      "sha256": "4a01b543e17223e3bfc083514697119854e7d6231398e266ee567bd2219e590e",
+      "gz": "4a01b543e17223e3bfc0.gz",
+      "gztam": 215
+    },
+    {
+      "ruta": "notes/korean/readme_files/filelist.xml",
+      "tam": 204,
+      "sha256": "4a2dac9ba011f0e7d021ebcea0c09afd8051eb8ba54598d44ce9fc831217cf1c",
+      "gz": "4a2dac9ba011f0e7d021.gz",
+      "gztam": 154
+    },
+    {
+      "ruta": "notes/korean/readme_files/themedata.thmx",
+      "tam": 3081,
+      "sha256": "6e6b9d1eedb553723a40059b12d6148506dbc52eb959da5f01ba45a256925f05",
+      "gz": "6e6b9d1eedb553723a40.gz",
+      "gztam": 2749
+    },
+    {
+      "ruta": "notes/korean/util.js",
+      "tam": 512,
+      "sha256": "f228a1c6d4b209d9d88129932614705f26bb361749cb07a43937da3c7e24d939",
+      "gz": "f228a1c6d4b209d9d881.gz",
+      "gztam": 230
+    },
+    {
+      "ruta": "notes/t_chinese/button.jpg",
+      "tam": 1575,
+      "sha256": "2d1b70e32bd07d6ccf59b8ada57bbc67585b82b1a0b539c93cab86233345ef28",
+      "gz": "2d1b70e32bd07d6ccf59.gz",
+      "gztam": 1506
+    },
+    {
+      "ruta": "notes/t_chinese/button_read-more.gif",
+      "tam": 1270,
+      "sha256": "c77e0cdf7e9a2441fd129350bb640ad1b07d7a352987d834d21df17e9db17d87",
+      "gz": "c77e0cdf7e9a2441fd12.gz",
+      "gztam": 1150
+    },
+    {
+      "ruta": "notes/t_chinese/noteBanner.jpg",
+      "tam": 16250,
+      "sha256": "fbdd3aee87b0f93167ba278ef9c00e52ac0446bf10d2d5a21ed8816d76230a98",
+      "gz": "fbdd3aee87b0f93167ba.gz",
+      "gztam": 16238
+    },
+    {
+      "ruta": "notes/t_chinese/notes.css",
+      "tam": 2143,
+      "sha256": "87a079b9696fa5964558a0a775b122fd5653d182ce44dff64c6bf31428c67755",
+      "gz": "87a079b9696fa5964558.gz",
+      "gztam": 515
+    },
+    {
+      "ruta": "notes/t_chinese/patcher.css",
+      "tam": 6856,
+      "sha256": "3f586b94857914ada4d82e709dd05961847e5927d4de538f9a4fd8c6b0973de8",
+      "gz": "3f586b94857914ada4d8.gz",
+      "gztam": 1536
+    },
+    {
+      "ruta": "notes/t_chinese/patcher_ad.jpg",
+      "tam": 33182,
+      "sha256": "bd58d814bff4caec8028b9a3f36d5d2fdd0265300f3790db6cacc38830a587dc",
+      "gz": "bd58d814bff4caec8028.gz",
+      "gztam": 32782
+    },
+    {
+      "ruta": "notes/t_chinese/patcher_bg-main.jpg",
+      "tam": 17752,
+      "sha256": "6eae74cb4496c7ec5f19a0c75cdd0bfe06ecd3ed1df2012025cf611f88d87ac0",
+      "gz": "6eae74cb4496c7ec5f19.gz",
+      "gztam": 15621
+    },
+    {
+      "ruta": "notes/t_chinese/patcher_bg-main_with-ad-border.jpg",
+      "tam": 16969,
+      "sha256": "a72cfd62b70fc938c7304d3bb5364ff15be36863ff75dced2ed7f167a55a331d",
+      "gz": "a72cfd62b70fc938c730.gz",
+      "gztam": 14795
+    },
+    {
+      "ruta": "notes/t_chinese/patcher_bg-tile.jpg",
+      "tam": 39550,
+      "sha256": "152fb853fbb4bde980588d4ad7a246987460ef46802cc3ee7f61a549979baff4",
+      "gz": "152fb853fbb4bde98058.gz",
+      "gztam": 39518
+    },
+    {
+      "ruta": "notes/t_chinese/patchnotes.xsl",
+      "tam": 3561,
+      "sha256": "c0065fce6f05b6627cbbadce6db37190301f24223ac849c460be0142b5114df5",
+      "gz": "c0065fce6f05b6627cbb.gz",
+      "gztam": 805
+    },
+    {
+      "ruta": "notes/t_chinese/readme.html",
+      "tam": 2096,
+      "sha256": "8714b1f92aaa796862ebd8a86035dd807d1c0298ac1bac2e23a33b42eb6bf8bd",
+      "gz": "8714b1f92aaa796862eb.gz",
+      "gztam": 882
+    },
+    {
+      "ruta": "notes/t_chinese/readme.xml",
+      "tam": 44714,
+      "sha256": "f3291279929f7c06489fbc8ff97e869095e65ffdec6c33e8fa00692216f5091f",
+      "gz": "f3291279929f7c06489f.gz",
+      "gztam": 6869
+    },
+    {
+      "ruta": "notes/t_chinese/readme_files/colorschememapping.xml",
+      "tam": 313,
+      "sha256": "4a01b543e17223e3bfc083514697119854e7d6231398e266ee567bd2219e590e",
+      "gz": "4a01b543e17223e3bfc0.gz",
+      "gztam": 215
+    },
+    {
+      "ruta": "notes/t_chinese/readme_files/filelist.xml",
+      "tam": 204,
+      "sha256": "4a2dac9ba011f0e7d021ebcea0c09afd8051eb8ba54598d44ce9fc831217cf1c",
+      "gz": "4a2dac9ba011f0e7d021.gz",
+      "gztam": 154
+    },
+    {
+      "ruta": "notes/t_chinese/readme_files/themedata.thmx",
+      "tam": 3081,
+      "sha256": "6e6b9d1eedb553723a40059b12d6148506dbc52eb959da5f01ba45a256925f05",
+      "gz": "6e6b9d1eedb553723a40.gz",
+      "gztam": 2749
+    },
+    {
+      "ruta": "notes/t_chinese/util.js",
+      "tam": 512,
+      "sha256": "f228a1c6d4b209d9d88129932614705f26bb361749cb07a43937da3c7e24d939",
+      "gz": "f228a1c6d4b209d9d881.gz",
+      "gztam": 230
+    },
+    {
+      "ruta": "options.JPN",
+      "tam": 9142,
+      "sha256": "c7ba7e7781e15c90dc196b572e9e94918b3ee00bd5ddc723755016bbcc11de3c",
+      "gz": "c7ba7e7781e15c90dc19.gz",
+      "gztam": 3012
+    },
+    {
+      "ruta": "options.cht",
+      "tam": 6804,
+      "sha256": "46ccba790689d30b1f26e9a659c51934209698fb182c236c60ace9c177af2c71",
+      "gz": "46ccba790689d30b1f26.gz",
+      "gztam": 2575
+    },
+    {
+      "ruta": "options.deu",
+      "tam": 6556,
+      "sha256": "838f8d887826a1e22549740dc3a631326b6ce3dbce2ef5786caeff4fa5ab9d1a",
+      "gz": "838f8d887826a1e22549.gz",
+      "gztam": 2749
+    },
+    {
+      "ruta": "options.enu",
+      "tam": 5912,
+      "sha256": "b5257684a513504b994305bf265129c47bafddc08fc8c0761da810bbffd0d861",
+      "gz": "b5257684a513504b9943.gz",
+      "gztam": 2453
+    },
+    {
+      "ruta": "options.esp",
+      "tam": 6156,
+      "sha256": "587fe596ad2bdd36f3b4db2fb93fc79d7f778ac1a97834c2f54626164c19ee27",
+      "gz": "587fe596ad2bdd36f3b4.gz",
+      "gztam": 2517
+    },
+    {
+      "ruta": "options.fra",
+      "tam": 5992,
+      "sha256": "47a76504540af680d07c447b87cfd12a4a155f3314758a71ab4273d9def65eb0",
+      "gz": "47a76504540af680d07c.gz",
+      "gztam": 2450
+    },
+    {
+      "ruta": "options.kor",
+      "tam": 8890,
+      "sha256": "68a9a7961b3af464a195297925fbf4a77a39527240b43ee049ea2fb76bd85b85",
+      "gz": "68a9a7961b3af464a195.gz",
+      "gztam": 3076
+    },
+    {
+      "ruta": "optuotd.JPN",
+      "tam": 6184,
+      "sha256": "7f16c9b324dde5d8273c7b03acdccdc35fde15a4b9dc3ba68f9f13d98dcc5e41",
+      "gz": "7f16c9b324dde5d8273c.gz",
+      "gztam": 2317
+    },
+    {
+      "ruta": "palette.mul",
+      "tam": 768,
+      "sha256": "7f9b3cfaf03c1ee37d4566f9a8ed5860a308ede22ab7444b876a736f67a1ed5d",
+      "gz": "7f9b3cfaf03c1ee37d45.gz",
+      "gztam": 607
+    },
+    {
+      "ruta": "patch.myp",
+      "tam": 775830,
+      "sha256": "e10b6bf9cefbe8c92d08e9f332ba46178b3bbcfa3ec773b768b2a1e9b3b2f865",
+      "gz": "e10b6bf9cefbe8c92d08.gz",
+      "gztam": 738242
+    },
+    {
+      "ruta": "patcher/splash/english/UO_bright.jpg",
+      "tam": 147768,
+      "sha256": "bf143fd601f88026b8683c012ee824922a2955fde3dd9657a3a0d342df2d24d1",
+      "gz": "bf143fd601f88026b868.gz",
+      "gztam": 128498
+    },
+    {
+      "ruta": "patcher/splash/english/UO_dark.jpg",
+      "tam": 137240,
+      "sha256": "d22d7383fe069b626f8bdb8882115a23b7accd9a46b7757ffda25e317922edaf",
+      "gz": "d22d7383fe069b626f8b.gz",
+      "gztam": 118024
+    },
+    {
+      "ruta": "patcher/splash/english/patch.html",
+      "tam": 1454,
+      "sha256": "ca11d9d1ecb47c1600af518e3092b8ae3e3357887914312091bb36d5bb22b085",
+      "gz": "ca11d9d1ecb47c1600af.gz",
+      "gztam": 656
+    },
+    {
+      "ruta": "patcher/splash/japanese/UO_bright.jpg",
+      "tam": 147768,
+      "sha256": "bf143fd601f88026b8683c012ee824922a2955fde3dd9657a3a0d342df2d24d1",
+      "gz": "bf143fd601f88026b868.gz",
+      "gztam": 128498
+    },
+    {
+      "ruta": "patcher/splash/japanese/UO_dark.jpg",
+      "tam": 137240,
+      "sha256": "d22d7383fe069b626f8bdb8882115a23b7accd9a46b7757ffda25e317922edaf",
+      "gz": "d22d7383fe069b626f8b.gz",
+      "gztam": 118024
+    },
+    {
+      "ruta": "patcher/splash/japanese/patch.html",
+      "tam": 1454,
+      "sha256": "ca11d9d1ecb47c1600af518e3092b8ae3e3357887914312091bb36d5bb22b085",
+      "gz": "ca11d9d1ecb47c1600af.gz",
+      "gztam": 656
+    },
+    {
+      "ruta": "patcher/splash/korean/UO_bright.jpg",
+      "tam": 147768,
+      "sha256": "bf143fd601f88026b8683c012ee824922a2955fde3dd9657a3a0d342df2d24d1",
+      "gz": "bf143fd601f88026b868.gz",
+      "gztam": 128498
+    },
+    {
+      "ruta": "patcher/splash/korean/UO_dark.jpg",
+      "tam": 137240,
+      "sha256": "d22d7383fe069b626f8bdb8882115a23b7accd9a46b7757ffda25e317922edaf",
+      "gz": "d22d7383fe069b626f8b.gz",
+      "gztam": 118024
+    },
+    {
+      "ruta": "patcher/splash/korean/patch.html",
+      "tam": 1454,
+      "sha256": "ca11d9d1ecb47c1600af518e3092b8ae3e3357887914312091bb36d5bb22b085",
+      "gz": "ca11d9d1ecb47c1600af.gz",
+      "gztam": 656
+    },
+    {
+      "ruta": "patcher/splash/t_chinese/UO_bright.jpg",
+      "tam": 147768,
+      "sha256": "bf143fd601f88026b8683c012ee824922a2955fde3dd9657a3a0d342df2d24d1",
+      "gz": "bf143fd601f88026b868.gz",
+      "gztam": 128498
+    },
+    {
+      "ruta": "patcher/splash/t_chinese/UO_dark.jpg",
+      "tam": 137240,
+      "sha256": "d22d7383fe069b626f8bdb8882115a23b7accd9a46b7757ffda25e317922edaf",
+      "gz": "d22d7383fe069b626f8b.gz",
+      "gztam": 118024
+    },
+    {
+      "ruta": "patcher/splash/t_chinese/patch.html",
+      "tam": 1454,
+      "sha256": "ca11d9d1ecb47c1600af518e3092b8ae3e3357887914312091bb36d5bb22b085",
+      "gz": "ca11d9d1ecb47c1600af.gz",
+      "gztam": 656
+    },
+    {
+      "ruta": "patchui.dll",
+      "tam": 329304,
+      "sha256": "9310deb92c0694729e2611bd2972ece8cad1ff381539f77fff7c77bb96e6baf4",
+      "gz": "9310deb92c0694729e26.gz",
+      "gztam": 177971
+    },
+    {
+      "ruta": "patchui_win.dll",
+      "tam": 329304,
+      "sha256": "9310deb92c0694729e2611bd2972ece8cad1ff381539f77fff7c77bb96e6baf4",
+      "gz": "9310deb92c0694729e26.gz",
+      "gztam": 177971
+    },
+    {
+      "ruta": "radarcol.mul",
+      "tam": 163768,
+      "sha256": "d573e9c9daa4fa719b4f5a3a59cfddd74744f37fe8bf323bd1495568cad2b5ff",
+      "gz": "d573e9c9daa4fa719b4f.gz",
+      "gztam": 40330
+    },
+    {
+      "ruta": "roof.txt",
+      "tam": 4164,
+      "sha256": "622c19a7d76b1d573acc157ff097135c128a984967bffd5b9c4315abc987bd51",
+      "gz": "622c19a7d76b1d573acc.gz",
+      "gztam": 1510
+    },
+    {
+      "ruta": "sjis2uni.mul",
+      "tam": 131072,
+      "sha256": "62948227429ebbae79cfe287d79eaf8dbf753ccd065553726ceca6caf2102d4d",
+      "gz": "62948227429ebbae79cf.gz",
+      "gztam": 14240
+    },
+    {
+      "ruta": "skillgrp.mul",
+      "tam": 338,
+      "sha256": "35646333bf999d5e1768ae362f01f07fc0b108821ee6e28f994e863892176ecd",
+      "gz": "35646333bf999d5e1768.gz",
+      "gztam": 141
+    },
+    {
+      "ruta": "skills.idx",
+      "tam": 696,
+      "sha256": "cbee8d8c30e56a5831f9031de9745621cd7292f4386878ec54ed6a01847d9a5c",
+      "gz": "cbee8d8c30e56a5831f9.gz",
+      "gztam": 238
+    },
+    {
+      "ruta": "skills.mul",
+      "tam": 599,
+      "sha256": "74a7e718a126007c2db017719cb96abe78188558e19b0e74457fd136c3c5c081",
+      "gz": "74a7e718a126007c2db0.gz",
+      "gztam": 298
+    },
+    {
+      "ruta": "soundLegacyMUL.uop",
+      "tam": 168385870,
+      "sha256": "961954c25a76e8ea8864c7495e51f74f60dd899e351e139429b6bae12a49c22a",
+      "gz": "961954c25a76e8ea8864.gz",
+      "gztam": 134484255
+    },
+    {
+      "ruta": "speech.mul",
+      "tam": 119749,
+      "sha256": "ba75c8c9296e4d6219f416b86e04af8df56d3f515904b6dec64681453a297db3",
+      "gz": "ba75c8c9296e4d6219f4.gz",
+      "gztam": 46761
+    },
+    {
+      "ruta": "stadif0.mul",
+      "tam": 146790,
+      "sha256": "5ebe135be96f2b9ea9e56ad80ac405e6414e13a14c879e820d9231dc015a1496",
+      "gz": "5ebe135be96f2b9ea9e5.gz",
+      "gztam": 47620
+    },
+    {
+      "ruta": "stadif1.mul",
+      "tam": 1088997,
+      "sha256": "25fba69d2f136932a197e6b6a902700b2d0fce1960750818070d96492f7783c9",
+      "gz": "25fba69d2f136932a197.gz",
+      "gztam": 348604
+    },
+    {
+      "ruta": "stadif2.mul",
+      "tam": 193438,
+      "sha256": "c2eb6c27c34311d2d0f68cb4e2d34a5825baa8d3ef0b5a9fd3455c8cccca1bd5",
+      "gz": "c2eb6c27c34311d2d0f6.gz",
+      "gztam": 26580
+    },
+    {
+      "ruta": "stadifi0.mul",
+      "tam": 21684,
+      "sha256": "1bd60b5bb85027435c6b74ff7213e2e368bbe914dfc418f23529bbb556c1eee3",
+      "gz": "1bd60b5bb85027435c6b.gz",
+      "gztam": 8621
+    },
+    {
+      "ruta": "stadifi1.mul",
+      "tam": 131172,
+      "sha256": "cd93719f41db33c1c985ac62012bc001efa0287d1c0f8329434cd082ff635b1e",
+      "gz": "cd93719f41db33c1c985.gz",
+      "gztam": 48196
+    },
+    {
+      "ruta": "stadifi2.mul",
+      "tam": 3216,
+      "sha256": "ce272438c5ab36ad0e22c27373d206bdfaa5147c0d72ca7d269941878e2cb9e1",
+      "gz": "ce272438c5ab36ad0e22.gz",
+      "gztam": 2233
+    },
+    {
+      "ruta": "stadifl0.mul",
+      "tam": 7228,
+      "sha256": "dd892b6e46ceee94235bb4a847ddb3b5d78188772a621c3048e68be1e78988d8",
+      "gz": "dd892b6e46ceee94235b.gz",
+      "gztam": 4621
+    },
+    {
+      "ruta": "stadifl1.mul",
+      "tam": 43724,
+      "sha256": "c464a2a346957829a6fa8a0f8a51f4b568d7781a78f91f9c261f2de2dd88bced",
+      "gz": "c464a2a346957829a6fa.gz",
+      "gztam": 21416
+    },
+    {
+      "ruta": "stadifl2.mul",
+      "tam": 1072,
+      "sha256": "8d291d6108ba80fd07e9c717d7c65cb9874bad04e7608a5a6b4db6cf6ae320a9",
+      "gz": "8d291d6108ba80fd07e9.gz",
+      "gztam": 653
+    },
+    {
+      "ruta": "staidx0.mul",
+      "tam": 5505024,
+      "sha256": "209319aeff26e01c7ea7ec86b8f01e3d598e4d82411431c43cb6e9b6ccc69de7",
+      "gz": "209319aeff26e01c7ea7.gz",
+      "gztam": 545346
+    },
+    {
+      "ruta": "staidx0x.mul",
+      "tam": 5505024,
+      "sha256": "f324b0862203e1099764c012dc4589649d3c7b12349bde4560ab089963a00438",
+      "gz": "f324b0862203e1099764.gz",
+      "gztam": 542501
+    },
+    {
+      "ruta": "staidx1.mul",
+      "tam": 5505024,
+      "sha256": "d7ae4bfc790b7c14d4a7e30e9b97e4b6a22f2e027f79e00cc6af317a8b7d10d8",
+      "gz": "d7ae4bfc790b7c14d4a7.gz",
+      "gztam": 540764
+    },
+    {
+      "ruta": "staidx1x.mul",
+      "tam": 5505024,
+      "sha256": "36443b0fddfe002895a05b89c20961b6c96f78f03a6d6de892a1f9b52c15c0a4",
+      "gz": "36443b0fddfe002895a0.gz",
+      "gztam": 541470
+    },
+    {
+      "ruta": "staidx2.mul",
+      "tam": 691200,
+      "sha256": "7965f58fdbe393227f1adefd96f7c401bc0520e4fca8fabe98b12f02c2ccba76",
+      "gz": "7965f58fdbe393227f1a.gz",
+      "gztam": 83965
+    },
+    {
+      "ruta": "staidx2x.mul",
+      "tam": 691200,
+      "sha256": "7965f58fdbe393227f1adefd96f7c401bc0520e4fca8fabe98b12f02c2ccba76",
+      "gz": "7965f58fdbe393227f1a.gz",
+      "gztam": 83965
+    },
+    {
+      "ruta": "staidx3.mul",
+      "tam": 983040,
+      "sha256": "920d9e52cd5a844ce75933513f985dfe0c5b31427a024532737866ea97e944c4",
+      "gz": "920d9e52cd5a844ce759.gz",
+      "gztam": 96740
+    },
+    {
+      "ruta": "staidx4.mul",
+      "tam": 393132,
+      "sha256": "1521f3e40fccd78c530a090136fa85fc2b436c9bb19a135fe7357c9f19b46282",
+      "gz": "1521f3e40fccd78c530a.gz",
+      "gztam": 48920
+    },
+    {
+      "ruta": "staidx5.mul",
+      "tam": 983040,
+      "sha256": "d6735911b2a9e763dcd8d91ddb040d48fb4a2e6b7fdae12f4271011e58c56cbe",
+      "gz": "d6735911b2a9e763dcd8.gz",
+      "gztam": 94569
+    },
+    {
+      "ruta": "staidx5x.mul",
+      "tam": 983040,
+      "sha256": "d6735911b2a9e763dcd8d91ddb040d48fb4a2e6b7fdae12f4271011e58c56cbe",
+      "gz": "d6735911b2a9e763dcd8.gz",
+      "gztam": 94569
+    },
+    {
+      "ruta": "stairs.txt",
+      "tam": 1762,
+      "sha256": "7fdd445000433b3e33cbca370a9cb955174b0444aa54195a7a58f722e1aef2dd",
+      "gz": "7fdd445000433b3e33cb.gz",
+      "gztam": 809
+    },
+    {
+      "ruta": "statics0.mul",
+      "tam": 20386415,
+      "sha256": "aac798ae8786d97eb893d5338e27113f3ace606221c4a7f80c24e57bd4a19976",
+      "gz": "aac798ae8786d97eb893.gz",
+      "gztam": 6472366
+    },
+    {
+      "ruta": "statics0x.mul",
+      "tam": 20298418,
+      "sha256": "a6ea999672c931fdc48b0fa506ad56f7d1a7eeeb96b6fb3a4cdfd0ea96065fe5",
+      "gz": "a6ea999672c931fdc48b.gz",
+      "gztam": 6436452
+    },
+    {
+      "ruta": "statics1.mul",
+      "tam": 20393786,
+      "sha256": "2109d96b4d668a3df58564eb156e0020ddc0ba94f8aad2836c56d9511218e14b",
+      "gz": "2109d96b4d668a3df585.gz",
+      "gztam": 6487035
+    },
+    {
+      "ruta": "statics1x.mul",
+      "tam": 20490050,
+      "sha256": "954f691d884319723f9da9461119dbef629652b94e92c1e12c94145a0924ed90",
+      "gz": "954f691d884319723f9d.gz",
+      "gztam": 6523950
+    },
+    {
+      "ruta": "statics2.mul",
+      "tam": 2443637,
+      "sha256": "e9fbbe216ddc4eec9fad2f886f39654bec84806886cf3abcaeca45df300c4c73",
+      "gz": "e9fbbe216ddc4eec9fad.gz",
+      "gztam": 910728
+    },
+    {
+      "ruta": "statics2x.mul",
+      "tam": 2443637,
+      "sha256": "e9fbbe216ddc4eec9fad2f886f39654bec84806886cf3abcaeca45df300c4c73",
+      "gz": "e9fbbe216ddc4eec9fad.gz",
+      "gztam": 910728
+    },
+    {
+      "ruta": "statics3.mul",
+      "tam": 3163433,
+      "sha256": "d1410d54ac048a68340e82804279dfd30f463ad60efe3532d2749b28d62ccdc7",
+      "gz": "d1410d54ac048a68340e.gz",
+      "gztam": 830268
+    },
+    {
+      "ruta": "statics4.mul",
+      "tam": 1194053,
+      "sha256": "e09b2d0c057910d3f4c7c86e0d0f1e0be16af4cd29c14b5d975bedefd67a15b7",
+      "gz": "e09b2d0c057910d3f4c7.gz",
+      "gztam": 460247
+    },
+    {
+      "ruta": "statics5.mul",
+      "tam": 3452127,
+      "sha256": "1aa4d692ffce66d628b39e5b30bfff51d112261f82057c794408337eb84baae9",
+      "gz": "1aa4d692ffce66d628b3.gz",
+      "gztam": 1049475
+    },
+    {
+      "ruta": "statics5x.mul",
+      "tam": 3452127,
+      "sha256": "1aa4d692ffce66d628b39e5b30bfff51d112261f82057c794408337eb84baae9",
+      "gz": "1aa4d692ffce66d628b3.gz",
+      "gztam": 1049475
+    },
+    {
+      "ruta": "stitchin.def",
+      "tam": 235233,
+      "sha256": "dc1f4ff4f44e07de33952197b9c71f5cdbf7983408df8d75f86c10e89f8d8714",
+      "gz": "dc1f4ff4f44e07de3395.gz",
+      "gztam": 15150
+    },
+    {
+      "ruta": "string_dictionary.uop",
+      "tam": 427970,
+      "sha256": "d09198f015a296dfaaf65061a61441e6bb6405058526beb8cd89468f2a9b9629",
+      "gz": "d09198f015a296dfaaf6.gz",
+      "gztam": 326440
+    },
+    {
+      "ruta": "suppinfo.txt",
+      "tam": 76925,
+      "sha256": "d5c2e2fb46868c568312b9730d5c109bc1ca59ec039cae7c80d14eddbcaadbc8",
+      "gz": "d5c2e2fb46868c568312.gz",
+      "gztam": 9004
+    },
+    {
+      "ruta": "teleprts.txt",
+      "tam": 258,
+      "sha256": "3a2b84d14171042378d8196d5a795a78fcf21bef8f18d8ae688a4dc4e2752d8f",
+      "gz": "3a2b84d14171042378d8.gz",
+      "gztam": 163
+    },
+    {
+      "ruta": "texidx.mul",
+      "tam": 196608,
+      "sha256": "491c96a4abc5554f467b1a71b652a8dba13600267e75c6988c8c419072b14458",
+      "gz": "491c96a4abc5554f467b.gz",
+      "gztam": 7190
+    },
+    {
+      "ruta": "texmaps.mul",
+      "tam": 47357952,
+      "sha256": "52a16409537dfef1b1feb0582eece8581d33a1c185b1bbf1976a2aadb177a528",
+      "gz": "52a16409537dfef1b1fe.gz",
+      "gztam": 21783693
+    },
+    {
+      "ruta": "tileart.uop",
+      "tam": 6162658,
+      "sha256": "17dc2b3cdb7d5a28037dcdfcc3f18c4392fb1a0b94ca63f888541bfe2ec00e1f",
+      "gz": "17dc2b3cdb7d5a28037d.gz",
+      "gztam": 2109627
+    },
+    {
+      "ruta": "tiledata.mul",
+      "tam": 3188736,
+      "sha256": "63de578a22003e5f163dd812489bd298c355b6d288fd874583a109dd975fdd72",
+      "gz": "63de578a22003e5f163d.gz",
+      "gztam": 97647
+    },
+    {
+      "ruta": "unifont.mul",
+      "tam": 1435288,
+      "sha256": "486b3dfc2a72f1c12f34c2c4329f6921606678787d5ff0ac0e6bed9be9827d21",
+      "gz": "486b3dfc2a72f1c12f34.gz",
+      "gztam": 656022
+    },
+    {
+      "ruta": "unifont1.mul",
+      "tam": 1433134,
+      "sha256": "b518c416abeb372d5c4831810004728ca2722e3683ebab98665a6aa0ada51149",
+      "gz": "b518c416abeb372d5c48.gz",
+      "gztam": 655529
+    },
+    {
+      "ruta": "unifont10.mul",
+      "tam": 2748376,
+      "sha256": "610537075831379b62be290224845aa2bab69d5af6081cdf9b77ddb60a5ac8f0",
+      "gz": "610537075831379b62be.gz",
+      "gztam": 199245
+    },
+    {
+      "ruta": "unifont11.mul",
+      "tam": 5036697,
+      "sha256": "20d889dc221cceb63070bb0d094e03ae9983167e13cf72ce7edce7968ccaf374",
+      "gz": "20d889dc221cceb63070.gz",
+      "gztam": 216965
+    },
+    {
+      "ruta": "unifont12.mul",
+      "tam": 8109326,
+      "sha256": "c79f65530d2564d1513de887563e51d9035373a5fe8d635970bba9e9a959e1a8",
+      "gz": "c79f65530d2564d1513d.gz",
+      "gztam": 221693
+    },
+    {
+      "ruta": "unifont2.mul",
+      "tam": 1432845,
+      "sha256": "8ba967aa18fa62550e419d8b8ccf5430e91bba27129c08308c505586ef41e652",
+      "gz": "8ba967aa18fa62550e41.gz",
+      "gztam": 655526
+    },
+    {
+      "ruta": "unifont3.mul",
+      "tam": 2659080,
+      "sha256": "1b12536569a1da54d88541f22101bbb75b919cd0b048babc9c9d16e18d96ba97",
+      "gz": "1b12536569a1da54d885.gz",
+      "gztam": 595202
+    },
+    {
+      "ruta": "unifont4.mul",
+      "tam": 4085838,
+      "sha256": "be8aab47dedf2c07a7a771326c79b23c36431bc658eb60a135d36305838abce1",
+      "gz": "be8aab47dedf2c07a7a7.gz",
+      "gztam": 793071
+    },
+    {
+      "ruta": "unifont5.mul",
+      "tam": 2312876,
+      "sha256": "c3ac51c51a3c65cfe3ccb3a71e79f1f1786f9031b3135f9574615b29ec70a6a1",
+      "gz": "c3ac51c51a3c65cfe3cc.gz",
+      "gztam": 684774
+    },
+    {
+      "ruta": "unifont6.mul",
+      "tam": 3466767,
+      "sha256": "34a51bcd21d04eb112591427e17ae6705100378c9a3725da301c608b4ca1282d",
+      "gz": "34a51bcd21d04eb11259.gz",
+      "gztam": 809723
+    },
+    {
+      "ruta": "unifont7.mul",
+      "tam": 2356698,
+      "sha256": "f0eda87d7c9bcc0223472377b277365930deae4e951cecf48445fcc4e06957c8",
+      "gz": "f0eda87d7c9bcc022347.gz",
+      "gztam": 168181
+    },
+    {
+      "ruta": "unifont8.mul",
+      "tam": 2749821,
+      "sha256": "cf55ed986fdba758ca9423121c427f37d14a2a04dfd11f442b6bea922684255d",
+      "gz": "cf55ed986fdba758ca94.gz",
+      "gztam": 198684
+    },
+    {
+      "ruta": "unifont9.mul",
+      "tam": 5039687,
+      "sha256": "edde46f585be9aff5702582653a50c55eee0e864d905c9b4990c03d0e2643c21",
+      "gz": "edde46f585be9aff5702.gz",
+      "gztam": 215680
+    },
+    {
+      "ruta": "uninstUOClassic.exe",
+      "tam": 86294,
+      "sha256": "43dd289f91a75d41013d8147b8d761e7c7b9a68b19162423dfea86c51cdf843a",
+      "gz": "43dd289f91a75d41013d.gz",
+      "gztam": 63442
+    },
+    {
+      "ruta": "uotd.exe",
+      "tam": 24576,
+      "sha256": "25725f0140205ff1ce86818fff46cc287a10d6484a96b55ae0637ae047c56453",
+      "gz": "25725f0140205ff1ce86.gz",
+      "gztam": 4540
+    },
+    {
+      "ruta": "vercfg.cfg",
+      "tam": 101,
+      "sha256": "80f523d48b266af3ec423914fd41f543345fb0d4786eee59dc2bcfd56d08ca03",
+      "gz": "80f523d48b266af3ec42.gz",
+      "gztam": 110
+    },
+    {
+      "ruta": "walls.txt",
+      "tam": 16985,
+      "sha256": "697313fa7f7fd23bfe722fb66ab1c85588df4ccabaa956c1cbf0199a60060d2b",
+      "gz": "697313fa7f7fd23bfe72.gz",
+      "gztam": 4352
+    }
+  ]
+}
