@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06.003358",
+  "version": "2026-11-06.010532",
   "servidor": {
     "host": "127.0.0.1",
     "puerto": 5293
@@ -14,11 +14,11 @@
   "web": "https://roninuo.github.io",
   "discord": "https://discord.gg/KMvqtdeKM",
   "lanzador": {
-    "version": "",
-    "url": "",
+    "version": "2026-11-04",
+    "url": "https://github.com/roninuo/cliente/releases/download/cliente/RoninUO.exe",
     "sha256": ""
   },
-  "base": "https://github.com/RoninUO/roninuo-cliente/releases/download/cliente/",
+  "base": "https://github.com/roninuo/cliente/releases/download/cliente/",
   "archivos": [
     {
       "ruta": "Anim1.def",
