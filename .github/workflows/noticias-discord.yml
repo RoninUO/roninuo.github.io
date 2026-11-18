@@ -1,0 +1,39 @@
+# RoninUO - cuando un push cambia js/datos.js, publica en Discord las noticias nuevas.
+# Necesita el secreto DISCORD_WEBHOOK (Settings > Secrets and variables > Actions).
+name: Noticias a Discord
+
+on:
+  push:
+    branches: [main, master]
+    paths: ["js/datos.js"]
+
+permissions:
+  contents: read
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: datos.js del push anterior
+        run: |
+          ANTES="${{ github.event.before }}"
+          if [ -n "$ANTES" ] && [ "$ANTES" != "0000000000000000000000000000000000000000" ] \
+             && git cat-file -e "$ANTES:js/datos.js" 2>/dev/null; then
+            git show "$ANTES:js/datos.js" > /tmp/datos_antes.js
+            echo "ANTES=/tmp/datos_antes.js" >> "$GITHUB_ENV"
+          else
+            echo "No hay version anterior: no se publicara nada."
+          fi
+
+      - name: Publicar las nuevas
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: node .github/scripts/noticias_discord.js js/datos.js "$ANTES"
