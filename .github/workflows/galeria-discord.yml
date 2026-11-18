@@ -1,0 +1,58 @@
+# RoninUO - cada 30 minutos mira el canal de capturas de Discord y sube a la web
+# las aprobadas por el staff (reaccion ✅). Tambien se puede lanzar a mano desde
+# la pestana Actions ("Run workflow").
+# Secretos: DISCORD_BOT_TOKEN, DISCORD_CANAL_CAPTURAS, DISCORD_ROL_STAFF.
+name: Galeria desde Discord
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: galeria
+  cancel-in-progress: false
+
+jobs:
+  galeria:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pillow
+        run: pip install --quiet pillow
+
+      - name: Leer Discord
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CANAL_CAPTURAS: ${{ secrets.DISCORD_CANAL_CAPTURAS }}
+          DISCORD_ROL_STAFF: ${{ secrets.DISCORD_ROL_STAFF }}
+        run: python .github/scripts/galeria_discord.py .
+
+      - name: Subir los cambios
+        id: subir
+        run: |
+          git add -A galeria
+          if git diff --cached --quiet; then
+            echo "Sin cambios en la galeria."
+            exit 0
+          fi
+          git config user.name "RoninUO galeria"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Galeria: capturas aprobadas en Discord"
+          git push
+          echo "subido=1" >> "$GITHUB_OUTPUT"
+
+      - name: Publicar la web
+        if: steps.subir.outputs.subido == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null || echo "GitHub Pages se publicara solo."

@@ -19,7 +19,25 @@
     sudamerica: '<svg class="silueta" viewBox="0 0 30 40" aria-hidden="true"><path fill="currentColor" d="M8 2 16 1 22 4 28 10 29.5 15 25 20 22 24 19 27 16 32 14 37 12 39.5 10 35 9 28 8 20 5 13 3 9 5 5Z"/></svg>'
   };
 
+  // Iconos del menu (trazo, toman el color del texto)
+  function ico(d) { return '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + d + '</svg>'; }
+  var ICONOS = {
+    "inicio": ico('<path d="M3 5.5c6 1.3 12 1.3 18 0M4.5 9h15M7 6.4V21M17 6.4V21M12 9v3.5"/>'),
+    "como-jugar": ico('<path d="M4 5h6a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6z"/>'),
+    "solicitud": ico('<path d="M15 4l5 5-9 9H6v-5z"/><path d="M4 20l2-2M13 6l5 5"/>'),
+    "mundo": ico('<path d="M2 20l7-12 4 6 2.5-3L22 20z"/><path d="M8 8.5l1-2 1 2M17 4.5a2 2 0 1 0 0 .1"/>'),
+    "caminos": ico('<circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M9.5 9.5l5 0-2.5 5z"/>'),
+    "skills": ico('<path d="M20 4L8.5 15.5M5 19l2.5-2.5M6.5 14l3.5 3.5M4 20l1-1"/>'),
+    "honor": ico('<circle cx="12" cy="12" r="9"/><path d="M12 6l3 6-3 6-3-6z"/>'),
+    "vida": ico('<path d="M12 2v2M9 4h6M8 7c-2 3-2 8 0 11h8c2-3 2-8 0-11z"/><path d="M8 7h8M7.5 12.5h9M9 18v2h6v-2"/>'),
+    "galeria": ico('<rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/>'),
+    "reglas": ico('<path d="M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6zM6 3a2 2 0 0 0-2 2v1h2M6 21a2 2 0 0 1-2-2v-1h2"/><path d="M9 8h7M9 12h7M9 16h4"/>'),
+    "descargas": ico('<path d="M12 3v12M7 10l5 5 5-5M4 17v3h16v-3"/>'),
+    "desarrollo": ico('<path d="M14 4l6 6-3 3-6-6zM11 7l-8 8 3 3 8-8M3 21h8"/>')
+  };
+
   function $(id) { return document.getElementById(id); }
+  function esc(t) { return String(t == null ? "" : t).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
 
   function fechaTexto(iso) {
     var p = iso.split("-");
@@ -29,7 +47,7 @@
   // ---------------------------------------------------------------- Menu
   function pintarMenu() {
     $("menu-lista").innerHTML = MENU.map(function (m) {
-      return '<li><a href="#' + m.id + '">' + m.texto + '</a></li>';
+      return '<li><a href="#' + m.id + '">' + (ICONOS[m.id] || "") + '<span>' + m.texto + '</span></a></li>';
     }).join("");
   }
 
@@ -82,8 +100,8 @@
     var fase = Math.max(h, 1);
     var pct = Math.round(((fase - 0.5) / total) * 100);
     $("lateral").innerHTML =
-      '<div class="box"><div class="box-h">Hora en el mundo<span aria-hidden="true">時刻</span></div>' +
-        '<div class="box-b"><div class="relojes" id="relojes-lateral"></div></div></div>' +
+      '<div class="box"><div class="box-h">Capturas<span aria-hidden="true">写真</span></div>' +
+        '<div class="box-b" id="capturas-lateral"><div class="cap-vacia">Cargando capturas…</div></div></div>' +
       '<div class="box"><div class="box-h">Ping estimado<span aria-hidden="true">通信</span></div><div class="box-b">' +
         '<ul class="ping">' + CONFIG.ping.map(function (p) {
           return '<li>' + BANDERAS[p.bandera] + '<span>' + p.nombre + '</span><b>' + p.ms + ' ms</b></li>';
@@ -179,6 +197,94 @@
     show(false);
   }
 
+  // ---------------------------------------------------------------- Galeria
+  // galeria/capturas.json lo escribe la Action "Galeria desde Discord" con las
+  // capturas que el staff aprueba en el canal de capturas.
+  var CAPTURAS = [];
+  var ICONO_FOTO = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>';
+
+  function textoVacio() {
+    return '<div class="cap-vacia">' + ICONO_FOTO + '<span>Aún no hay capturas. Sube las tuyas al canal de capturas del Discord: el staff elige las mejores para la web.</span>' +
+      '<a class="btn primary btn-dc" href="' + CONFIG.discord + '" target="_blank" rel="noopener">' + ICONO_DISCORD + 'Ir al Discord</a></div>';
+  }
+
+  function pintarCapturasLateral() {
+    var caja = $("capturas-lateral");
+    if (!caja) return;
+    if (!CAPTURAS.length) { caja.innerHTML = textoVacio(); return; }
+    var lista = CAPTURAS.slice(0, 6), i = 0, temporizador;
+    caja.innerHTML = '<a class="cap-marco" href="#galeria" aria-label="Ver la galería"><img id="cap-img" alt=""></a>' +
+      '<div class="cap-pie" aria-live="polite"><b id="cap-autor"></b><span id="cap-texto"></span></div>' +
+      '<div class="cap-nav"><div class="cap-puntos">' + lista.map(function (c, n) {
+        return '<button type="button" data-n="' + n + '" aria-label="Captura ' + (n + 1) + '"></button>';
+      }).join("") + '</div><a href="#galeria">Ver todas ›</a></div>';
+    var img = $("cap-img");
+    function ver(n) {
+      i = (n + lista.length) % lista.length;
+      var c = lista[i];
+      img.classList.add("cambia");
+      setTimeout(function () {
+        img.src = c.mini; img.alt = "Captura de " + c.autor + (c.texto ? ": " + c.texto : "");
+        img.classList.remove("cambia");
+      }, 180);
+      $("cap-autor").textContent = c.autor;
+      $("cap-texto").textContent = c.texto || fechaTexto(c.fecha);
+      Array.prototype.forEach.call(caja.querySelectorAll(".cap-puntos button"), function (b, k) {
+        b.setAttribute("aria-current", k === i ? "true" : "false");
+      });
+    }
+    function siguiente() { ver(i + 1); }
+    function arrancar() {
+      clearInterval(temporizador);
+      if (lista.length > 1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) temporizador = setInterval(siguiente, 6000);
+    }
+    caja.querySelector(".cap-puntos").addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      ver(+b.getAttribute("data-n")); arrancar();
+    });
+    ver(0); arrancar();
+  }
+
+  function pintarGaleria() {
+    var caja = $("galeria-rejilla");
+    if (!caja) return;
+    if (!CAPTURAS.length) { caja.innerHTML = textoVacio(); return; }
+    caja.className = "gal-rejilla";
+    caja.innerHTML = CAPTURAS.map(function (c, n) {
+      return '<button type="button" data-n="' + n + '"><span class="cap-marco"><img loading="lazy" src="' + esc(c.mini) + '" alt="Captura de ' + esc(c.autor) + '"></span>' +
+        '<b>' + esc(c.autor) + '</b><small>' + fechaTexto(c.fecha) + (c.texto ? " · " + esc(c.texto) : "") + '</small></button>';
+    }).join("");
+    var dlg = $("gal-ver"), actual = 0;
+    function abrir(n) {
+      actual = (n + CAPTURAS.length) % CAPTURAS.length;
+      var c = CAPTURAS[actual];
+      $("gal-img").src = c.img; $("gal-img").alt = "Captura de " + c.autor;
+      $("gal-pie").innerHTML = '<span><b>' + esc(c.autor) + '</b> · ' + fechaTexto(c.fecha) + (c.texto ? '<br>' + esc(c.texto) : "") + '</span>';
+      if (!dlg.open) dlg.showModal();
+    }
+    caja.addEventListener("click", function (e) { var b = e.target.closest("button[data-n]"); if (b) abrir(+b.getAttribute("data-n")); });
+    $("gal-ant").addEventListener("click", function () { abrir(actual - 1); });
+    $("gal-sig").addEventListener("click", function () { abrir(actual + 1); });
+    $("gal-cerrar").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") abrir(actual - 1);
+      if (e.key === "ArrowRight") abrir(actual + 1);
+    });
+  }
+
+  function cargarCapturas() {
+    // cambia cada 10 minutos para no quedarse con una copia vieja
+    fetch("galeria/capturas.json?t=" + Math.floor(Date.now() / 600000))
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .catch(function () { return []; })
+      .then(function (lista) {
+        CAPTURAS = Array.isArray(lista) ? lista : [];
+        pintarCapturasLateral();
+        pintarGaleria();
+      });
+  }
+
   pintarMenu();
   pintarPaginas();
   pintarNoticias();
@@ -187,4 +293,5 @@
   pintarLateral();
   pintarRelojes();
   navegacion();
+  cargarCapturas();
 })();

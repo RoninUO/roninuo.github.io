@@ -64,6 +64,10 @@ var MENU = [
     "texto": "Vida en Hinokage"
   },
   {
+    "id": "galeria",
+    "texto": "Galería"
+  },
+  {
     "id": "reglas",
     "texto": "Reglas"
   },

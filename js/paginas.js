@@ -2,6 +2,18 @@
 // mete en <main>. Las noticias, el plan de desarrollo, el estado del servidor,
 // el Discord y los relojes salen de datos.js.
 var PAGINAS = {
+  "galeria": `    <div class="panel">
+      <div class="panel-h"><h2>Galería</h2><span class="kj" aria-hidden="true">写真</span></div>
+      <div class="panel-b">
+        <p>Capturas de los jugadores de Hinokage. Súbelas al canal de capturas del <a href="https://discord.gg/KMvqtdeKM" target="_blank" rel="noopener">Discord</a>: cuando el staff aprueba una, aparece aquí en menos de una hora.</p>
+        <div id="galeria-rejilla"><div class="cap-vacia">Cargando capturas…</div></div>
+      </div>
+    </div>
+    <dialog class="gal-ver" id="gal-ver" aria-label="Captura ampliada">
+      <figure><img id="gal-img" alt=""><figcaption><span id="gal-pie"></span>
+        <span class="gal-ctrl"><button type="button" id="gal-ant">‹ Anterior</button><button type="button" id="gal-sig">Siguiente ›</button><button type="button" id="gal-cerrar">Cerrar ✕</button></span>
+      </figcaption></figure>
+    </dialog>`,
   "inicio": `    <div class="panel">
       <div class="hero">
         <svg class="logo" viewBox="0 0 240 262" role="img" aria-label="Logotipo de RoninUO">

@@ -1,0 +1,160 @@
+/* RoninUO - cabecera tipo cartel (paisaje, titulo dorado y emblema de Jugar),
+   menu lacado con iconos, margen oscuro con cabeceras de pincelada y galeria.
+   Va despues de estilo.css y solo cambia lo que hace falta. */
+:root {
+  --oro-1: #fff1c2; --oro-2: #e8c36a; --oro-3: #a9762b; --oro-4: #6d4513;
+  --laca: #1c1412; --laca-2: #2a1c17;
+  --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  --pincel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 44' preserveAspectRatio='none'%3E%3Cpath fill='%23a3271a' d='M2 9 C40 3 90 6 140 4 C190 2 240 5 298 3 L296 12 L299 20 L294 30 L298 41 C250 39 200 43 150 40 C100 38 50 42 4 40 L7 31 L1 22 L6 15 Z'/%3E%3Cpath fill='%23c43a22' opacity='.55' d='M10 12 C80 8 160 11 290 7 L288 17 C200 19 120 16 12 20 Z'/%3E%3Cpath fill='%23000' opacity='.25' d='M8 33 C90 30 170 34 292 31 L292 37 C190 40 100 37 8 39 Z'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------------------------------------- Barra fina */
+.topbar .wrap { padding-block: 6px; gap: 14px; }
+.topbar-lema { font-size: 12.5px; letter-spacing: .06em; color: var(--band-muted); }
+.topbar .dc-cab { width: 30px; height: 30px; }
+.topbar .dc-cab .ico-dc { width: 17px; height: 17px; }
+
+/* ---------------------------------------------------------------- Cartel */
+.cartel { position: relative; overflow: hidden; background: #07080b; color: #f3ead6; isolation: isolate; }
+.cartel .paisaje { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+.cartel::after { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--grano); opacity: .35; mix-blend-mode: overlay; pointer-events: none; }
+.cartel-in { display: flex; align-items: center; gap: 24px; min-height: 230px; padding-block: 26px 30px; }
+.titulo { display: flex; align-items: center; gap: 20px; text-decoration: none; min-width: 0; }
+.titulo-mon { width: 92px; height: 92px; flex: none; color: #f1dca3; filter: drop-shadow(0 3px 0 #3b2309) drop-shadow(0 6px 14px rgba(0,0,0,.7)); }
+.titulo-txt { display: grid; gap: 4px; min-width: 0; }
+.titulo-txt b {
+  font-family: var(--f-display); font-weight: 800; font-size: clamp(44px, 7.4vw, 92px); line-height: .95; letter-spacing: .06em;
+  background: linear-gradient(180deg, var(--oro-1) 0%, var(--oro-2) 34%, var(--oro-3) 52%, #f6d98d 64%, var(--oro-4) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 2px 0 #3b2309) drop-shadow(0 0 1px #1a0f04) drop-shadow(0 8px 18px rgba(0,0,0,.75));
+}
+.titulo-txt b i {
+  font-style: normal; font-size: .46em; letter-spacing: .04em; margin-left: .14em; vertical-align: .9em;
+  background: linear-gradient(180deg, #ffb08a 0%, #e0482a 45%, #8f1d0e 100%); -webkit-background-clip: text; background-clip: text;
+}
+.titulo-txt small { font-family: var(--f-display); font-weight: 600; font-size: clamp(13px, 1.6vw, 17px); letter-spacing: .14em; color: #e7d3a3; text-shadow: 0 2px 6px #000; }
+
+/* Emblema de Jugar: octogono dorado con laca roja y brasas */
+.jugar {
+  margin-left: auto; flex: none; display: block; text-decoration: none; padding: 4px; width: 190px; height: 104px;
+  clip-path: polygon(14% 0, 86% 0, 100% 50%, 86% 100%, 14% 100%, 0 50%);
+  background: linear-gradient(180deg, var(--oro-1), var(--oro-2) 30%, var(--oro-3) 55%, #f3d488 70%, var(--oro-4));
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,.7)) drop-shadow(0 0 18px rgba(255,110,40,.35));
+  transition: transform .15s ease, filter .15s ease;
+}
+.jugar-in {
+  display: grid; place-content: center; justify-items: center; gap: 2px; width: 100%; height: 100%;
+  clip-path: polygon(14% 0, 86% 0, 100% 50%, 86% 100%, 14% 100%, 0 50%);
+  background:
+    radial-gradient(120% 70% at 50% 120%, rgba(255,140,50,.75), rgba(255,90,30,0) 60%),
+    radial-gradient(60% 50% at 50% 0%, rgba(255,255,255,.12), rgba(255,255,255,0) 70%),
+    linear-gradient(180deg, #5a1610, #2b0907);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.45);
+}
+.jugar b { font-family: var(--f-display); font-weight: 800; font-size: 28px; letter-spacing: .14em; color: #fff4dc; text-transform: uppercase; text-shadow: 0 2px 0 #3a0c06, 0 0 12px rgba(255,150,70,.6); line-height: 1; }
+.jugar small { font-size: 11.5px; letter-spacing: .12em; color: #f0cf8a; text-transform: uppercase; }
+.jugar:hover, .jugar:focus-visible { transform: translateY(-2px) scale(1.03); filter: drop-shadow(0 8px 18px rgba(0,0,0,.75)) drop-shadow(0 0 26px rgba(255,120,40,.6)); }
+.jugar:focus-visible { outline: none; }
+.cartel .menu-btn { border-color: #b99c63; color: #f1dca3; background: rgba(0,0,0,.35); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .cartel .lava { animation: lava 3.2s ease-in-out infinite alternate; }
+  .cartel .ascuas circle { animation: ascua 6s linear infinite; }
+  .cartel .ascuas circle:nth-child(2) { animation-delay: -1.5s; } .cartel .ascuas circle:nth-child(3) { animation-delay: -3s; }
+  .cartel .ascuas circle:nth-child(4) { animation-delay: -4.2s; } .cartel .ascuas circle:nth-child(5) { animation-delay: -5s; }
+  .jugar-in { animation: brasa 2.6s ease-in-out infinite alternate; }
+  @keyframes lava { from { opacity: .55; } to { opacity: 1; } }
+  @keyframes ascua { 0% { transform: translateY(40px); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-60px); opacity: 0; } }
+  @keyframes brasa { from { filter: brightness(.92); } to { filter: brightness(1.12); } }
+}
+
+/* ---------------------------------------------------------------- Menu lacado */
+nav.main {
+  background: var(--grano), linear-gradient(180deg, var(--laca-2), var(--laca));
+  border-top: 0; box-shadow: 0 1px 0 rgba(255,255,255,.04) inset, 0 6px 14px rgba(0,0,0,.35);
+}
+nav.main::before, nav.main::after { content: ""; position: absolute; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--oro-3) 12%, var(--oro-2) 50%, var(--oro-3) 88%, transparent); }
+nav.main::before { top: 0; } nav.main::after { bottom: 0; }
+nav.main ul { justify-content: center; max-width: none; }
+nav.main li + li { border-left: 1px solid rgba(0,0,0,.45); box-shadow: -1px 0 0 rgba(255,255,255,.05); }
+nav.main a {
+  display: grid; justify-items: center; gap: 3px; padding: 10px 11px 9px; border-bottom: 0;
+  color: #cdb27a; font-size: 12px; letter-spacing: .035em; white-space: nowrap; text-transform: uppercase; font-weight: 700; position: relative;
+}
+nav.main a .ico { width: 24px; height: 24px; color: var(--oro-2); filter: drop-shadow(0 1px 0 #000); transition: transform .15s ease; }
+nav.main a:hover { color: #f6e4b6; }
+nav.main a:hover .ico { transform: translateY(-1px); color: var(--oro-1); }
+nav.main a[aria-current="page"] { color: #fff2d2; border-bottom-color: transparent; }
+nav.main a[aria-current="page"]::after { content: ""; position: absolute; left: 18%; right: 18%; bottom: 3px; height: 3px; background: var(--shu); box-shadow: 0 0 8px rgba(224,87,60,.8); }
+
+/* ---------------------------------------------------------------- Margen bruto */
+aside {
+  --panel: #14161b; --paper: #0e1013; --ink: #ece5d3; --muted: #a49d8c; --line: #2b2e35; --ai: #e1bf73;
+  gap: 18px; color: var(--ink);
+}
+.box {
+  background: var(--grano), linear-gradient(180deg, #181a20, #111318);
+  border: 1px solid #2b2e35; box-shadow: 0 0 0 1px #000, 0 10px 22px rgba(0,0,0,.25);
+}
+.box-h {
+  background: var(--pincel) center / 100% 100% no-repeat; color: #fff6e6; margin: 14px 10px 4px; padding: 10px 16px;
+  font-size: 17px; text-shadow: 0 2px 2px rgba(0,0,0,.6);
+}
+.box-h span { color: #f3cf86; font-size: 15px; }
+.box-b { padding: 12px 18px 18px; }
+.box .bar { background: #0a0b0e; }
+.box .btn.primary { box-shadow: 0 0 0 1px #000, 0 0 14px rgba(224,87,60,.25); }
+
+/* ---------------------------------------------------------------- Galeria: bloque del margen */
+.cap-marco { position: relative; display: block; padding: 4px; background: linear-gradient(135deg, var(--oro-1), var(--oro-3) 40%, #f2d58a 60%, var(--oro-4)); box-shadow: 0 6px 14px rgba(0,0,0,.6); }
+.cap-marco img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #000; outline: 1px solid rgba(0,0,0,.6); }
+.cap-pie { display: grid; gap: 1px; font-size: 13px; line-height: 1.4; min-height: 38px; }
+.cap-pie b { font-family: var(--f-display); color: #f1dca3; font-size: 14px; }
+.cap-pie span { color: var(--muted); }
+.cap-nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.cap-puntos { display: flex; gap: 6px; }
+.cap-puntos button { width: 9px; height: 9px; padding: 0; border-radius: 50%; border: 1px solid var(--oro-3); background: transparent; cursor: pointer; }
+.cap-puntos button[aria-current="true"] { background: var(--oro-2); }
+.cap-vacia { border: 1px dashed #3a3d45; padding: 18px 14px; text-align: center; color: var(--muted); font-size: 13.5px; display: grid; gap: 8px; justify-items: center; }
+.cap-vacia svg { width: 42px; height: 42px; color: var(--oro-3); }
+@media (prefers-reduced-motion: no-preference) { .cap-marco img { transition: opacity .35s ease; } .cap-marco img.cambia { opacity: 0; } }
+
+/* Galeria: pagina */
+.gal-rejilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.gal-rejilla button { display: grid; gap: 6px; padding: 0; border: 0; background: none; text-align: left; cursor: pointer; color: var(--ink); font: inherit; }
+.gal-rejilla .cap-marco img { aspect-ratio: 16 / 10; }
+.gal-rejilla small { font-size: 12.5px; color: var(--muted); }
+.gal-rejilla b { font-family: var(--f-display); font-size: 15px; }
+.gal-ver { border: 0; padding: 0; background: transparent; max-width: min(1200px, 94vw); max-height: 94vh; color: #f3ead6; }
+.gal-ver::backdrop { background: rgba(5,6,8,.88); }
+.gal-ver figure { margin: 0; display: grid; gap: 10px; }
+.gal-ver img { max-width: 100%; max-height: 80vh; display: block; margin: 0 auto; border: 3px solid var(--oro-3); }
+.gal-ver figcaption { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 14px; }
+.gal-ver figcaption b { font-family: var(--f-display); color: #f1dca3; }
+.gal-ctrl { display: flex; gap: 8px; }
+.gal-ctrl button { font: inherit; font-size: 14px; padding: 6px 12px; border: 1px solid var(--oro-3); background: rgba(0,0,0,.5); color: #f1dca3; cursor: pointer; }
+
+/* ---------------------------------------------------------------- Movil */
+@media (max-width: 1240px) {
+  nav.main a { padding: 9px 7px 8px; font-size: 11px; letter-spacing: .02em; }
+}
+@media (max-width: 900px) {
+  .cartel-in { min-height: 180px; }
+  .titulo-mon { width: 70px; height: 70px; }
+  .jugar { width: 160px; height: 88px; } .jugar b { font-size: 23px; }
+}
+@media (max-width: 640px) {
+  .topbar-lema { display: none; }
+  .hero .logo { display: none; }
+  .cartel .lava, .cartel .ascuas { display: none; }
+  .cartel-in { flex-wrap: wrap; min-height: 0; padding-block: 18px 20px; gap: 14px; }
+  .titulo { gap: 12px; }
+  .titulo-mon { width: 54px; height: 54px; }
+  .titulo-txt small { letter-spacing: .08em; }
+  .jugar { margin-left: 0; width: 150px; height: 80px; }
+  .cartel .menu-btn { margin-left: auto; }
+  nav.main ul { justify-content: stretch; }
+  nav.main li + li { border-left: 0; box-shadow: none; border-top: 1px solid rgba(0,0,0,.4); }
+  nav.main a { display: flex; gap: 12px; align-items: center; padding: 11px 16px; font-size: 13px; }
+  nav.main a[aria-current="page"]::after { left: 0; right: auto; top: 8px; bottom: 8px; width: 3px; height: auto; }
+}

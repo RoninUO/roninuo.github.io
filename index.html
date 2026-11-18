@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="css/estilo.css?v=20261118a">
+<link rel="stylesheet" href="css/estilo.css?v=20261118b">
+<link rel="stylesheet" href="css/cartel.css?v=20261118b">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -24,20 +25,59 @@
   </defs>
 </svg>
 
-<div class="band gut">
+<div class="band topbar gut">
   <div class="wrap">
-    <a class="brand" href="#inicio" aria-label="RoninUO, ir a inicio">
-      <svg viewBox="0 0 200 200" aria-hidden="true" style="color: var(--band-ink)"><use href="#mark"/></svg>
-      <span><b>Ronin<span>UO</span></b><small>Crónicas del Honor · Ecos del Sol Naciente</small></span>
-    </a>
+    <span class="topbar-lema">Servidor de rol de Ultima Online · Japón feudal</span>
     <div class="cab-der">
       <div class="relojes-cab" id="relojes-cab" aria-label="Hora en España y Argentina"></div>
       <div class="status" id="estado-cab"></div>
       <a class="dc-cab" id="discord-cab" href="#" target="_blank" rel="noopener" aria-label="Discord de RoninUO" title="Discord de RoninUO"></a>
     </div>
-    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
   </div>
 </div>
+
+<header class="cartel gut">
+  <svg class="paisaje" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="pc-cielo" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#07080b"/><stop offset=".55" stop-color="#1d1215"/><stop offset=".85" stop-color="#4b1d13"/><stop offset="1" stop-color="#6a2614"/>
+      </linearGradient>
+      <radialGradient id="pc-sol" cx=".5" cy=".5" r=".5">
+        <stop offset="0" stop-color="#ff7a3c"/><stop offset=".6" stop-color="#c8361b"/><stop offset="1" stop-color="#c8361b" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="pc-brillo" cx=".5" cy=".5" r=".5">
+        <stop offset="0" stop-color="#ff9a4a" stop-opacity=".55"/><stop offset="1" stop-color="#ff9a4a" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="pc-niebla" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#c9b9a6" stop-opacity="0"/><stop offset=".5" stop-color="#c9b9a6" stop-opacity=".09"/><stop offset="1" stop-color="#c9b9a6" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="300" fill="url(#pc-cielo)"/>
+    <circle cx="930" cy="150" r="190" fill="url(#pc-brillo)"/>
+    <circle cx="930" cy="150" r="70" fill="url(#pc-sol)"/>
+    <path fill="#1f1619" d="M0 210 L120 170 L210 190 L330 140 L430 180 L540 150 L640 190 L760 160 L880 196 L1000 150 L1120 186 L1240 156 L1360 184 L1440 170 V300 H0Z"/>
+    <g transform="translate(250 0)"><path fill="#170f12" d="M420 230 L560 120 L590 104 L612 104 L640 122 L780 232 Z"/>
+    <path class="lava" fill="none" stroke="#ff6a2a" stroke-width="2.4" stroke-linecap="round" d="M598 106 L592 128 L600 146 L590 170 M606 108 L614 132 L606 156"/>
+    <circle cx="601" cy="98" r="22" fill="url(#pc-brillo)"/></g>
+    <rect y="200" width="1440" height="60" fill="url(#pc-niebla)"/>
+    <path fill="#0f0b0d" d="M0 250 Q160 214 320 236 T640 230 T960 238 T1280 226 T1440 232 V300 H0Z"/>
+    <g fill="#0a0809">
+      <path d="M1240 232 h96 v-6 h-96z M1230 220 q58 -10 116 0 v6 q-58 -8 -116 0z M1252 226 h6 v60 h-6z M1318 226 h6 v60 h-6z"/>
+      <path d="M140 240 l26 -50 l26 50z M160 190 l6 -14 l6 14z M150 214 h32 v4 h-32z M146 228 h40 v4 h-40z"/>
+    </g>
+    <g class="ascuas" fill="#ff8a3d" transform="translate(250 0)">
+      <circle cx="590" cy="80" r="1.6"/><circle cx="622" cy="60" r="1.2"/><circle cx="575" cy="48" r="1"/><circle cx="640" cy="90" r="1.4"/><circle cx="610" cy="30" r="1"/>
+    </g>
+  </svg>
+  <div class="wrap cartel-in">
+    <a class="titulo" href="#inicio" aria-label="RoninUO, ir a inicio">
+      <svg class="titulo-mon" viewBox="0 0 200 200" aria-hidden="true"><use href="#mark"/></svg>
+      <span class="titulo-txt"><b>RONIN<i>UO</i></b><small>Crónicas del Honor · Ecos del Sol Naciente</small></span>
+    </a>
+    <a class="jugar" href="#como-jugar"><span class="jugar-in"><b>Jugar</b><small>Cómo empezar</small></span></a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+  </div>
+</header>
 <nav class="main gut" id="menu" aria-label="Menú principal">
   <ul id="menu-lista"></ul>
 </nav>
@@ -57,11 +97,11 @@
 </footer>
 
 <noscript><p style="text-align:center;padding:20px">Esta web necesita JavaScript.</p></noscript>
-<script src="js/datos.js?v=20261118a"></script>
-<script src="js/paginas.js?v=20261118a"></script>
-<script src="js/app.js?v=20261118a"></script>
-<script src="js/skills.js?v=20261118a"></script>
-<script src="js/nombres.js?v=20261118a"></script>
-<script src="js/cuentas.js?v=20261118a"></script>
+<script src="js/datos.js?v=20261118b"></script>
+<script src="js/paginas.js?v=20261118b"></script>
+<script src="js/app.js?v=20261118b"></script>
+<script src="js/skills.js?v=20261118b"></script>
+<script src="js/nombres.js?v=20261118b"></script>
+<script src="js/cuentas.js?v=20261118b"></script>
 </body>
 </html>
