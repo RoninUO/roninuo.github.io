@@ -81,6 +81,12 @@ var MENU = [
 // fecha en formato AAAA-MM-DD; el texto admite HTML (enlaces, negritas).
 var NOTICIAS = [
   {
+    "fecha": "2026-11-18",
+    "etiqueta": "Diario de desarrollo",
+    "titulo": "Hinokage cambia de cara",
+    "texto": "Estamos rediseñando la parte gráfica del juego con estética japonesa: el paperdoll (la ficha de tu personaje) y los gumps (las ventanas del juego) tendrán un aspecto propio de Hinokage. En combate, cada waza (técnica) que prepares y cada efecto que te dejen aparecerán como iconos con cuenta atrás en la barra de efectos: el aturdimiento de un kiai (grito de combate), el sangrado de un kesagiri (corte en diagonal), la ceguera del metsubushi (polvo cegador)... y también tu kamae (postura). Además, el cliente habla castellano: los nombres de las habilidades y las descripciones de los efectos ya van con sus tildes, y pronto las estadísticas se llamarán Tai, Gi y Shin (cuerpo, destreza y espíritu)."
+  },
+  {
     "fecha": "2026-11-02",
     "etiqueta": "Diario de desarrollo",
     "titulo": "Hinokage ya tiene mapa",
