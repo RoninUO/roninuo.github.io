@@ -1,13 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Kabuto (casco samurai): cuenco y shikoro (cubrenuca) en bermellon, kuwagata (cuernos) y maedate (emblema) dorados -->
-  <rect width="64" height="64" rx="12" fill="#16181c"/>
-  <path d="M14 38 Q14 18 32 18 Q50 18 50 38 Z" fill="#b8361f"/>
-  <path d="M18 29 Q32 24 46 29 M16 33.5 Q32 28.5 48 33.5" fill="none" stroke="#16181c" stroke-width="1.6"/>
-  <path d="M8 38 H56 L60 46 Q32 42 4 46 Z" fill="#b8361f"/>
-  <path d="M6 48 Q32 44 58 48 L61 55 Q32 51 3 55 Z" fill="#8e2915"/>
-  <path d="M30 36 Q20 26 11 6 Q10 4 12.5 5.5 Q22 20 33 32 Z" fill="#d9ad4c"/>
-  <path d="M34 36 Q44 26 53 6 Q54 4 51.5 5.5 Q42 20 31 32 Z" fill="#d9ad4c"/>
-  <rect x="11" y="37" width="42" height="3.2" rx="1" fill="#d9ad4c"/>
-  <circle cx="32" cy="31" r="5" fill="#d9ad4c"/>
-  <circle cx="32" cy="31" r="2.2" fill="#b8361f"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+ <defs>
+  <linearGradient id="o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1c2"/><stop offset=".35" stop-color="#e8c36a"/><stop offset=".55" stop-color="#b98432"/><stop offset=".7" stop-color="#f6d98d"/><stop offset="1" stop-color="#8a5a1c"/></linearGradient>
+  <radialGradient id="s" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#ff9a5c"/><stop offset=".5" stop-color="#e0482a"/><stop offset="1" stop-color="#9c2210"/></radialGradient>
+  <radialGradient id="f" cx=".5" cy=".45" r=".6"><stop offset="0" stop-color="#4a1a12"/><stop offset="1" stop-color="#0b0a0d"/></radialGradient>
+ </defs>
+ <circle cx="100" cy="100" r="100" fill="url(#f)"/>
+ <g transform="translate(100 104) scale(1.08) translate(-100 -96)">
+  <path fill="none" stroke="url(#o)" stroke-linecap="round" stroke-width="19" d="M153 52 A75 75 0 1 0 172 86"/>
+  <circle cx="100" cy="92" r="42" fill="url(#s)"/>
+  <line stroke="url(#o)" stroke-linecap="round" stroke-width="8" x1="58" y1="148" x2="142" y2="64"/>
+  <path fill="url(#o)" d="M30 142 Q100 88 170 142 Q100 126 30 142 Z"/>
+ </g>
 </svg>
